@@ -1,0 +1,283 @@
+---
+title: "OD Calibration of MC`r params$multicultivator`"
+author: "Hugo Pineda"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+params:
+  multicultivator:
+    label: Multi-Cultivator
+    value: 2
+    input: select
+    choices: [0, 2]
+output: html_document
+knit:  (function(inputFile, encoding) { rmarkdown::render(inputFile, encoding = encoding, output_file = file.path(dirname(inputFile), paste0(strftime(Sys.Date(), "%Y%m%d"), "_", substr(basename(inputFile),1,nchar(basename(inputFile))-4), ".html"))) })
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+selected.multicultivator <- params$multicultivator
+
+library(here)
+library("tidyverse")
+library("broom")
+```
+
+```{r}
+nest <- nest_legacy
+unnest <- unnest_legacy
+```
+
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here("settings.R"))
+
+source(file.path(functions.dir, "calibration.R"))
+
+# load calibration data
+source(file.path(data.raw.dir, "od_calibration.R" ))
+
+df.od.calibration <- load_calibration_data() %>% 
+  filter(sample_id != 4)
+
+df.od.calibration.models <- load_calibration_models() %>%
+  mutate(channel = channel + 1) %>%
+  select(-c(from, to, model)) %>%
+  distinct()
+
+predict_tidy_linear_model <- function( m, x, .degree = degree, .coefficient = value) {
+  .degree <- rlang::enquo(.degree)
+  .coefficient <- rlang::enquo(.coefficient)
+
+  .predict <- function(beta, X) {
+    y <- 0
+    
+    for(n in seq_along(beta)) {
+      y <- y + beta[n] * (X ** (n - 1))
+    }
+    
+    return(y)
+  }
+
+  beta <- m %>% arrange(!!.degree) %>% pull(!!.coefficient)
+  
+  return( .predict(beta, x))
+}
+
+predict_tidy_linear_model_data <- function(m, data, x, .to=predicted, .keep.all=TRUE, ...) {
+  x <- rlang::enquo(x)
+  .to <- rlang::enquo(.to)
+  
+  if (.keep.all) {
+    return(
+      data %>% mutate( !!quo_name(.to) := predict_tidy_linear_model(m, !!x, ...))
+    )
+  } else {
+    return(
+      predict_tidy_linear_model(m, data %>% pull(!!x) )
+    )
+  }
+}
+
+predict_tidy_linear_model_range <- function(m, x, from, to, .interval = 0.001, .keep.all=TRUE, ...) {
+  x <- rlang::enquo(x)
+  
+  values <- data.frame(
+    s = seq(from, to, .interval)
+  ) %>% rename(
+    !!quo_name(x) := "s"
+  )
+  
+  return(
+    predict_tidy_linear_model_data(m, values, !!x, .keep.all = .keep.all, ...)
+  )
+}
+```
+
+```{r, eval=FALSE}
+# test case 1
+df.od.calibration.models %>%
+  filter(multicultivator == 0, channel == 1) %>%
+  predict_tidy_linear_model( c(0, 1, 2))
+
+df.od.calibration.models %>%
+  filter(multicultivator == 0, channel == 1) %>%
+  predict_tidy_linear_model_range( od_mc_raw, from = 0, to = 2, .interval = 0.5)
+```
+
+```{r}
+df.od.calibration.predicted <- left_join(
+  df.od.calibration %>%
+    group_by(multicultivator, channel) %>%
+    nest(),
+  df.od.calibration.models %>%
+    group_by(multicultivator, channel) %>%
+    nest( .key = "model"),
+  by = c("multicultivator", "channel")
+) %>%
+  mutate( predictions = map(model, predict_tidy_linear_model_range, x = od_mc_raw, from = 0, to=1.5, .interval = 0.01) )
+```
+
+```{r}
+df.od.calibration.performance <- df.od.calibration.predicted %>%
+  mutate(
+    predicted = map2(model, data, function(m, d) {
+      predict_tidy_linear_model_data(m, d, x = od_mc_raw)
+    })
+  ) %>%
+  unnest(predicted) %>%
+  filter(!is.na(od_mc_raw)) %>%
+  mutate(
+    error = od_lab_value - predicted,
+    accuracy = predicted / od_lab_value
+  )
+```
+
+```{r}
+df.od.calibration.offset <-df.od.calibration.performance %>%
+  group_by(multicultivator, channel) %>%
+  summarise(
+    offset = mean( od_lab_value - predicted)
+  )
+
+df.od.calibration.corrected <- left_join(
+  df.od.calibration %>%
+    group_by(multicultivator, channel) %>%
+    nest(),
+  left_join(
+    df.od.calibration.models,
+    df.od.calibration.offset,
+    by = c("multicultivator", "channel")
+  ) %>%
+    mutate(value = ifelse(degree == 0, value + offset, value)) %>%
+    group_by(multicultivator, channel) %>%
+    nest(.key = "model"),
+  by = c("multicultivator", "channel")
+) %>%
+  mutate( predictions = map(model, predict_tidy_linear_model_range, x = od_mc_raw, from = 0, to=1, .interval = 0.01) )
+```
+
+```{r}
+df.od.calibration.predicted %>%
+  unnest(data) %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  filter(!is.na(od_mc_raw)) %>%
+  ggplot(aes(x=od_mc_raw, y=od_lab_value)) +
+  facet_wrap(~channel, ncol = 4) +
+  geom_point(aes(colour=sample_id)) +
+  # geom_smooth(method = "lm") +
+  geom_line(
+    data= df.od.calibration.predicted %>% 
+      filter(multicultivator == selected.multicultivator) %>% 
+      unnest(predictions) %>%
+      rename(od_lab_value = predicted)
+  ) +
+  scale_color_viridis_c()
+  # TODO: add original calibration
+  # TODO: add current calibration
+```
+
+### Error
+
+```{r}
+df.od.calibration.performance %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  ggplot(aes(x=od_mc_raw, y=error)) +
+  facet_wrap(~channel, ncol = 4) +
+  geom_point(aes(colour=sample_id)) +
+  scale_color_viridis_c()
+```
+
+Error distribution:
+
+```{r}
+df.od.calibration.performance %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  ggplot(aes(error, fill=channel)) +
+  facet_wrap(~channel, ncol=4) +
+  geom_density(bw=0.1)
+```
+
+Confidence in estimating error:
+
+```{r}
+df.od.calibration.performance %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  ggplot(aes(x=channel, y=error)) +
+  stat_summary(fun.y = "mean", geom="point") +
+  stat_summary(fun.data = "mean_cl_boot", geom="errorbar")
+```
+
+### Accuracy
+
+```{r}
+df.od.calibration.performance %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  ggplot(aes(x=od_mc_raw, y=accuracy)) +
+  facet_wrap(~channel, ncol = 4) +
+  geom_point(aes(colour=sample_id)) +
+  scale_y_continuous( labels = scales::percent) +
+  scale_color_viridis_c()
+```
+
+### Corrected Model
+
+```{r}
+df.od.calibration.corrected %>%
+  unnest(data) %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  filter(!is.na(od_mc_raw)) %>%
+  ggplot(aes(x=od_mc_raw, y=od_lab_value)) +
+  facet_wrap(~channel, ncol = 4) +
+  geom_point(aes(colour=sample_id)) +
+  # geom_smooth(method = "lm") +
+  geom_line(
+    data= df.od.calibration.corrected %>% 
+      filter(multicultivator == selected.multicultivator) %>% 
+      unnest(predictions) %>% 
+      rename(od_lab_value = predicted) 
+  ) +
+  scale_color_viridis_c()
+```
+
+New error rates
+
+```{r}
+df.od.calibration.corrected.performance <- df.od.calibration.corrected %>%
+  mutate(
+    predicted = map2(model, data, function(m, d) {
+      predict_tidy_linear_model_data(m, d, x = od_mc_raw)
+    })
+  ) %>%
+  unnest(predicted) %>%
+  filter(!is.na(od_mc_raw)) %>%
+  mutate(
+    error = od_lab_value - predicted,
+    accuracy = predicted / od_lab_value
+  )
+```
+
+```{r}
+df.od.calibration.corrected.performance %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  ggplot(aes(x=od_mc_raw, y=error)) +
+  facet_wrap(~channel, ncol = 4) +
+  geom_point(aes(colour=sample_id)) +
+  scale_color_viridis_c()
+```
+
+```{r}
+df.od.calibration.corrected %>% 
+  filter(multicultivator == selected.multicultivator) %>%
+  unnest(model) %>%
+  select(-dataset) %>%
+  mutate(
+    channel = channel - 1
+  ) %>%
+  write_csv(
+    file.path(data.processed.dir, mmpr::stamp_filename(sprintf("linear_calibration_models_mc%s.csv", selected.multicultivator)) )
+  )
+```
