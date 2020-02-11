@@ -15,27 +15,26 @@ knit:  (function(inputFile, encoding) { rmarkdown::render(inputFile, encoding = 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(
   echo = FALSE, warning=FALSE
-  
 )
 
 selected.multicultivator <- params$multicultivator
 
-library(here)
-library("tidyverse")
-library("broom")
-```
+library(tidyverse)
+library(broom)
 
-```{r}
 nest <- nest_legacy
 unnest <- unnest_legacy
 ```
 
-
 ```{r load_data, include=FALSE}
 # Load project settings
-source(here("settings.R"))
+source(here::here("settings.R"))
 
+# load calibration functions
 source(file.path(functions.dir, "calibration.R"))
+
+# load output functions
+source(file.path(functions.dir, "output.R"))
 
 # load calibration data
 source(file.path(data.raw.dir, "od_calibration.R" ))
@@ -105,7 +104,7 @@ df.od.calibration.models %>%
 
 df.od.calibration.models %>%
   filter(multicultivator == 0, channel == 1) %>%
-  predict_tidy_linear_model_range( od_mc_raw, from = 0, to = 2, .interval = 0.5)
+  predict_tidy_linear_model_range( od_mc_raw, from = 0, to = 1, .interval = 0.5)
 ```
 
 ```{r}
@@ -157,7 +156,7 @@ df.od.calibration.corrected <- left_join(
     nest(.key = "model"),
   by = c("multicultivator", "channel")
 ) %>%
-  mutate( predictions = map(model, predict_tidy_linear_model_range, x = od_mc_raw, from = 0, to=1, .interval = 0.01) )
+  mutate( predictions = map(model, predict_tidy_linear_model_range, x = od_mc_raw, from = 0, to=1.5, .interval = 0.01) )
 ```
 
 ```{r}
@@ -269,7 +268,21 @@ df.od.calibration.corrected.performance %>%
   scale_color_viridis_c()
 ```
 
+
+### Accuracy
+
 ```{r}
+df.od.calibration.corrected.performance %>%
+  filter(multicultivator == selected.multicultivator) %>%
+  ggplot(aes(x=od_mc_raw, y=accuracy)) +
+  facet_wrap(~channel, ncol = 4) +
+  geom_point(aes(colour=sample_id)) +
+  scale_y_continuous( labels = scales::percent) +
+  scale_color_viridis_c()
+```
+
+
+```{r export_data}
 df.od.calibration.corrected %>% 
   filter(multicultivator == selected.multicultivator) %>%
   unnest(model) %>%
@@ -277,7 +290,8 @@ df.od.calibration.corrected %>%
   mutate(
     channel = channel - 1
   ) %>%
-  write_csv(
-    file.path(data.processed.dir, mmpr::stamp_filename(sprintf("linear_calibration_models_mc%s.csv", selected.multicultivator)) )
-  )
+  # write_csv(
+  #   file.path(data.processed.dir, mmpr::stamp_filename(sprintf("linear_calibration_models_mc%s.csv", selected.multicultivator)) )
+  # )
+  write_output_csv("casy", "casy_counts_diameter")
 ```

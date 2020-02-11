@@ -6,6 +6,8 @@ root.dir <- here::here()
 functions.dir <- file.path(root.dir, "functions")
 # Data directory
 data.dir <- file.path(root.dir, "data")
+data.raw.dir  <- file.path(data.dir, "raw")
+data.processed.dir  <- file.path(data.dir, "processed")
 output.dir <- file.path(root.dir, "data")
 output.precision <- 4
 
@@ -62,7 +64,10 @@ p.label.dt <- bquote("Doubling time"~(h))
 p.label.method <- "Method"
 p.label.od <- function(.w) { bquote("OD"[.(.w)]) }
 p.label.od.720 <- p.label.od(720)
+p.label.od.730 <- p.label.od(730)
 p.label.od.ln <- function(.w) { bquote("ln"(.(p.label.od(.w)))) }
 p.label.od.ln.720 <- p.label.od.ln(720)
 p.label.cdr <- ~ bquote("Cumulative d"~("h"^-1))
 p.label.temperature <-  bquote("Temperature"~(degree*"C"))
+p.label.size <-  bquote("Size"~(mu*"m"))
+p.label.counts <- "# Counts"
