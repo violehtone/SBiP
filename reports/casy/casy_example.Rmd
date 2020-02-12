@@ -1,0 +1,96 @@
+---
+title: "CASY-counter"
+author: "Hugo Pineda Hernandez"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE, message = FALSE
+  
+)
+
+library(tidyverse)
+
+unnest <- unnest_legacy
+nest <- nest_legacy
+
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# load output functions
+source(file.path(functions.dir, "output.R"))
+
+# Load Experimental Design
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design()
+
+# Load CASY 
+source(file.path(data.raw.dir, "casy.R"))
+df.casy.design <- load_casy_design()
+df.casy <- load_casy()
+```
+
+
+### Explore raw data
+
+```{r}
+df.casy %>% 
+  ggplot(aes(x = size_um, y = counts, colour = replicate)) +
+  geom_point(alpha = 0.5) +
+  facet_grid(sample_type~sample_id) +
+  labs(
+    x = p.label.size,
+    y = p.label.counts
+  ) +
+  theme_bw(16)
+```
+
+
+### Calculate # cells/mL
+
+- Sum all the counts reported by the CASY-counter for each sample and replicate.
+- Correct by the corresponding dilution factor.
+
+```{r}
+
+```
+
+
+### Calculate average and peak diameter
+
+```{r}
+
+```
+
+
+### Join data
+
+```{r}
+
+```
+
+### Validation of peak diameter estimation 
+
+```{r}
+```
+
+
+### Summarise data and join design
+
+```{r}
+```
+
+
+### Export data
+
+
+```{r export_Data}
+df.export %>%
+  write_output_csv("casy", "casy_counts_diameter")
+```
+
