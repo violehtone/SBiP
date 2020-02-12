@@ -3,29 +3,42 @@
 f_growth <- function(d, .f=turbidostat_growth, method=regression.method, ...) {
   
   f_g <- function(.x) {
-    future( .f(.x, time_h, OD, method=method, ...))
+    .f(.x, time_h, OD, method=method, ...)
   }
   
   d %>% 
     # remove data from before turbidostat was enabled
     filter(!is.na(decision)) %>%
-    group_by(year, turbidostat_datafile, multicultivator, channel) %>%
-    # nest so we have each group as a separate data.frame
+    # nest so the data of each group is in a separate data.frame
     nest() %>%
     mutate(
-      # use future to create a process for each time map makes a call
+      # calculate growth rates per group
       rates = map(data, f_g ),
+    ) %>%
+    # return data.frame to original shape (i.e. no nested groups)
+    unnest(rates)
+}
+
+# function used to calculate growth rates (parallel, requires 'future' package)
+f_growth_p <- function(d, .f=turbidostat_growth, method=regression.method, ...) {
+  
+  f_g <- function(.x) {
+    .f(.x, time_h, OD, method=method, ...)
+  }
+  
+  d %>% 
+    # remove data obtained when turbidostat was not active (i.e. no was decision made)
+    filter(!is.na(decision)) %>%
+    # nest so the data of each group is in a separate data.frame
+    nest() %>%
+    mutate(
+      # calculate growth rates per group
+      rates = map(data, ~future(f_g) ),
       # use values to retrieve the data
       rates = values(rates)
     ) %>%
     # return data.frame to original shape (i.e. no nested groups)
-    unnest(rates) %>% 
-    # provide data lost in growth rate estimation
-    left_join(
-      d %>% select(year, turbidostat_datafile, multicultivator, channel, time_h, time) %>% 
-        distinct(year, turbidostat_datafile, multicultivator, channel, time_h),
-      by = c("year", "turbidostat_datafile", "multicultivator", "channel", "time_h")
-    )
+    unnest(rates)
 }
 
 f_growth_filter <- function(d) {
@@ -37,8 +50,8 @@ f_generations_slope <- function(d) {
   d %>%
     mutate(
       # slope = growth factor = ln(2) / doubling time
-      # doubling time = ln(2) / slope = w_time / number of generations
-      # generations (doublings) = w_time / doubling time = w_time / (ln(2) / slope)
+      # T doubling  = ln(2) / slope = w_time / number of generations
+      # generations (doublings) = w_time / T doubling = w_time / (ln(2) / slope)
       generation_d = w_time / (log(2) / slope),
       generations = accumulate(generation_d, `+`)
     )
