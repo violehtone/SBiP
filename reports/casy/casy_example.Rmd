@@ -90,7 +90,7 @@ df.casy.counts %>%
 ```
 
 
-### Join data
+### Join count with diameter data
 
 ```{r}
 
@@ -99,6 +99,7 @@ df.casy.counts %>%
 ### Validation of peak diameter estimation 
 
 ```{r}
+
 ```
 
 

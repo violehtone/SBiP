@@ -71,9 +71,9 @@ df.measurements.course %>%
 
 ```{r}
 df.measurements.course %>% 
-  ggplot(aes(x = as.factor(channel), y = od_value_730, colour = purpose)) +
-  facet_wrap(~multicultivator)
-  geom_point()+
+  ggplot(aes(x=as.factor(channel), y = od_value_730, colour = purpose)) +
+  facet_wrap(~multicultivator) +
+  geom_point()
 ```
 
 ```{r}
