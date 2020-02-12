@@ -29,12 +29,11 @@ source(file.path(functions.dir, "output.R"))
 source(file.path(data.raw.dir, "design.R"))
 df.design <- load_design()
 
-# Load CASY 
+# Load CASY Count Data
 source(file.path(data.raw.dir, "casy.R"))
 df.casy.design <- load_casy_design()
 df.casy <- load_casy()
 ```
-
 
 ### Explore raw data
 
@@ -46,20 +45,43 @@ df.casy %>%
   labs(
     x = p.label.size,
     y = p.label.counts
-  ) +
-  theme_bw(16)
+  ) 
 ```
 
 
 ### Calculate # cells/mL
 
-- Sum all the counts reported by the CASY-counter for each sample and replicate.
-- Correct by the corresponding dilution factor.
+1. Sum all the counts reported by the CASY-counter for each sample and replicate.
+2. Correct by the corresponding dilution factor.
 
 ```{r}
-
+df.casy.counts <- df.casy %>%
+  # group by all variables BUT counts and size_um
+  group_by_at(vars(-c(counts, size_um))) %>% 
+  summarise(
+    total_counts = sum(counts)
+  ) %>% 
+  mutate(
+    # first calculate concentration in casy counter (counts / 200 uL)
+    casy_mL = total_counts / measurement_volume,
+    # calculate dilution made in casyton
+    casy_dilution = (sample_volume + casyton_volume) / sample_volume,
+    # calculate final concentrations using all dilution steps
+    cells_mL = casy_mL * casy_dilution * sample_dilution
+  )
 ```
 
+#### Technical replicates
+
+Inspect variation between technical replicates for the counts.
+
+```{r}
+df.casy.counts %>% 
+  ggplot(aes(x = sample_id, y = cells_mL, colour = replicate)) +
+  geom_point() +
+  facet_wrap(~sample_type, scales = "free") +
+  coord_flip()
+```
 
 ### Calculate average and peak diameter
 
@@ -83,6 +105,7 @@ df.casy %>%
 ### Summarise data and join design
 
 ```{r}
+
 ```
 
 

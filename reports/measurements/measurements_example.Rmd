@@ -18,10 +18,12 @@ library(tidyverse)
 ```{r load_data, include=FALSE}
 # Load project settings
 source(here::here("settings.R"))
-# Load design and events
+
+# Load Experimental Design
 source(file.path(data.raw.dir, "design.R"))
 df.design <- load_design()
 
+# Load Measurements
 source(file.path(data.raw.dir, "measurements.R"))
 df.measurements.raw <- load_measurements()
 ```
@@ -38,24 +40,55 @@ df.design %>% glimpse()
 df.measurements.raw %>% glimpse()
 ```
 
-
-
 ### Join measurements and design
 
 ```{r}
+df.measurements <- left_join(
+  df.measurements.raw, 
+  df.design,
+  by = "sample_id"
+  )
 ```
 
+```{r}
+df.measurements.course <- df.measurements %>% 
+  filter(dataset == "course")
+```
 
 ### Plotting
 
 #### Distrubution of data
 
 ```{r}
+df.measurements.course %>% 
+  ggplot(aes(
+    x = as.factor(channel), y = od_value_730, 
+    colour = as.factor(multicultivator)
+  )) +
+  facet_wrap(~multicultivator) +
+  geom_point()
 ```
 
 ```{r}
+df.measurements.course %>% 
+  ggplot(aes(x = as.factor(channel), y = od_value_730, colour = purpose)) +
+  facet_wrap(~multicultivator)
+  geom_point()+
 ```
 
 ```{r}
+df.measurements.course %>% 
+  ggplot(aes(x =purpose, y = od_value_730)) +
+  geom_boxplot()
 ```
+
+### Chlorophyl content per treatment
+
+```{r}
+df.measurements.course %>% 
+  ggplot(aes(x =purpose, y = od_value_685 / od_value_730)) +
+  geom_boxplot()
+```
+
+
 
