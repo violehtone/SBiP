@@ -121,7 +121,7 @@ We can try to improve our estimate by removing observation with low confidence (
 ```{r export_data}
 growth.rates.export.file.path <- df.growth %>%
   select(sample_id, decision, time_h, slope, r.squared, w_size) %>%
-  write_output_csv("growth", "growth_summary")
+  write_output_csv("growth", "growth_rates")
 ```
 
 Data was exported to `r growth.rates.export.file.path`
