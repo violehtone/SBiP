@@ -50,7 +50,7 @@ write_output_csv <- function(
   
   # make it a "relative" path if desired
   if (.return.relative) {
-    source.output <- str_replace(source.output, here::here(), "")
+    source.output <- str_replace(source.output, here::here(), ".")
   }
   
   # return file path
@@ -78,6 +78,8 @@ read_output_csv <- function(
   if (stringr::str_ends( file.name, ".csv", negate = TRUE)) {
     file.name <- paste0(file.name, ".csv")
   }
+  
+  file.name <- str_replace(file.name, "\\.csv", "\\.csv")
   
   # generate output dir path
   source.output.dir <- file.path(.output.dir, name)

@@ -23,7 +23,7 @@ f_growth <- function(d, .f=turbidostat_growth, method=regression.method, ...) {
 f_growth_p <- function(d, .f=turbidostat_growth, method=regression.method, ...) {
   
   f_g <- function(.x) {
-    .f(.x, time_h, OD, method=method, ...)
+    future(.f(.x, time_h, OD, method=method, ...))
   }
   
   d %>% 
@@ -33,7 +33,7 @@ f_growth_p <- function(d, .f=turbidostat_growth, method=regression.method, ...) 
     nest() %>%
     mutate(
       # calculate growth rates per group
-      rates = map(data, ~future(f_g) ),
+      rates = map(data, f_g ),
       # use values to retrieve the data
       rates = values(rates)
     ) %>%
