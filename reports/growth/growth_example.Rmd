@@ -19,29 +19,72 @@ library("tidyverse")
 source(here::here("settings.R"))
 
 # load output helper functions
+source(file.path(functions.dir, "growth.R"))
+# load output helper functions
 source(file.path(functions.dir, "output.R"))
 
 # load design
-
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design()
 
 # load all processed growth rates
-
+df.growth.rates <- read_output_csv("growth", "growth_rates(_pc_[0-9])?")
 ```
+
 List all sample IDs that are contained in the dataset
 
 ```{r}
-
+df.growth.rates %>%
+  pull(sample_id) %>%
+  unique()
 ```
 
 Show all the collected growth rates
 
 ```{r}
-
+df.growth.rates %>%
+  left_join(df.design, by = "sample_id") %>%
+  f_growth_filter() %>%
+  ggplot(aes(x=sample_id, y=slope, fill=sample_id)) +
+  stat_summary(fun.y = "mean", geom = "bar") +
+  stat_summary(fun.data = "mean_sdl", geom = "errorbar") +
+  scale_fill_viridis_d() +
+  coord_flip()
 ```
 
 You harvested while the culture was crashing (negative growth). We actually harvested from "steady"-states. So we *can* use the growth rates from those samples. Create a plot with only the growth rates from sample in steady state.
 NOTE: you can use assume all pre-course samples are from steady state.
 
 ```{r}
+df.growth.rates %>%
+  left_join(df.design, by = "sample_id") %>%
+  filter( purpose == 'control' | str_detect(sample_id, "_PC_")) %>%
+  f_growth_filter() %>%
+  ggplot(aes(x=sample_id, y=slope, fill=sample_id)) +
+  stat_summary(fun.y = "mean", geom = "bar" ) +
+  stat_summary(fun.data = "mean_sdl", geom="errorbar") +
+  scale_fill_viridis_d() +
+  coord_flip() +
+  labs(
+    x = "",
+    y = p.label.mu,
+    fill = ""
+  )
+```
 
+```{r}
+df.growth.rates %>%
+  left_join(df.design, by = "sample_id") %>%
+  filter( purpose == 'control' | str_detect(sample_id, "_PC_")) %>%
+  f_growth_filter() %>%
+  ggplot(aes(x=sample_id, y=slope, fill=purpose)) +
+  stat_summary(fun.y = "mean", geom = "bar" ) +
+  stat_summary(fun.data = "mean_sdl", geom="errorbar") +
+  scale_fill_viridis_d() +
+  coord_flip() +
+  labs(
+    x = "",
+    y = p.label.mu,
+    fill = ""
+  )
 ```

@@ -22,25 +22,63 @@ source(here::here("settings.R"))
 source(file.path(functions.dir, "output.R"))
 
 # load processed casy count data
-# df.casy <- 
+df.casy <- read_output_csv("casy", "casy_counts_diameter")
 ```
 
 Calculate the amount of cells broken during the beat beating and the lysis efficiency as the percentage broken cells over the total cells before lysis.
 
 ```{r}
-# df.cell.extracts <- 
+df.cell.extracts <- df.casy %>%
+  filter(sample_type != "MC") %>%
+  # filter(sample_type %in% c("BBB", "ABB")) %>%
+  select(-contains("diameter")) %>%
+  pivot_wider(
+    names_from = sample_type,
+    values_from = cells_mL
+  ) %>%
+  mutate(
+    broken_cells_mL = BBB - ABB,
+    lysis_efficiency = broken_cells_mL / BBB,
+  ) %>%
+  left_join(
+    df.casy %>% 
+      filter(sample_type == "MC") %>% 
+      select(sample_id, peak_diameter, median_diameter, mean_diameter),
+    by = 'sample_id'
+  )
 ```
 
 Plot the number of broken cells per sample
 
 ```{r}
-
+df.cell.extracts %>%
+  ggplot(aes(x=sample_id, y=broken_cells_mL, fill=sample_id)) +
+  geom_col() +
+  scale_fill_viridis_d() +
+  scale_y_log10(labels = function(.x) { scales::number(.x, big.mark = ".") }) +
+  coord_flip() +
+  labs(
+    x = "Sample ID", fill = "Sample ID",
+    y = bquote("log"[10]~"# Broken Cells (mL"^-1~")")
+  )
 ```
 
 Plot the lysis efficiency per sample
 
 ```{r}
-
+df.cell.extracts %>%
+  mutate(
+    sample_id = reorder(sample_id, 1-lysis_efficiency)
+  ) %>%
+  ggplot(aes(x=sample_id, y=1-lysis_efficiency, fill=sample_id)) +
+  geom_col() +
+  scale_fill_viridis_d() +
+  scale_y_continuous(labels = scales::percent) +
+  coord_flip() +
+  labs(
+    x = "Sample ID", fill = "Sample ID",
+    y = "Percentage Unbroken Cells [%]"
+  )
 ```
 
 ## Export
