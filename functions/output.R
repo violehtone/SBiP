@@ -85,7 +85,7 @@ read_output_csv <- function(
   source.output.dir <- file.path(.output.dir, name)
   
   # generate pattern
-  output.file.pattern <- file.path("(.*", sprintf(")?([0-9]{8})_%s", file.name))
+  output.file.pattern <- file.path("(.*", sprintf(")?([0-9]{8})_(%s)", file.name))
   
   # find files matching
   output.file.paths <- list.files(
@@ -98,8 +98,10 @@ read_output_csv <- function(
       p = output.file.paths, stringsAsFactors = FALSE
     ) %>%
       mutate(
-        dataset = lubridate::ymd(sub(output.file.pattern, "\\2", p))
+        dataset = lubridate::ymd(sub(output.file.pattern, "\\2", p)),
+        name = sub(output.file.pattern, "\\3", p)
       ) %>%
+      group_by(name) %>%
       filter(dataset == max(dataset)) %>%
       pull(p) 
   }
