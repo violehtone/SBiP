@@ -27,10 +27,13 @@ source(file.path(functions.dir, "growth.R"))
 source(file.path(functions.dir, "output.R"))
 
 # Load Multi-Cultivator
-# df.multicultivator.raw <-
+source(file.path(data.raw.dir, "multicultivator.R"))
+df.multicultivator.raw <- load_multicultivator()
 
 # Load Design
-# df.design <- 
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design() %>%
+  filter(dataset == "course")
 
 ```
 
@@ -39,29 +42,61 @@ source(file.path(functions.dir, "output.R"))
 Inspect the Multi-Cultivator data.frame.
 
 ```{r}
-
+df.multicultivator.raw %>% glimpse()
 ```
 
 Which columns are needed to calculate growth rates?
+
+- multicultivator
+- channel
+- pump // decision
+- time_h // time
+- OD
 
 ### Optical Density in Multi-Cultivator
 
 Show plot of the Optical Density over time.
 
 ```{r}
-
+df.multicultivator.raw %>%
+  ggplot(aes(x=time_h, y=OD, colour=pump)) + 
+  facet_grid(multicultivator ~ channel) +
+  geom_point() +
+  labs(
+    x = p.label.time.h,
+    y = p.label.od.ln.720 
+  )
 ```
 
 Zoom-in on a few dilution cycles.
 
 ```{r}
-
+df.multicultivator.raw %>%
+  filter(time_h > 21.5, time_h < 29.5) %>%
+  filter(multicultivator == 0, channel == 3) %>%
+  ggplot(aes(x=time_h, y=OD, colour=pump)) + 
+  facet_grid(multicultivator ~ channel) +
+  geom_point() +
+  labs(
+    x = p.label.time.h,
+    y = p.label.od.ln.720 
+  )
 ```
 
 Visualise the regressions for every dilution cycle.
 
 ```{r}
-
+df.multicultivator.raw %>%
+  filter(time_h > 21.5, time_h < 29.5) %>%
+  filter(multicultivator == 0, channel == 3) %>%
+  ggplot(aes(x=time_h, y=OD, colour=pump)) + 
+  facet_grid(multicultivator ~ channel) +
+  geom_point() +
+  geom_smooth(aes(group=decision), se=F, method = "lm") +
+  labs(
+    x = p.label.time.h,
+    y = p.label.od.ln.720 
+  )
 ```
 
 ## Combine with Design
@@ -69,17 +104,61 @@ Visualise the regressions for every dilution cycle.
 Our goal is to determine the growth rate of culture for every sample we took.
 Therefore we need to associate our Multi-Cultivator data with the samples.
 
-Can we do this using left join?
-
+Can we do this using left join? Yes, we can BUT we have to careful with multicultivator, channel being a good predictor for sample_id.
 
 ```{r}
-# df.multicultivator <- 
+df.multicultivator.raw %>%
+  left_join(
+    df.design, by = c("multicultivator", "channel")
+  ) %>%
+  mutate(
+    sample_time = ydm_hms(sample_time, tz="Europe/Amsterdam")
+  ) %>%
+  filter(time < sample_time)
+```
+
+```{r}
+df.multicultivator <- df.design %>%
+  mutate(
+    sample_time = ydm_hms(sample_time, tz="Europe/Amsterdam")
+  ) %>%
+  select(sample_id, multicultivator, channel, sample_time) %>%
+  mutate(
+    data = pmap(
+      list(m = multicultivator, c = channel, st = sample_time), function(m, c, st) {
+        df.multicultivator.raw %>%
+          filter(multicultivator == m, channel == c, time < st) %>%
+          select(-c(multicultivator, channel))
+      }
+    )
+  ) %>% 
+  unnest(data)
 ```
 
 Check if data from *after* sampling has been removed.
 
 ```{r}
+df.multicultivator %>%
+  ggplot(aes(x=time_h, y=OD, colour=pump)) + 
+  facet_grid(multicultivator ~ channel) +
+  geom_point() +
+  labs(
+    x = p.label.time.h,
+    y = p.label.od.ln.720 
+  )
+```
 
+```{r}
+df.multicultivator %>%
+  filter(multicultivator == 2, channel == 2) %>%
+  filter(time_h > 10) %>%
+  ggplot(aes(x=time_h, y=OD, colour=pump)) + 
+  facet_grid(multicultivator ~ channel) +
+  geom_point() +
+  labs(
+    x = p.label.time.h,
+    y = p.label.od.ln.720 
+  )
 ```
 
 ## Growth Rates
@@ -88,32 +167,80 @@ Calculate the growth rates on the smaller dataset using the `f_growth` function.
 NOTE: to retain relevant group information, group by as many variables as possible.
 
 ```{r}
-# df.growth <- 
+df.growth <- df.multicultivator %>%
+  select(multicultivator, channel, sample_id, time_h, OD, decision) %>%
+  group_by_at(vars(-c(time_h, OD, decision))) %>%
+  f_growth()
 ```
 
 Visualise all found growth rates.
 
 ```{r}
-
+df.growth %>%
+  ggplot(aes(x=time_h, y=slope, colour=r.squared)) +
+  facet_wrap(~sample_id) +
+  geom_point() +
+  scale_color_viridis_c() +
+  labs(
+    x = p.label.time.h,
+    y = p.label.mu,
+    color = p.label.r.sq
+  )
 ```
 
 Can you guess 'correct' growth rate for our 'treatment' samples?
 Which observations would you keep?
 
 ```{r}
-
+df.growth %>%
+  left_join(df.design, by="sample_id") %>%
+  filter(purpose == 'control') %>%
+  ggplot(aes(x=time_h, y=slope, colour=r.squared)) +
+  facet_wrap(~sample_id) +
+  geom_point() +
+  scale_color_viridis_c() +
+  labs(
+    x = p.label.time.h,
+    y = p.label.mu,
+    color = p.label.r.sq
+  )
 ```
 
 Show a summary of the growth rates observed for each sample.
 
 ```{r}
-
+df.growth %>%
+  left_join(df.design, by="sample_id") %>%
+  filter( purpose == 'control' ) %>%
+  ggplot(aes(x=sample_id, y=slope, fill=sample_id)) +
+  stat_summary(fun.y = "mean", geom="bar") +
+  stat_summary(fun.data = "mean_sdl", geom="errorbar") +
+  scale_fill_viridis_d() +
+  coord_flip() +
+  labs(
+    x = "",
+    y = p.label.mu,
+    fill = ""
+  )
 ```
 
 We can try to improve our estimate by removing observation with low confidence (low R squared)
 
 ```{r}
-
+df.growth %>%
+  left_join(df.design, by="sample_id") %>%
+  filter( purpose == 'control' ) %>%
+  f_growth_filter() %>%
+  ggplot(aes(x=sample_id, y=slope, fill=sample_id)) +
+  stat_summary(fun.y = "mean", geom="bar") +
+  stat_summary(fun.data = "mean_sdl", geom="errorbar") +
+  scale_fill_viridis_d() +
+  coord_flip() +
+  labs(
+    x = "",
+    y = p.label.mu,
+    fill = ""
+  )
 ```
 
 ## Export
