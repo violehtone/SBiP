@@ -1,0 +1,58 @@
+---
+title: "Cell Extract Analysis"
+author: "Your Name"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE, message = FALSE
+  
+)
+
+library("tidyverse")
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# load output functions
+source(file.path(functions.dir, "output.R"))
+
+# load processed casy count data
+# df.casy <- 
+```
+
+Calculate the amount of cells broken during the beat beating and the lysis efficiency as the percentage broken cells over the total cells before lysis.
+
+```{r}
+# df.cell.extracts <- 
+```
+
+Plot the number of broken cells per sample
+
+```{r}
+
+```
+
+Plot the lysis efficiency per sample
+
+```{r}
+
+```
+
+## Export
+
+```{r export_data}
+# load output 
+source(file.path(functions.dir, "output.R"))
+  
+cell.extracts.export.file.path <- df.cell.extracts %>% 
+  select(sample_id, ABB, BBB, broken_cells_mL, lysis_efficiency, peak_diameter, mean_diameter) %>%
+  write_output_csv("cell_extracts")
+```
+
+Data was exported to `r cell.extracts.export.file.path`
+
