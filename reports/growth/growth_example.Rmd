@@ -1,0 +1,47 @@
+---
+title: "Growth Rate Analysis"
+author: "Joeri Jongbloets"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+library("tidyverse")
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# load output helper functions
+source(file.path(functions.dir, "output.R"))
+
+# load design
+
+
+# load all processed growth rates
+
+```
+List all sample IDs that are contained in the dataset
+
+```{r}
+
+```
+
+Show all the collected growth rates
+
+```{r}
+
+```
+
+You harvested while the culture was crashing (negative growth). We actually harvested from "steady"-states. So we *can* use the growth rates from those samples. Create a plot with only the growth rates from sample in steady state.
+NOTE: you can use assume all pre-course samples are from steady state.
+
+```{r}
+
+```

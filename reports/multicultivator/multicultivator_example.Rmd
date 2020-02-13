@@ -1,0 +1,127 @@
+---
+title: "Multi-Cultivator Analysis"
+author: "Your Name"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+library("tidyverse")
+
+nest <- nest_legacy
+unnest <- unnest_legacy
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# load growth calculation function
+source(file.path(functions.dir, "growth.R"))
+# load output helper functions
+source(file.path(functions.dir, "output.R"))
+
+# Load Multi-Cultivator
+# df.multicultivator.raw <-
+
+# Load Design
+# df.design <- 
+
+```
+
+## Inspect Raw Data
+
+Inspect the Multi-Cultivator data.frame.
+
+```{r}
+
+```
+
+Which columns are needed to calculate growth rates?
+
+### Optical Density in Multi-Cultivator
+
+Show plot of the Optical Density over time.
+
+```{r}
+
+```
+
+Zoom-in on a few dilution cycles.
+
+```{r}
+
+```
+
+Visualise the regressions for every dilution cycle.
+
+```{r}
+
+```
+
+## Combine with Design
+
+Our goal is to determine the growth rate of culture for every sample we took.
+Therefore we need to associate our Multi-Cultivator data with the samples.
+
+Can we do this using left join?
+
+
+```{r}
+# df.multicultivator <- 
+```
+
+Check if data from *after* sampling has been removed.
+
+```{r}
+
+```
+
+## Growth Rates
+
+Calculate the growth rates on the smaller dataset using the `f_growth` function.
+NOTE: to retain relevant group information, group by as many variables as possible.
+
+```{r}
+# df.growth <- 
+```
+
+Visualise all found growth rates.
+
+```{r}
+
+```
+
+Can you guess 'correct' growth rate for our 'treatment' samples?
+Which observations would you keep?
+
+```{r}
+
+```
+
+Show a summary of the growth rates observed for each sample.
+
+```{r}
+
+```
+
+We can try to improve our estimate by removing observation with low confidence (low R squared)
+
+```{r}
+
+```
+
+## Export
+
+```{r export_data}
+growth.rates.export.file.path <- df.growth %>%
+  select(sample_id, decision, time_h, slope, r.squared, w_size) %>%
+  write_output_csv("growth", "growth_summary")
+```
+
+Data was exported to `r growth.rates.export.file.path`
