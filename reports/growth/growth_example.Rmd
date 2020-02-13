@@ -1,6 +1,6 @@
 ---
 title: "Growth Rate Analysis"
-author: "Joeri Jongbloets"
+author: "Your Name"
 date: "`r strftime(Sys.Date(), '%B %d %Y')`"
 output: html_document
 ---
