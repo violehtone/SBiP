@@ -86,32 +86,63 @@ df.casy.counts %>%
 ### Calculate average and peak diameter
 
 ```{r}
-
+df.casy.diameter <- df.casy %>%
+  group_by(sample_id, sample_type, replicate) %>%
+  arrange(size_um) %>%
+  summarise(
+    mean_diameter = sum(size_um * counts) / sum(counts),
+    median_diameter = size_um[which.min(abs(cumsum(counts) - sum(counts) / 2))],
+    peak_diameter = size_um[which.max(counts)]
+  )
 ```
 
 
 ### Join count with diameter data
 
 ```{r}
-
+df.casy.full <- left_join(
+  df.casy.counts,
+  df.casy.diameter,
+  by = c("sample_id", "sample_type", "replicate")
+)
 ```
 
 ### Validation of peak diameter estimation 
 
 ```{r}
-
+df.casy %>%
+  left_join(df.casy.diameter, by=c("sample_id", "sample_type", "replicate")) %>%
+  # to gain resolution in our plot we can filter to a specific subset
+  # filter(sample_type == "MC", size_um < 5, sample_id == "200206_2_5") %>%
+  pivot_longer(
+    cols = c(peak_diameter, mean_diameter, median_diameter),
+    names_to = "size_type",
+    values_to = "diameter"
+  ) %>%
+  ggplot(aes(x=size_um, y=counts)) +
+  geom_point(alpha = 0.1) +
+  geom_vline(aes(xintercept = diameter, color = size_type)) +
+  facet_grid(sample_id ~ replicate) +
+  labs(
+    x = p.label.size,
+    colour = ""
+  )
 ```
 
-
-### Summarise data and join design
+### Summarise data
 
 ```{r}
-
+df.export <- df.casy.full %>%
+  group_by(sample_id, sample_type) %>%
+  summarise(
+    cells_mL = mean(cells_mL),
+    peak_diameter = mean(peak_diameter),
+    mean_diameter = mean(mean_diameter),
+    median_diameter = mean(median_diameter)
+  )
 ```
 
-
 ### Export data
-
 
 ```{r export_data}
 df.export %>%
