@@ -1,0 +1,665 @@
+---
+title: "qPCR Analysis"
+author: ""
+date: ""
+output: html_document
+params:
+  dataset:
+    label: Dataset
+    value: 200213_1
+    input: select
+    choices: [200207_1, 200207_2, 200212_1, 200213_1]
+  processed:
+    label: Processed
+    value: F,
+    input: select
+    choices: [T, F]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+
+library(tidyverse)
+library(broom)
+library(kableExtra)
+library(patchwork)
+
+theme_set(theme_bw(14))
+```
+
+```{r load_data}
+# Load project settings
+source(here::here("settings.R"))
+
+# load output functions
+source(file.path(functions.dir, "output.R"))
+
+# parameters
+plate.id <- params$dataset
+# plate.id  <- "200212_1"
+processed <- params$processed
+# processed <- T
+
+# load processed cell extract data
+df.cell.extracts <- read_output_csv("cell_extracts", "cell_extracts")
+
+# Load qpcr functions
+source(file.path(data.raw.dir, "qpcr.R"))
+df.plate.design <- load_plate_design_pcr(plate.id = plate.id)
+df.protocol <- load_protocol_design_pcr(plate.id = plate.id)
+df.qpcr.plate.raw <- load_export_pcr(plate.id = plate.id)
+ncols.qpcr.plate <- ncol(df.qpcr.plate.raw)
+```
+
+```{r}
+# Define background cycles 
+bck.min <- 3
+bck.max <- 7
+# Define threshold
+ct.threshold <- 0.2
+# avogadro constant
+avogadro <- 6.023E23 # particles / mol
+# number of cycles for reaction stage
+reaction.n.cycles <- 40
+```
+
+## Passive reporter normalization
+
+Normalize the SYBR green signal with the ROX signal
+```{r}
+df.Rn <-  df.qpcr.plate.raw %>%
+  rename(well = Well) %>%
+  pivot_longer(cols = contains("Reading"), names_to = "cycle", values_to = "signal") %>% 
+  pivot_wider(names_from = `Dye Name`, values_from = signal) %>% 
+  mutate(
+    cycle = as.numeric(str_remove(cycle, "Reading ")),
+    # Calculate normalized reporter signal (Rn)
+    Rn = SYBR / ROX
+  )
+```
+
+## Background correction
+
+Calculate the mean background Rn for each well
+
+```{r df.qpcr.background}
+## Get the average signal during the background cycles (defined on thi report)
+df.qpcr.background <- df.Rn %>%
+  group_by(well) %>%
+  filter(cycle > bck.min & cycle < bck.max) %>%
+  summarise(
+    baseline = mean(Rn)
+  )
+```
+
+Substract background from each reaction
+
+```{r df.qpcr.corrected}
+## Correct SYBR green signal with ROX and correct with baseline
+df.qpcr.corrected <- df.Rn %>% 
+  left_join(df.qpcr.background, by = "well") %>%
+  group_by(well) %>%
+  mutate(
+    ARn = Rn - baseline
+  ) %>%
+  ungroup() %>%
+  select(-c(ROX, SYBR))
+
+```
+
+```{r}
+## Add design info to the corrected data
+df.qpcr <- df.qpcr.corrected %>%
+  left_join(df.plate.design, by = "well")  %>%
+  # filter outliers if we are creating the processed document
+  filter(!processed | !outlier)
+
+# filter only reaction cycles
+df.qpcr.reaction <- df.qpcr %>%
+  filter(cycle < reaction.n.cycles) 
+```
+
+## Data inspection
+
+### All cycles from assay (PCR reaction + melting curve)
+
+```{r, fig.width=12, fig.height=6}
+df.qpcr %>% 
+  ggplot(aes(x = cycle, y = ARn, colour = sample_class, group = well)) +
+  geom_line() +
+  facet_grid(row~column) +
+  labs(
+    colour = ""
+  ) +
+  theme(legend.position = 'top')
+```
+
+### PCR reaction
+
+```{r, fig.width=12, fig.height=7}
+df.qpcr.reaction %>% 
+  ggplot(aes(x = cycle, y = ARn, colour = as.factor(sample_class), group = well)) +
+  geom_line() +
+  facet_grid(row~column) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    title = "Full plate", 
+    colour = ""
+  )+
+  theme(legend.position = 'top')
+```
+
+#### Standards
+
+```{r}
+df.qpcr.reaction %>% 
+  filter(sample_class == "standard") %>% 
+  ggplot(aes(x = cycle, y = ARn, colour = as.factor(sample_id), group = well)) +
+  scale_colour_viridis_d() +
+  geom_line() +
+  geom_hline(yintercept = ct.threshold) +
+  facet_wrap(~replicate) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    colour = "Sample",
+    subtitle = "Black horizontal line shows the cutoff for Ct"
+  ) 
+```
+
+```{r}
+df.qpcr.reaction %>% 
+  filter(sample_class == "standard") %>% 
+  ggplot(aes(x = cycle, y = ARn, colour = as.factor(sample_id), group = well)) +
+  scale_colour_viridis_d() +
+  geom_line() +
+  geom_hline(yintercept = ct.threshold) +
+  facet_wrap(~sample_id) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    colour = "Standard",
+    subtitle = "Black horizontal line shows the cutoff for Ct"
+  ) 
+```
+
+#### Samples
+
+```{r}
+df.qpcr.reaction %>% 
+  filter(sample_class == "sample") %>% 
+  ggplot(aes(x = cycle, y = ARn, colour = as.factor(dilution_factor), group = well)) +
+  scale_colour_viridis_d() +
+  geom_line() +
+  geom_hline(yintercept = ct.threshold) +
+  facet_wrap(~sample_id) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    colour = "Dilution factor",
+    subtitle = "Black horizontal line shows the cutoff for Ct"
+  ) 
+```
+
+```{r}
+df.qpcr.reaction %>% 
+  filter(sample_class == "sample") %>% 
+  ggplot(aes(x = cycle, y = ARn, colour = as.factor(replicate), group = well)) +
+  scale_colour_viridis_d() +
+  geom_line() +
+  geom_hline(yintercept = ct.threshold) +
+  facet_grid(dilution_factor~sample_id) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    colour = "Sample",
+    subtitle = "Black horizontal line shows the cutoff for Ct"
+  ) 
+```
+
+#### NTC 
+
+```{r}
+df.qpcr.reaction %>% 
+  filter(sample_class == "NTC") %>% 
+  ggplot(aes(x = cycle, y = ARn, group = well)) +
+  scale_colour_viridis_d() +
+  geom_line() +
+  geom_hline(yintercept = ct.threshold) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    colour = "Dilution factor",
+    subtitle = "Black horizontal line shows the cutoff for Ct"
+  ) 
+```
+
+### Melting curve
+
+```{r rt.pcr.melting.df}
+# filter only melting curve
+rt.pcr.melting.df <-  df.qpcr %>%
+  filter(cycle > reaction.n.cycles) %>%
+  group_by(well) %>%
+  mutate(
+    derivative = abs(c(NA, diff(Rn)))
+  )
+
+```
+
+```{r}
+rt.pcr.melting.df %>%
+  ggplot(aes(x = cycle, y = ARn, group = well, colour = as.factor(sample_id))) +
+  geom_line() +
+  scale_colour_viridis_d() +
+  theme(legend.position = "none") +
+  expand_limits(x = 40) +
+  facet_wrap(~sample_class) +
+  labs(
+    x = "Cycle",
+    y =  ~ paste(Delta, "Rn"),
+    colour = ""
+  ) 
+```
+
+```{r}
+rt.pcr.melting.df %>%
+  filter(cycle > 60 ) %>% 
+  ggplot(aes(x = cycle, y = derivative, group = well, colour = as.factor(sample_id))) +
+  geom_line() +
+  scale_colour_viridis_d() +
+  expand_limits(x = 40) +
+  facet_wrap(~sample_class) +
+  theme(legend.position = "bottom") +
+  labs(
+    x = "Cycle",
+    y =  ~ paste("-derivative", Delta, "Rn"),
+    colour = ""
+  )
+```
+
+### Ct counts
+
+```{r}
+df.qpcr.reaction %>% 
+  filter(sample_class != "NTC") %>%
+  ggplot(aes(x = cycle, y = ARn, group = well)) +
+  scale_colour_viridis_d() +
+  geom_line() +
+  geom_hline(yintercept = ct.threshold) +
+  facet_wrap(~sample_class) +
+  scale_y_continuous(trans = "log10") +
+  labs(
+    x = "Cycle",
+    y =  ~ paste("log10 ", Delta, "Rn"),
+    colour = "Sample",
+    subtitle = "Black horizontal line shows the cutoff for Ct"
+  ) 
+```
+
+## Amplification efficiency
+
+### Estimated slope, R^2^ and efficiency 
+
+```{r ct.pcr.df}
+# get the Ct value for each reaction
+ct.pcr.df <- df.qpcr.reaction %>%
+  filter(ARn <= ct.threshold) %>%
+  group_by(well) %>%
+  filter(cycle == max(cycle)) %>%
+  rename(Ct = cycle) %>% 
+  # attach info from standard fragment
+  crossing(df.protocol %>% select(st_info) %>% unnest(st_info)) %>% 
+  crossing(df.protocol %>% select(mm) %>% unnest(mm))
+```
+
+
+* Optimal slope: -3.32
+* Recomendend R~2~ > 0.98
+* Efficiency: 90-105 %
+
+### Standard curve
+
+```{r}
+standard.curve.df <- ct.pcr.df %>%
+  filter(sample_class == "standard") %>%
+  mutate(
+    well_conc = (initial_conc / dilution_factor) * template_vol / final_vol,
+    # calculate # fragments per uL 
+    fragments_uL = (well_conc / 1E9 /  amplicon_mw * avogadro)
+  )
+
+standard.model.df <- standard.curve.df %>%
+  group_by(replicate) %>%
+  mutate(fragments_uL = log10(fragments_uL)) %>%
+  nest() %>%
+  mutate(
+    fit = map(data, ~lm(Ct ~ fragments_uL, data = .x))
+  ) %>% 
+  # add a standard curve including all the replicates
+  bind_rows(
+    standard.curve.df %>%
+      ungroup() %>%
+      mutate(
+        replicate = "all",
+        fragments_uL = log10(fragments_uL)
+      ) %>%
+      group_by(replicate) %>%
+      nest() %>%
+      mutate(
+        fit = map(data, ~lm(Ct ~ fragments_uL, data = .x))
+      )
+  )
+
+slopes.df <- standard.model.df %>%
+  mutate(
+    tidied = map(fit, tidy)
+  ) %>%
+  unnest(tidied) %>%
+  filter(term == "fragments_uL") %>%
+  select(replicate, slope = estimate)
+
+r.squared.df <- standard.model.df %>%
+  mutate(
+    tidied = map(fit, glance)
+  ) %>%
+  unnest(tidied) %>%
+  select(replicate, r.squared)
+
+quality.df <- left_join(slopes.df, r.squared.df, by = "replicate") %>%
+  mutate(
+    E = 10^(-1/slope),
+    efficiency = (E - 1) * 100
+  )
+
+```
+
+```{r}
+df.standard.model <- standard.model.df %>% 
+  ungroup() %>%
+  mutate(
+    r.squared = map_dbl(fit, function(.d) { .d %>% glance %>% pull('r.squared')}),
+    intercept = map_dbl(fit, function(.d) { .d %>% tidy %>% filter(term == "(Intercept)") %>% pull('estimate')}),
+    slope = map_dbl(fit, function(.d) { .d %>% tidy %>% filter(term != "(Intercept)") %>% pull('estimate')}),
+  ) %>%
+  filter(r.squared > 0.98) %>%
+  mutate( optimal_distance = abs(3.32 - abs(slope))  ) %>%
+  arrange(optimal_distance) %>%
+  slice(1)
+
+standard.slope <- df.standard.model %>% pull(slope)
+standard.int <- df.standard.model %>% pull(intercept)
+
+standard.range.df <- standard.curve.df %>%
+  ungroup() %>%
+  summarise(
+    max_Ct = max(Ct),
+    min_Ct = min(Ct)
+  )
+```
+
+Show the slope and intercept from the best standard curve
+
+```{r}
+df.standard.model %>% select(-fit, -data) %>%
+  kable(format = "html") %>% 
+   kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+
+```{r}
+p.top <- standard.curve.df %>% 
+  bind_rows(
+    standard.curve.df %>%
+      ungroup() %>% 
+      mutate(
+        replicate = "all",
+        fragments_uL = fragments_uL
+      )
+  ) %>% 
+  ggplot(aes(x = log10(fragments_uL), Ct)) +
+  geom_point() +
+  facet_wrap(~replicate, nrow = 1) +
+  geom_smooth(method = "lm") +
+  labs(
+    x = "Log10 [DNA]",
+    y = "Ct",
+    title = "Standard curve"
+  ) 
+
+p.slope <- quality.df %>% 
+  ggplot(aes(replicate, slope)) +
+  geom_hline(yintercept = -3.32, colour = "red", size = 1) +
+  geom_point(size = 2) +
+  labs(
+    x = "Sample",
+    y = "Slope",
+    subtitle = "Red line indicates optimal slope"
+  )
+
+p.r.sq <- quality.df %>% 
+  ggplot(aes(replicate, r.squared)) +
+  geom_hline(yintercept = c(0.98), colour = "red", size = 1, alpha = 0.5) +
+  geom_point(size = 2) +
+  labs(
+    x = "Sample",
+    y = expression(R^2),
+    subtitle = "Red line indicates minimum R2"
+  )
+
+p.eff <- quality.df %>% 
+  ggplot(aes(replicate, efficiency)) +
+  geom_hline(yintercept = c(90, 105), colour = "red", size = 1, alpha = 0.5) +
+  geom_point(size = 2) +
+  labs(
+    x = "Sample",
+    y = "Efficiency",
+    subtitle = "Red lines indicate optimal range"
+  )
+```
+
+```{r, fig.width=10, fig.height=7}
+p.top + {
+  p.slope + p.eff + p.r.sq
+} +
+  plot_layout(ncol = 1)
+```
+
+```{r}
+kable(quality.df, "html") %>% 
+ kable_styling(bootstrap_options = c("striped", "hover"))
+```
+
+### Samples
+
+```{r quality_checks_samples, eval = F}
+
+samples.model.df <-  ct.pcr.df %>%
+  filter(sample_class == "sample") %>%
+  ungroup() %>%
+  group_by(sample_id, replicate) %>%
+  mutate(
+    dilution_factor = as.numeric(dilution_factor)
+  ) %>%
+  mutate(
+    fragments_uL = log10(1000/dilution_factor)
+  ) %>%
+  nest() %>%
+  mutate(
+    fit = map(data, ~lm(Ct ~ fragments_uL, data = .x))
+  )
+
+slopes.samples.df <- samples.model.df %>%
+  mutate(
+    tidied = map(fit, tidy)
+  ) %>%
+  unnest(tidied) %>%
+  filter(term == "fragments_uL") %>%
+  select(sample_id, replicate, slope = estimate)
+
+
+r.squared.samples.df <- samples.model.df %>%
+  mutate(
+    tidied = map(fit, glance)
+  ) %>%
+  unnest(tidied) %>%
+  select(sample_id, replicate, r.squared)
+
+quality.samples.df <- left_join(slopes.samples.df, r.squared.samples.df, by = c("sample_id", "replicate")) %>%
+  mutate(
+    E = 10^(-1/slope),
+    efficiency = (E - 1) * 100
+  ) %>%
+  arrange(sample_id, replicate)
+
+
+```
+
+Here I show the Ct values obtained for the samples. The vertical red lines inidicate the maximum and minimum Ct values obtained for the points in the standard curve. 
+
+```{r}
+ct.pcr.df %>% 
+  filter(sample_class == "sample")  %>%  
+  ggplot(aes(x = sample_id, y = Ct, colour = sample_dilution)) +
+  geom_point(size = 2) +
+  scale_colour_viridis_d() +
+  geom_hline(yintercept =  standard.range.df$max_Ct, colour = "red") +
+  geom_hline(yintercept =  standard.range.df$min_Ct, colour = "red") +
+  facet_wrap(~replicate) +
+  coord_flip() +
+  labs(
+    x = "Sample",
+    y = "Ct",
+    colour = "Sample's dilution"
+  ) +
+  theme(legend.position = "top")
+```
+
+
+```{r, fig.height=6, fig.width=10, eval = F}
+theme_set(theme_bw(11))
+p.st.s <- ct.pcr.df %>%
+  filter(sample_class == "sample") %>%
+  ungroup() %>%
+  group_by(sample_id, replicate) %>%
+  mutate(
+    dilution_factor = as.numeric(dilution_factor)
+  ) %>%
+  mutate(
+    fragments_uL = log10(1000/dilution_factor)
+  ) %>% 
+  ggplot(aes(x = fragments_uL, Ct, colour = replicate)) +
+  geom_point(alpha = 0.5) +
+  facet_wrap(~sample_id, nrow = 1) +
+  geom_smooth(method = "lm", alpha = 0.5) +
+  labs(
+    x = "Log10 [DNA]",
+    y = "Ct",
+    colour = "Replicate"
+  ) +
+  theme(legend.position = "top")
+
+
+p.eff.s <- quality.samples.df %>% 
+  ggplot(aes(sample_id, efficiency, colour = replicate)) +
+  geom_hline(yintercept = c(90, 105), colour = "red", size = 1, alpha = 0.5) +
+  geom_point(size = 2, alpha = 0.6) +
+  labs(
+    x = "Sample",
+    y = "Efficiency",
+    subtitle = "Red lines indicate optimal range"
+  ) +
+  theme(legend.position = "none")
+
+p.rsq.s <- r.squared.samples.df %>% 
+ ggplot(aes(sample_id, r.squared, colour = replicate)) +
+  geom_hline(yintercept = c(0.98), colour = "red", size = 1, alpha = 0.5) +
+  geom_point(size = 2, alpha = 0.6) +
+  labs(
+    x = "Sample",
+    y = expression(R^2),
+    subtitle = "Red line indicates minimum R2"
+  ) +
+  theme(legend.position = "none")
+  
+p.slope.s <- quality.samples.df %>% 
+  ggplot(aes(sample_id, slope, colour = replicate)) +
+  geom_hline(yintercept = -3.32, colour = "red", size = 1) +
+  geom_point(size = 2, alpha = 0.6) +
+  labs(
+    x = "Sample",
+    y = "Slope",
+    subtitle = "Red line indicates optimal slope"
+  )  +
+  theme(legend.position = "none")
+  
+# generate plot
+p.st.s + {
+  p.slope.s + p.eff.s +  p.rsq.s
+} +
+  plot_layout(ncol = 1)
+
+```
+
+
+#### Distribution of number of DNA fragments per samples
+
+```{r df.fragments}
+df.fragments <- ct.pcr.df %>%
+  filter(sample_class == "sample", Ct >= standard.range.df$min_Ct & Ct <= standard.range.df$max_Ct) %>%
+  ungroup() %>%
+  group_by(sample_id, replicate) %>%
+  mutate(
+    dilution_factor = as.numeric(dilution_factor)
+  ) %>% 
+  group_by(sample_id, replicate) %>%
+  mutate(
+    fragments_well_uL = 10^((Ct - standard.int) / standard.slope),
+    fragments_dilution_uL = fragments_well_uL * final_vol / template_vol,
+    fragments_sample_uL = dilution_factor * fragments_dilution_uL
+  ) 
+```
+
+```{r}
+df.fragments %>% 
+  ggplot(aes(sample_id, fragments_sample_uL)) +
+  geom_boxplot() +
+  geom_jitter(aes(colour = as.factor(dilution_factor)), size = 2, alpha = 0.6, width=0.15, height = 0) +
+  labs(
+    x = "Sample",
+    y = "[# DNA fragments]",
+    colour = "Dilution factor"
+  ) +
+  coord_flip()
+```
+
+## Relationship of # DNA fragments vs dilution factor
+
+```{r, fig.width=14, fig.height=6}
+df.fragments %>% 
+  ggplot(aes(dilution_factor, fragments_sample_uL, colour = sample_dilution)) +
+  geom_point(alpha = 0.5) +
+  scale_x_log10() +
+  facet_grid(replicate~sample_id, scales = "free") +
+  labs(
+    x = "Dilution factor (log10)",
+    y = "# DNA fragments"
+  )
+```
+
+## Export
+
+```{r}
+if (processed) {
+  qpcr.export.file.path <- df.fragments %>% 
+    filter(sample_class == "sample") %>% 
+    mutate(plate_id = plate.id) %>%
+    select(plate_id, sample_id, replicate, dilution_factor, sample_dilution, fragments_sample_uL) %>%
+    write_output_csv("qpcr", paste("qpcr_fragments", plate.id, sep = "_"))
+  
+  print(glue::glue("Data was exported to {qpcr.export.file.path}"))
+} else {
+  print("This document shows the unfiltered data so no data was exported.")
+}
+```
