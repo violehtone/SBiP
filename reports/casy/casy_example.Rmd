@@ -63,7 +63,7 @@ df.casy.counts <- df.casy %>%
   ) %>% 
   mutate(
     # first calculate concentration in casy counter (counts / 200 uL)
-    casy_mL = total_counts / measurement_volume,
+    casy_mL = total_counts / (measurement_volume / 1E3),
     # calculate dilution made in casyton
     casy_dilution = (sample_volume + casyton_volume) / sample_volume,
     # calculate final concentrations using all dilution steps
