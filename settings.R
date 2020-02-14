@@ -4,10 +4,13 @@
 root.dir <- here::here()
 # Custom R function directory
 functions.dir <- file.path(root.dir, "functions")
+# Reports directory
+reports.dir <- file.path(root.dir, "reports")
 # Data directory
 data.dir <- file.path(root.dir, "data")
 data.raw.dir  <- file.path(data.dir, "raw")
 data.processed.dir  <- file.path(data.dir, "processed")
+# Output directory
 output.dir <- file.path(root.dir, "data")
 output.precision <- 4
 
@@ -71,3 +74,6 @@ p.label.cdr <- ~ bquote("Cumulative d"~("h"^-1))
 p.label.temperature <-  bquote("Temperature"~(degree*"C"))
 p.label.size <-  bquote("Size"~(mu*"m"))
 p.label.counts <- "# Counts"
+
+p.label.dna.conc <- bquote("[DNA]"~("ng"%.%mu*"L"^-1))
+p.label.conc.phs.mM <- bquote("Phosphate (mM)")
