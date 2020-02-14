@@ -36,6 +36,8 @@ Reports describe the data analysis performed as part of this project. At least e
 | `multicultivator` | Process Multi-Cultivator Data |   | Growth Rates | `growth/YYMMDD_growth_rates.csv` |
 | `growth`          | Validate Growth Rate Data     | `multicultivator`|   |   |
 | `cell_extracts`   | Calculate Lysis Efficiency    | `casy` | Lysis efficiency | `cell_extracts/YYMMDD_cell_extracts.csv` |
+| `qpcr`            | Calculate # DNA Fragments     |   | # DNA Fragments       | `qpcr/YYMMDD_qpcr_fragments_PLATEID.csv` |
+| `ploidy`          | Calculate Ploidy Level        | `cell_extracts`, `qprc`  | Ploidy Level | `ploidy/YYMMDD_chromosomes_per_cell.csv` |
 
 ### Scripts
 
