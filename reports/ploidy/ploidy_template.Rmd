@@ -1,0 +1,101 @@
+---
+title: "Ploidy Analysis"
+author: "Your Name"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+library("tidyverse")
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# load output functions
+source(file.path(functions.dir, "output.R"))
+
+# load design
+source(file.path(,))
+
+# load cell extracts
+df.cell.extracts <- read_output_csv("")
+
+# load qPCR data
+df.qpcr <- read_output_csv("", "")
+```
+
+Calculate the ploidy level using the qpcr and cell extract information.
+
+```{r}
+# df.ploidy <- 
+```
+
+Inspect the raw data, by plotting the ploidy level per sample and per plate.
+
+```{r}
+
+```
+
+Now make a plot showing the ploidy level per sample, colored by the treatments.
+
+```{r}
+df.ploidy %>% 
+  ggplot(aes(x = , y = , colour = ) +
+  stat_summary(fun.y = , geom = "point", size = 3) +
+  stat_summary(fun.data = , geom = "errorbar", width = 0.001) +
+  coord_flip() +
+  expand_limits(y=0) +
+  labs(
+    x = "Sample",
+    y = "# Chromosomes per Cell",
+    color = p.label.conc.phs.mM
+  )
+```
+
+Are we content with the data? Should we remove some data?
+
+```{r}
+# df.ploidy.f <- 
+```
+
+Now repeat the last slide to inspect the changes.
+
+```{r}
+
+```
+
+Another useful plot is to visualize every point per treatment.
+
+```{r}
+
+```
+
+Last but not least, a plot showing whether there is a difference between the groups.
+
+```{r}
+
+```
+
+Perform a t.test to see if there is a significant effect of phopshate concentration on the ploidy level.
+
+```{r}
+t.test( ~ , data = )
+```
+
+## Export
+
+```{r}
+ploidy.export.file.path <- df.ploidy.f %>% 
+  select(sample_id, plate_id, dilution_factor, replicate, ploidy) %>%
+  write_output_csv("ploidy", paste("chromosomes_per_cell", sep = "_"))
+```
+
+Data was exported to `r ploidy.export.file.path`
+
