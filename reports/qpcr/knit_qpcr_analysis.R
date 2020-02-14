@@ -1,6 +1,9 @@
 library(tidyverse)
 source(here::here("settings.R"))
 
+# install.packages("patchwork")
+# install.packages("kableExtra")
+
 knit_qpcr_analysis <- function( plate.id, rm.outliers = FALSE) {
   
   label <- ifelse(rm.outliers, "processed", "raw")
@@ -40,4 +43,4 @@ batch_knit_qcpr_analysis <- function(plate.ids = NULL, rm.outliers = NULL) {
 
 # Or generate all reports for every plate id in the data (might take a while)
 # batch_knit_qcpr_analysis()
-# batch_knit_qcpr_analysis(c("200212_1", "200213_1"), T)
+# batch_knit_qcpr_analysis(c("200212_1", "200213_1"), F)

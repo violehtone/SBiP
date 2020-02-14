@@ -12,6 +12,7 @@ knitr::opts_chunk$set(
 )
 
 library("tidyverse")
+library("patchwork")
 ```
 
 ```{r load_data, include=FALSE}
@@ -22,50 +23,90 @@ source(here::here("settings.R"))
 source(file.path(functions.dir, "output.R"))
 
 # load design
-source(file.path(,))
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design()
 
 # load cell extracts
-df.cell.extracts <- read_output_csv("")
+df.cell.extracts <- read_output_csv("cell_extracts")
 
 # load qPCR data
-df.qpcr <- read_output_csv("", "")
+df.qpcr <- read_output_csv("qpcr", "qpcr_fragments_(20021[2-3]_1)")
 ```
 
 Calculate the ploidy level using the qpcr and cell extract information.
 
 ```{r}
-# df.ploidy <- 
+df.ploidy <- df.qpcr %>% 
+  left_join(df.cell.extracts, by = "sample_id") %>% 
+  mutate(
+    ploidy = (fragments_sample_uL * 1E3) / broken_cells_mL
+  ) %>% 
+  left_join(df.design, by = "sample_id")
 ```
 
 Inspect the raw data, by plotting the ploidy level per sample and per plate.
 
 ```{r}
-
-```
-
-Now make a plot showing the ploidy level per sample, colored by the treatments.
-
-```{r}
-df.ploidy %>% 
-  ggplot(aes(x = , y = , colour = ) +
-  stat_summary(fun.y = , geom = "point", size = 3) +
-  stat_summary(fun.data = , geom = "errorbar", width = 0.001) +
+df.ploidy %>%
+  ggplot(aes(x = sample_id, y = ploidy, fill = plate_id, group = plate_id)) +
+  stat_summary(fun.y = mean, geom = "bar", position = "dodge") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", position = position_dodge(width=0.9)) +
   coord_flip() +
   expand_limits(y=0) +
   labs(
     x = "Sample",
     y = "# Chromosomes per Cell",
-    color = p.label.conc.phs.mM
+    fill = "Plate ID"
   )
+```
+
+```{r}
+p.before <- df.ploidy %>%
+  ggplot(aes( x = sample_id, y = ploidy, colour = as.factor(dilution_factor), shape = purpose)) +
+  facet_wrap(~purpose, scales = "free_y", ncol = 1) +
+  geom_jitter(width = 0.1) +
+  coord_flip()
+
+p.before
 ```
 
 Are we content with the data? Should we remove some data?
 
 ```{r}
-# df.ploidy.f <- 
+df.ploidy.f <- df.ploidy %>%
+  filter(plate_id == "200213_1") %>%
+  filter(!(sample_id == "200206_2_8" ))
 ```
 
-Now repeat the last slide to inspect the changes.
+Now repeat the last plot to inspect the changes.
+
+```{r}
+df.ploidy.f %>%
+  ggplot(aes(x = sample_id, y = ploidy, fill = purpose)) +
+  stat_summary(fun.y = mean, geom = "bar", position = "dodge") +
+  stat_summary(fun.data = mean_se, geom = "errorbar", position = position_dodge(width=0.9)) +
+  coord_flip() +
+  expand_limits(y=0) +
+  labs(
+    x = "Sample",
+    y = "# Chromosomes per Cell",
+    fill = "Plate ID"
+  )
+```
+
+```{r}
+p.after <- df.ploidy.f %>%
+  ggplot(aes( x = sample_id, y = ploidy, colour = as.factor(dilution_factor), shape = purpose)) +
+  facet_wrap(~purpose, scales = "free_y", ncol = 1) +
+  geom_jitter(width = 0.1) +
+  coord_flip()
+
+p.after
+```
+
+```{r}
+(p.before  + labs(title = "Before") + theme(legend.position = 'none')) / (p.after + labs(title = "After") + theme(legend.position = 'none'))
+```
 
 ```{r}
 
@@ -80,13 +121,36 @@ Another useful plot is to visualize every point per treatment.
 Last but not least, a plot showing whether there is a difference between the groups.
 
 ```{r}
-
+df.ploidy.f %>% 
+  group_by(sample_id, phosphate_mM) %>%
+  summarise(
+    ploidy = mean(ploidy)
+  ) %>%
+  ggplot(aes( x = as.factor(phosphate_mM), y = ploidy)) +
+  stat_summary(fun.y = "mean", geom = "point", size=3) +
+  geom_jitter(aes(color=sample_id)) +
+  stat_summary(fun.data = "mean_sdl", fun.args = c(mult = 1), geom = "errorbar") +
+  expand_limits(y=0)
 ```
 
 Perform a t.test to see if there is a significant effect of phopshate concentration on the ploidy level.
 
 ```{r}
-t.test( ~ , data = )
+df.ploidy.f %>%
+  group_by(sample_id, phosphate_mM) %>%
+  summarise(
+    ploidy = mean(ploidy)
+  ) %>%
+  t.test( ploidy ~ phosphate_mM, data = .)
+```
+
+```{r}
+df.ploidy.f %>%
+  group_by(sample_id, phosphate_mM) %>%
+  summarise(
+    ploidy = mean(ploidy)
+  ) %>%
+  wilcox.test( ploidy ~ phosphate_mM, data = .)
 ```
 
 ## Export
