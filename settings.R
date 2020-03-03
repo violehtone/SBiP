@@ -28,6 +28,10 @@ slope.threshold <- 0
 # when calculating sliding windows
 w_size <- 12
 
+# Test Settings
+p.value.adj.method <- "fdr"
+test.alpha <- 0.05
+
 ## GGplot Settings
 
 mmp_theme <- theme_bw(
