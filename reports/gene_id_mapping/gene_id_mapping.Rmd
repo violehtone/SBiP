@@ -1,0 +1,132 @@
+---
+title: "Synechocystis gene and pathway IDs"
+author: "Hugo Pineda, Joeri Jongbloets"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+library(tidyverse)
+# install.packages("BiocManager") (only if you do not have BiocManager)
+# BiocManager::install("KEGGREST")
+library(KEGGREST)
+# install.packages("kableExtra")
+library(kableExtra)
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# Load helper functions
+source(file.path(functions.dir, "output.R"))
+```
+
+Using the following functions and the `KEGGREST` package, it is possible to download all gene names, gene ids and their associated pathway name and id from KEGG database. You will only need to this once.
+
+```{r, echo=TRUE}
+query_kegg_pathway <- function(df.id){
+  # query kegg db for a set of genes (max 10)
+  kegg.all <- keggGet(df.id$gene_id)
+  # extract pathways and gene name information for each gene id
+  pathway <- map_dfr(kegg.all, extract_kegg_pathway)
+  return(pathway)
+}
+  
+extract_kegg_pathway <- function(kegg.list){
+  # extract gene info from KEGG query
+  gene.id.raw <- kegg.list$ENTRY
+  # extract pathway info from KEGG query
+  pathway.raw <- kegg.list$PATHWAY
+  
+  # get pathway id and name
+  pathway.id <- ifelse(is.null(pathway.raw), NA, names(pathway.raw))
+  pathway.name <- ifelse(is.null(pathway.raw), NA, pathway.raw)
+  # get gene id and name
+  gene.name.raw <- kegg.list$NAME
+  gene.name <- ifelse(is.null(gene.name.raw), gene.id.raw, gene.name.raw)
+  
+  # bunddle into data.frame
+  df.out <- tibble(
+    pathway_name = pathway.name,
+    pathway_id = pathway.id,
+    gene_name = gene.name,
+    gene_id = gene.id.raw
+  )
+  
+  return(df.out)
+}
+
+create_gene_list <- function(list){
+  df <- unnest(list[[1]])
+  out <- deframe(df)
+  return(out)
+}
+```
+
+
+```{r}
+# get a vector with all genes in KEGG for Synechocystis
+kegg.sets.syn <- keggList("syn")
+
+# loop over chuncks of 10 genes and extract gene and pathway info 
+# using the previously defined functions
+df.gene.pathway.ids <- tibble(
+  gene_id = names(kegg.sets.syn)
+) %>%
+  mutate(
+    idx = ntile(row_number(), 362)
+  ) %>%
+  group_by(idx) %>%
+  nest() %>%
+  mutate(
+    pathways = map(data, query_kegg_pathway)
+  ) %>%
+  unnest(pathways) %>% 
+  select(-idx)
+
+```
+
+## Mapping Overview
+
+```{r}
+# get all the uniprot ids for each gene id in Synechocystis
+uniprot.ids <- keggConv("syn", "uniprot")
+
+# make it into a data.frame
+df.uniprot.ids <- tibble(
+   gene_id = str_remove(uniprot.ids, "syn:"),
+  protein_id = str_remove(names(uniprot.ids), "up:")
+)
+
+```
+
+```{r}
+df.gene.ids <- left_join(
+  df.gene.pathway.ids, 
+  df.uniprot.ids, 
+  by = "gene_id"
+)
+```
+
+The following table shows the mapping:
+
+```{r}
+kable(df.ids) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "responsive"))
+```
+
+## Export
+
+```{r export_gene_id_data}
+ids.output.file.path <- df.gene.ids %>% 
+  select(-data) %>% 
+  write_output_csv("id_mapping")
+```
+
+Gene ID Mapping was exported to `r ids.output.file.path`.
