@@ -1,0 +1,3615 @@
+idx,pathway_name,pathway_id,gene_name,gene_id,protein_id
+1,Terpenoid backbone biosynthesis,syn00900,sds,slr0611,P72580
+1,NA,NA,slr0612,slr0612,P72581
+1,NA,NA,slr0613,slr0613,P72582
+1,NA,NA,sll0558,sll0558,P72583
+1,Porphyrin and chlorophyll metabolism,syn00860,sll1214,sll1214,P72584
+1,Fructose and mannose metabolism,syn00051,sll1213,sll1213,P72585
+1,Fructose and mannose metabolism,syn00051,rfbD,sll1212,P72586
+1,Photosynthesis,syn00195,psbA2,slr1311,P16033
+1,Arginine and proline metabolism,syn00330,speA,slr1312,P72587
+1,DNA replication,syn03030,lig,sll1209,P72588
+2,NA,NA,slr1315,slr1315,P72589
+2,NA,NA,fecC,slr1316,P72590
+2,NA,NA,fecD,slr1317,P72591
+2,NA,NA,fecE,slr1318,P72592
+2,NA,NA,fecB,slr1319,P72593
+2,NA,NA,iutA,sll1206,P72594
+2,NA,NA,pchR,sll1205,P72595
+2,NA,NA,sll1204,sll1204,P72596
+2,NA,NA,sll1203,sll1203,P72597
+2,NA,NA,sll1202,sll1202,P72598
+3,NA,NA,fhuA,sll1409,P72599
+3,NA,NA,pcrR,sll1408,P72600
+3,NA,NA,sll1407,sll1407,P72601
+3,NA,NA,fhuA,sll1406,P72602
+3,NA,NA,sll1405,sll1405,P72603
+3,NA,NA,exbB,sll1404,P72604
+3,NA,NA,slr1484,slr1484,P72605
+3,NA,NA,slr1485,slr1485,P72606
+3,NA,NA,slr1488,slr1488,P72607
+3,NA,NA,pchR,slr1489,P72608
+4,NA,NA,fhuA,slr1490,P72609
+4,NA,NA,fecB,slr1491,P72610
+4,NA,NA,fecB,slr1492,P72611
+4,NA,NA,slr1493,slr1493,P72612
+4,NA,NA,slr1494,slr1494,P72613
+4,NA,NA,sll1401,sll1401,P72614
+4,NA,NA,sll1400,sll1400,P72615
+4,NA,NA,ssl2733,ssl2733,P72616
+4,NA,NA,sll1399,sll1399,P72617
+4,Photosynthesis,syn00195,psb13,sll1398,Q55356
+5,NA,NA,slr1495,slr1495,P72618
+5,NA,NA,sll1397,sll1397,P75027
+5,NA,NA,sll1396,sll1396,P72619
+5,NA,NA,hypD,slr1498,P72620
+5,Streptomycin biosynthesis,syn00521,rfbD,sll1395,P72621
+5,NA,NA,msrA,sll1394,P72622
+5,Starch and sucrose metabolism,syn00500,glgA,sll1393,P72623
+5,NA,NA,sll1392,sll1392,P72624
+5,NA,NA,slr1501,slr1501,P72625
+5,NA,NA,slr1113,slr1113,P72626
+6,NA,NA,slr1114,slr1114,P72627
+6,NA,NA,slr1115,slr1115,P72628
+6,NA,NA,slr1116,slr1116,P72629
+6,NA,NA,slr1117,slr1117,P72630
+6,NA,NA,sll1064,sll1064,P72631
+6,NA,NA,rffM,slr1118,P72632
+6,NA,NA,sll1063,sll1063,P72633
+6,NA,NA,slr1119,slr1119,P72634
+6,NA,NA,sll1062,sll1062,P72635
+6,NA,NA,sll1061,sll1061,P72636
+7,NA,NA,sll1060,sll1060,P72637
+7,NA,NA,ssl2069,ssl2069,P72638
+7,NA,NA,ssr1853,ssr1853,P72639
+7,NA,NA,hofD,slr1120,P72640
+7,Purine metabolism,syn00230,adk,sll1059,P72641
+7,Monobactam biosynthesis,syn00261,dapB,sll1058,P72642
+7,NA,NA,trx,sll1057,P72643
+7,Purine metabolism,syn00230,purL,sll1056,P72644
+7,NA,NA,slr1122,slr1122,P72645
+7,Purine metabolism,syn00230,sll1054,sll1054,P72646
+8,NA,NA,sll1053,sll1053,P72647
+8,Purine metabolism,syn00230,gmk,slr1123,P72648
+8,"Glycine, serine and threonine metabolism",syn00260,gpmB,slr1124,P72649
+8,NA,NA,crtX,slr1125,P72650
+8,NA,NA,sll1052,sll1052,P72651
+8,Photosynthesis - antenna proteins,syn00196,cpcF,sll1051,P72652
+8,NA,NA,sll1049,sll1049,P72653
+8,NA,NA,slr1127,slr1127,P72654
+8,NA,NA,slr1128,slr1128,P72655
+8,RNA degradation,syn03018,rne,slr1129,P72656
+9,DNA replication,syn03030,rhnB,slr1130,P72657
+9,NA,NA,mutT,sll1045,P72658
+9,RNA degradation,syn03018,pnp,sll1043,P72659
+9,Protein export,syn03060,lepB,sll0716,P72660
+9,Pyruvate metabolism,syn00620,me,slr0721,P72661
+9,Cysteine and methionine metabolism,syn00270,cysM,sll0712,P72662
+9,Terpenoid backbone biosynthesis,syn00900,sll0711,sll0711,P72663
+9,NA,NA,sll0710,sll0710,P72664
+9,NA,NA,llaI.2,sll0709,P72665
+9,NA,NA,ksgA,sll0708,P72666
+10,NA,NA,slr0722,slr0722,P72667
+10,NA,NA,slr0723,slr0723,P72668
+10,NA,NA,sohA,slr0724,P72669
+10,NA,NA,slr0725,slr0725,P72670
+10,NA,NA,slr0727,slr0727,P72671
+10,NA,NA,slr0728,slr0728,P72672
+10,NA,NA,slr0729,slr0729,P72673
+10,NA,NA,slr0730,slr0730,P72674
+10,NA,NA,slr0731,slr0731,P72675
+10,Thiamine metabolism,syn00730,nifS,sll0704,P72676
+11,NA,NA,slr0732,slr0732,P72677
+11,NA,NA,sll0703,sll0703,P72678
+11,NA,NA,sll0702,sll0702,P72679
+11,NA,NA,xerC,slr0733,P72680
+11,NA,NA,ssl1326,ssl1326,P72681
+11,NA,NA,slr0734,slr0734,P72682
+11,NA,NA,sll0700,sll0700,Q55696
+11,NA,NA,sll0699,sll0699,Q55697
+11,Two-component system,syn02020,dfr,sll0698,P20169
+11,Photosynthesis,syn00195,psaD,slr0737,P19569
+12,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,trpE,slr0738,P20170
+12,Terpenoid backbone biosynthesis,syn00900,crtE,slr0739,P72683
+12,NA,NA,slr0740,slr0740,P72684
+12,NA,NA,sll0696,sll0696,P72685
+12,NA,NA,phoU,slr0741,P72686
+12,NA,NA,slr0742,slr0742,P72687
+12,NA,NA,nusA,slr0743,P72688
+12,NA,NA,infB,slr0744,P72689
+12,NA,NA,slr0236,slr0236,P72690
+12,Starch and sucrose metabolism,syn00500,glgX,slr0237,P72691
+13,NA,NA,slr0238,slr0238,P72692
+13,NA,NA,ssl0426,ssl0426,P72693
+13,Porphyrin and chlorophyll metabolism,syn00860,cbiF,slr0239,P72694
+13,NA,NA,slr0240,slr0240,P72695
+13,NA,NA,slr0241,slr0241,P72696
+13,NA,NA,bcp,slr0242,P72697
+13,NA,NA,slr0243,slr0243,P72698
+13,NA,NA,sll0230,sll0230,P72699
+13,NA,NA,slr0244,slr0244,P72700
+13,Photosynthesis,syn00195,psbM,sml0003,P72701
+14,NA,NA,slr0245,slr0245,P72702
+14,Arginine and proline metabolism,syn00330,sll0228,sll0228,P72703
+14,NA,NA,ppiB,sll0227,P72704
+14,NA,NA,ycf4,sll0226,P72705
+14,NA,NA,sll0225,sll0225,P72706
+14,NA,NA,sll0224,sll0224,P72707
+14,NA,NA,rnpB,rnpB,NA
+14,NA,NA,slr0249,slr0249,P72708
+14,NA,NA,slr0250,slr0250,P72709
+14,ABC transporters,syn02010,slr0251,slr0251,P72710
+15,Porphyrin and chlorophyll metabolism,syn00860,slr0252,slr0252,P72711
+15,Photosynthesis,syn00195,psaK,ssr0390,P72712
+15,NA,NA,ssl0410,ssl0410,P72713
+15,Oxidative phosphorylation,syn00190,ndhB,sll0223,P72714
+15,NA,NA,phoA,sll0222,P72715
+15,NA,NA,sgl0002,sgl0002,P72716
+15,Photosynthesis,syn00195,ycf6,sml0004,P72717
+15,NA,NA,slr0254,slr0254,P72718
+15,NA,NA,bcp,sll0221,P72719
+15,"Alanine, aspartate and glutamate metabolism",syn00250,glmS,sll0220,P72720
+16,NA,NA,sll0219,sll0219,P72721
+16,NA,NA,sll0218,sll0218,P72722
+16,NA,NA,sll0217,sll0217,P72723
+16,NA,NA,ctpB,slr0257,P75023
+16,NA,NA,sll0216,sll0216,P72724
+16,NA,NA,slr1411,slr1411,P72725
+16,Oxidative phosphorylation,syn00190,atpC,sll1327,P17253
+16,Oxidative phosphorylation,syn00190,atpA,sll1326,P27179
+16,Oxidative phosphorylation,syn00190,atpD,sll1325,P27180
+16,Oxidative phosphorylation,syn00190,atpF,sll1324,P27181
+17,Oxidative phosphorylation,syn00190,atpG,sll1323,P27183
+17,Oxidative phosphorylation,syn00190,atpH,ssl2615,P27182
+17,Oxidative phosphorylation,syn00190,atpI,sll1322,P27178
+17,NA,NA,atp1,sll1321,P27196
+17,NA,NA,slr1413,slr1413,P72727
+17,NA,NA,slr1414,slr1414,P72728
+17,NA,NA,slr1415,slr1415,P72729
+17,NA,NA,morR,slr1416,P72730
+17,NA,NA,slr1417,slr1417,P72731
+17,NA,NA,sll1319,sll1319,P72732
+18,NA,NA,sll1318,sll1318,P72733
+18,ABC transporters,syn02010,sll1041,sll1041,P72734
+18,NA,NA,sll1040,sll1040,P72735
+18,Folate biosynthesis,syn00790,folK,slr1093,P72736
+18,Aminoacyl-tRNA biosynthesis,syn00970,trnP-GGG,trnP-GGG,NA
+18,NA,NA,slr1094,slr1094,P72737
+18,NA,NA,sll1039,sll1039,P72738
+18,NA,NA,slr1095,slr1095,P72739
+18,Glycolysis / Gluconeogenesis,syn00010,phdD,slr1096,P72740
+18,NA,NA,slr1097,slr1097,P72741
+19,NA,NA,slr1098,slr1098,P72742
+19,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,ubiX,slr1099,P72743
+19,NA,NA,slr1100,slr1100,P72744
+19,NA,NA,slr1101,slr1101,P72745
+19,NA,NA,slr1102,slr1102,P72746
+19,NA,NA,slr1103,slr1103,P72747
+19,NA,NA,slr1104,slr1104,P72748
+19,NA,NA,fus,slr1105,P72749
+19,NA,NA,sll1037,sll1037,P72750
+19,NA,NA,sll1036,sll1036,P72751
+20,NA,NA,ssl2009,ssl2009,P72752
+20,Pyrimidine metabolism,syn00240,upp,sll1035,P72753
+20,NA,NA,phb,slr1106,P72754
+20,NA,NA,slr1107,slr1107,P72755
+20,NA,NA,sll1033,sll1033,P72756
+20,NA,NA,ccmN,sll1032,P72757
+20,NA,NA,ccmM,sll1031,P72758
+20,NA,NA,ccmL,sll1030,P72759
+20,NA,NA,ccmK,sll1029,P72760
+20,NA,NA,ccmK,sll1028,P72761
+21,"Alanine, aspartate and glutamate metabolism",syn00250,gltD,sll1027,P72762
+21,NA,NA,ank,slr1109,P72763
+21,NA,NA,slr1110,slr1110,P72764
+21,Secondary bile acid biosynthesis,syn00121,slr1772,slr1772,P72765
+21,NA,NA,sll1686,sll1686,P72766
+21,NA,NA,ssr2972,ssr2972,P72767
+21,NA,NA,slr1773,slr1773,P72768
+21,NA,NA,slr1774,slr1774,P72769
+21,NA,NA,slr1776,slr1776,P72770
+21,NA,NA,ycf10,sll1685,P72771
+22,Porphyrin and chlorophyll metabolism,syn00860,chlD,slr1777,P72772
+22,NA,NA,slr1778,slr1778,P72773
+22,NA,NA,cad,sll1683,P72774
+22,"Alanine, aspartate and glutamate metabolism",syn00250,sll1682,sll1682,P72775
+22,Vitamin B6 metabolism,syn00750,pdxJ,slr1779,P72776
+22,NA,NA,slr1780,slr1780,P72777
+22,NA,NA,sll1681,sll1681,P72778
+22,NA,NA,sll1680,sll1680,P72779
+22,NA,NA,hhoA,sll1679,P72780
+22,NA,NA,slr1783,slr1783,P72781
+23,Porphyrin and chlorophyll metabolism,syn00860,bvdR,slr1784,P72782
+23,NA,NA,sll1678,sll1678,P72783
+23,NA,NA,sll1677,sll1677,P72784
+23,Starch and sucrose metabolism,syn00500,malQ,sll1676,P72785
+23,NA,NA,sll1675,sll1675,P72786
+23,Thiamine metabolism,syn00730,slr1787,slr1787,P72787
+23,NA,NA,slr1788,slr1788,P72788
+23,NA,NA,slr1789,slr1789,P72789
+23,NA,NA,sll1673,sll1673,P72790
+23,NA,NA,sll1672,sll1672,P72791
+24,NA,NA,sll1671,sll1671,P72792
+24,NA,NA,slr1790,slr1790,P72793
+24,Sulfur metabolism,syn00920,cysH,slr1791,P72794
+24,NA,NA,hrcA,sll1670,P72795
+24,Aminoacyl-tRNA biosynthesis,syn00970,trnS-UGA,trnS-UGA,NA
+24,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroK,sll1669,P72796
+24,Pentose phosphate pathway,syn00030,talB,slr1793,P72797
+24,NA,NA,ssr2998,ssr2998,P72798
+24,NA,NA,slr1794,slr1794,P72799
+24,NA,NA,msrA,slr1795,P72800
+25,NA,NA,ssr3000,ssr3000,P72801
+25,NA,NA,mom72,sll1667,P72802
+25,NA,NA,dnaJ,sll1666,P72803
+25,NA,NA,slr1796,slr1796,P72804
+25,NA,NA,sll1665,sll1665,P72805
+25,NA,NA,sll1664,sll1664,P72806
+25,NA,NA,sll1663,sll1663,P72807
+25,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,pheA,sll1662,P72808
+25,Aminoacyl-tRNA biosynthesis,syn00970,trnT-CGU,trnT-CGU,NA
+25,NA,NA,pleD,slr1798,P72809
+26,NA,NA,sll1660,sll1660,P72810
+26,Methane metabolism,syn00680,sll1659,sll1659,P72811
+26,NA,NA,sll1658,sll1658,P72812
+26,NA,NA,slr1799,slr1799,P72813
+26,NA,NA,slr1800,slr1800,P72814
+26,NA,NA,sll1656,sll1656,P72815
+26,Biotin metabolism,syn00780,birA,sll1655,P72816
+26,NA,NA,sll1654,sll1654,P72817
+26,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,gerCb,sll1653,P72818
+26,NA,NA,sll1652,sll1652,P72819
+27,Citrate cycle (TCA cycle),syn00020,icd,slr1289,P80046
+27,NA,NA,slr1290,slr1290,P72821
+27,NA,NA,sll1201,sll1201,P72822
+27,Oxidative phosphorylation,syn00190,ndhD2,slr1291,P72823
+27,NA,NA,sll1200,sll1200,P72824
+27,NA,NA,slr1293,slr1293,P72825
+27,NA,NA,ycf19,ssr2142,P72826
+27,ABC transporters,syn02010,sufA,slr1295,P72827
+27,NA,NA,trmD,sll1198,P72828
+27,NA,NA,ssl2384,ssl2384,P72829
+28,Glycolysis / Gluconeogenesis,syn00010,pfkA,sll1196,P72830
+28,NA,NA,slr1298,slr1298,P72831
+28,Photosynthesis,syn00195,psbU,sll1194,Q55332
+28,NA,NA,sll1193,sll1193,P72833
+28,Pentose and glucuronate interconversions,syn00040,slr1299,slr1299,P72834
+28,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,ubiH,slr1300,P72835
+28,NA,NA,sll1192,sll1192,P72836
+28,NA,NA,sll1191,sll1191,P72837
+28,NA,NA,ssr2153,ssr2153,P72838
+28,NA,NA,slr1301,slr1301,P72839
+29,NA,NA,slr1302,slr1302,P72840
+29,NA,NA,slr1303,slr1303,P72841
+29,Glyoxylate and dicarboxylate metabolism,syn00630,glcE,sll1189,P72842
+29,NA,NA,slr1305,slr1305,P72843
+29,NA,NA,slr1306,slr1306,P72844
+29,NA,NA,sll1188,sll1188,P72845
+29,NA,NA,lgt,sll1187,P72846
+29,NA,NA,sll1186,sll1186,P72847
+29,Porphyrin and chlorophyll metabolism,syn00860,hemF,sll1185,P72848
+29,Porphyrin and chlorophyll metabolism,syn00860,ho1,sll1184,P72849
+30,NA,NA,slr1307,slr1307,P72850
+30,Ribosome,syn03010,rpl28,ssr1604,P72851
+30,NA,NA,slr0962,slr0962,P72852
+30,Aminoacyl-tRNA biosynthesis,syn00970,trnP-CGG,trnP-CGG,NA
+30,NA,NA,sll0943,sll0943,P72853
+30,Sulfur metabolism,syn00920,sir,slr0963,P72854
+30,NA,NA,slr0964,slr0964,P72855
+30,DNA replication,syn03030,dnaN,slr0965,P72856
+30,"Glycine, serine and threonine metabolism",syn00260,trpA,slr0966,P77960
+30,NA,NA,slr0967,slr0967,P72857
+31,NA,NA,sll0939,sll0939,P72858
+31,NA,NA,sll0938,sll0938,P72859
+31,NA,NA,ssl1792,ssl1792,P72860
+31,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,sll0936,sll0936,P72861
+31,Porphyrin and chlorophyll metabolism,syn00860,cbiH,slr0969,P72862
+31,NA,NA,slr0971,slr0971,P72863
+31,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,ccmA,sll0934,P72864
+31,NA,NA,sll0933,sll0933,P72865
+31,Ribosome,syn03010,rps15,ssl1784,P72866
+31,NA,NA,sll0932,sll0932,P72867
+32,NA,NA,sll0931,sll0931,P72868
+32,NA,NA,sll0930,sll0930,P72869
+32,Photosynthesis - antenna proteins,syn00196,apcD,sll0928,P72870
+32,Cysteine and methionine metabolism,syn00270,metX,sll0927,P72871
+32,NA,NA,sll0926,sll0926,P72872
+32,NA,NA,sll0925,sll0925,P72873
+32,NA,NA,infC,slr0974,P72874
+32,NA,NA,slr0975,slr0975,P72875
+32,NA,NA,sll0924,sll0924,P72876
+32,Aminoacyl-tRNA biosynthesis,syn00970,trnV-UAC,trnV-UAC,NA
+33,NA,NA,epsB,sll0923,P72877
+33,NA,NA,sll0922,sll0922,P72878
+33,NA,NA,slr0976,slr0976,P72879
+33,ABC transporters,syn02010,slr0977,slr0977,P72880
+33,NA,NA,slr0978,slr0978,P72881
+33,NA,NA,slr0980,slr0980,P72882
+33,NA,NA,slr0981,slr0981,P72883
+33,ABC transporters,syn02010,rfbB,slr0982,P72884
+33,Starch and sucrose metabolism,syn00500,rfbF,slr0983,P72885
+33,Amino sugar and nucleotide sugar metabolism,syn00520,rfbG,slr0984,P72886
+34,Streptomycin biosynthesis,syn00521,rfbC,slr0985,P72887
+34,NA,NA,slr1610,slr1610,P72888
+34,NA,NA,slr1611,slr1611,P72889
+34,NA,NA,slr1612,slr1612,P72890
+34,NA,NA,slr1613,slr1613,P72891
+34,NA,NA,slr1614,slr1614,P72892
+34,Amino sugar and nucleotide sugar metabolism,syn00520,rfbE,slr1615,P72893
+34,Pyrimidine metabolism,syn00240,slr1616,slr1616,P72894
+34,NA,NA,slr1617,slr1617,P72895
+34,NA,NA,slr1618,slr1618,P72896
+35,NA,NA,slr1619,slr1619,P72897
+35,NA,NA,slr1062,slr1062,P72898
+35,NA,NA,slr1063,slr1063,P72899
+35,NA,NA,rfbU,slr1064,P72900
+35,NA,NA,slr1065,slr1065,P72901
+35,NA,NA,slr1066,slr1066,P72902
+35,Galactose metabolism,syn00052,galE,slr1067,P72903
+35,NA,NA,slr1068,slr1068,P72904
+35,NA,NA,slr1069,slr1069,P72905
+35,NA,NA,slr1070,slr1070,P72906
+36,NA,NA,slr1071,slr1071,P72907
+36,Fructose and mannose metabolism,syn00051,yefA,slr1072,P72908
+36,NA,NA,slr1073,slr1073,P72909
+36,NA,NA,slr1074,slr1074,P72910
+36,NA,NA,slr1075,slr1075,P75027
+36,NA,NA,slr1076,slr1076,P72911
+36,NA,NA,slr1077,slr1077,P72912
+36,NA,NA,ssr1765,ssr1765,P72913
+36,NA,NA,ssr1766,ssr1766,P72914
+36,Galactose metabolism,syn00052,galE,slr1078,P72915
+37,NA,NA,slr1079,slr1079,P72916
+37,NA,NA,ssr1768,ssr1768,P72917
+37,NA,NA,slr1081,slr1081,P72918
+37,NA,NA,slr1082,slr1082,P72919
+37,NA,NA,slr1083,slr1083,P72920
+37,NA,NA,slr1084,slr1084,P72921
+37,NA,NA,slr1085,slr1085,P72922
+37,NA,NA,slr1087,slr1087,P72923
+37,NA,NA,sll1025,sll1025,P72924
+37,NA,NA,ssl1972,ssl1972,P72925
+38,NA,NA,sll1024,sll1024,P72926
+38,Citrate cycle (TCA cycle),syn00020,sucC,sll1023,P72927
+38,NA,NA,sll1022,sll1022,P72928
+38,NA,NA,sll1021,sll1021,P72929
+38,NA,NA,sll1020,sll1020,P72930
+38,NA,NA,slr1090,slr1090,P72931
+38,NA,NA,hliA,ssr1789,P72932
+38,Pyruvate metabolism,syn00620,HAGH1,sll1019,P72933
+38,Pyrimidine metabolism,syn00240,pyrC,sll1018,P72934
+38,NA,NA,amt2,sll1017,P72935
+39,NA,NA,slr1400,slr1400,P72936
+39,NA,NA,slr0670,slr0670,P72937
+39,NA,NA,nucH,sll0656,P72938
+39,NA,NA,sll0654,sll0654,P72939
+39,Purine metabolism,syn00230,cysC,slr0676,P72940
+39,NA,NA,exbB,slr0677,P72941
+39,NA,NA,slr0678,slr0678,P72942
+39,NA,NA,fmu_fmv,slr0679,P72943
+39,NA,NA,slr0680,slr0680,P72944
+39,NA,NA,slr0681,slr0681,P72945
+40,Histidine metabolism,syn00340,hisD,slr0682,P72946
+40,NA,NA,sll0651,sll0651,Q55696
+40,NA,NA,sll0650,sll0650,P72947
+40,NA,NA,sll0649,sll0649,P72948
+40,NA,NA,lim,sll0648,P72949
+40,NA,NA,sll0647,sll0647,P72950
+40,Purine metabolism,syn00230,cyaA,sll0646,P72951
+40,NA,NA,sll0645,sll0645,P72952
+40,NA,NA,sll0644,sll0644,P72953
+40,NA,NA,slr0686,slr0686,P72954
+41,NA,NA,ureG,sll0643,P72955
+41,NA,NA,pleD,slr0687,P72956
+41,NA,NA,sll0641,sll0641,P72957
+41,NA,NA,Sac1,sll0640,P72958
+41,NA,NA,slr0688,slr0688,P72959
+41,NA,NA,ssr1155,ssr1155,P72960
+41,Cysteine and methionine metabolism,syn00270,slr0689,slr0689,P72961
+41,NA,NA,sll0639,sll0639,P72962
+41,NA,NA,sll0638,sll0638,P72963
+41,NA,NA,ycf45,slr0692,P72964
+42,Thiamine metabolism,syn00730,thiE,sll0635,P72965
+42,NA,NA,btpA,sll0634,P72966
+42,Aminoacyl-tRNA biosynthesis,syn00970,trnR-CCU,trnR-CCU,NA
+42,NA,NA,slr0695,slr0695,P72967
+42,NA,NA,slr1590,slr1590,P72968
+42,NA,NA,slr1591,slr1591,P72969
+42,NA,NA,slr1592,slr1592,P72970
+42,NA,NA,slr1593,slr1593,P72971
+42,NA,NA,slr1594,slr1594,P72972
+42,NA,NA,slr1595,slr1595,P72973
+43,NA,NA,sll1516,sll1516,P72974
+43,NA,NA,pxcA,slr1596,P75028
+43,NA,NA,sll1515,sll1515,P72975
+43,NA,NA,slr1597,slr1597,P72976
+43,NA,NA,hsp17,sll1514,P72977
+43,NA,NA,ccsA,sll1513,P72978
+43,NA,NA,sll1512,sll1512,P72979
+43,Lipoic acid metabolism,syn00785,lipA,slr1598,P72980
+43,NA,NA,sll1511,sll1511,P72981
+43,NA,NA,sll1510,sll1510,P72982
+44,NA,NA,ycf20,sll1509,P72983
+44,NA,NA,slr1599,slr1599,P72984
+44,NA,NA,slr1600,slr1600,P72985
+44,Photosynthesis,syn00195,psaM,smr0005,P72986
+44,NA,NA,slr1601,slr1601,P72987
+44,Lipopolysaccharide biosynthesis,syn00540,lpxC,sll1508,P72988
+44,NA,NA,sll1507,sll1507,P72989
+44,NA,NA,slr1603,slr1603,P72990
+44,NA,NA,ftsH,slr1604,P72991
+44,NA,NA,ssr2699,ssr2699,P72992
+45,NA,NA,vapC,ssl2923,P72993
+45,NA,NA,vapB,ssl2922,P72994
+45,NA,NA,ssl2920,ssl2920,P72995
+45,NA,NA,sll1505,sll1505,P72996
+45,NA,NA,sll1504,sll1504,P72997
+45,NA,NA,sll1503,sll1503,P72998
+45,Glyoxylate and dicarboxylate metabolism,syn00630,gltB,sll1502,P55037
+45,NA,NA,ssr2708,ssr2708,P72999
+45,NA,NA,ssr2711,ssr2711,P73000
+45,NA,NA,gdhB,slr1608,P73001
+46,Porphyrin and chlorophyll metabolism,syn00860,cbiA,sll1501,P73002
+46,NA,NA,sll1500,sll1500,P73003
+46,Fatty acid biosynthesis,syn00061,slr1609,slr1609,P73004
+46,Two-component system,syn02020,slr1041,slr1041,P73005
+46,Two-component system,syn02020,slr1042,slr1042,P73006
+46,Two-component system,syn02020,slr1043,slr1043,P73007
+46,Two-component system,syn02020,mcpA,slr1044,P73008
+46,ABC transporters,syn02010,slr1045,slr1045,P73009
+46,Protein export,syn03060,slr1046,slr1046,P73010
+46,NA,NA,pleD,slr1047,P73011
+47,NA,NA,slr1048,slr1048,P73012
+47,NA,NA,sll1011,sll1011,P73013
+47,Ribosome,syn03010,rps32,ssr1736,P73014
+47,Other types of O-glycan biosynthesis,syn00514,slr1050,slr1050,P73015
+47,Fatty acid biosynthesis,syn00061,envM,slr1051,P73016
+47,NA,NA,slr1052,slr1052,P73017
+47,NA,NA,slr1053,slr1053,P73018
+47,NA,NA,frpC,sll1009,P73019
+47,Porphyrin and chlorophyll metabolism,syn00860,chlH,slr1055,P73020
+47,NA,NA,slr1056,slr1056,P73021
+48,NA,NA,sll1006,sll1006,P73022
+48,Purine metabolism,syn00230,sll1005,sll1005,P73023
+48,Metabolic pathways,syn01100,sll1004,sll1004,P73024
+48,NA,NA,sll1003,sll1003,P73025
+48,NA,NA,ssl1923,ssl1923,P73026
+48,NA,NA,ssl1922,ssl1922,P73027
+48,NA,NA,ssl1920,ssl1920,P73028
+48,ABC transporters,syn02010,ycf22,sll1002,P73029
+48,ABC transporters,syn02010,sll1001,sll1001,P73030
+48,NA,NA,ssl1918,ssl1918,P73031
+49,NA,NA,slr1753,slr1753,P73032
+49,Glycerophospholipid metabolism,syn00564,gpsA,slr1755,P73033
+49,Phosphonate and phosphinate metabolism,syn00440,sll1647,sll1647,P73034
+49,Arginine biosynthesis,syn00220,glnA,slr1756,P77961
+49,NA,NA,slr1759,slr1759,P73035
+49,NA,NA,slr1760,slr1760,P73036
+49,NA,NA,ytfC,slr1761,P73037
+49,One carbon pool by folate,syn00670,sll1643,sll1643,P73038
+49,Glyoxylate and dicarboxylate metabolism,syn00630,slr1762,slr1762,P73039
+49,NA,NA,slr1763,slr1763,P73040
+50,NA,NA,sll1642,sll1642,P73041
+50,NA,NA,capA,slr1764,P73042
+50,"Alanine, aspartate and glutamate metabolism",syn00250,gad,sll1641,P73043
+50,NA,NA,ssr2962,ssr2962,P73044
+50,NA,NA,slr1767,slr1767,P73045
+50,NA,NA,sll1640,sll1640,P73046
+50,NA,NA,ureD,sll1639,P73047
+50,NA,NA,sll1638,sll1638,P73048
+50,NA,NA,slr1768,slr1768,P73049
+50,NA,NA,fbp,sll1636,P73050
+51,NA,NA,slr1770,slr1770,P73051
+51,NA,NA,slr1771,slr1771,P73052
+51,Pyrimidine metabolism,syn00240,sll1635,sll1635,P73053
+51,Photosynthesis,syn00195,psbK,sml0005,P15819
+51,NA,NA,sll1752,sll1752,P73054
+51,NA,NA,ssr3122,ssr3122,P73055
+51,NA,NA,slr1846,slr1846,P73056
+51,NA,NA,slr1847,slr1847,P73057
+51,Histidine metabolism,syn00340,hisD,slr1848,P73058
+51,NA,NA,merA,slr1849,P73059
+52,NA,NA,sll1751,sll1751,P73060
+52,Arginine biosynthesis,syn00220,ureC,sll1750,P73061
+52,NA,NA,sll1749,sll1749,P73062
+52,NA,NA,slr1851,slr1851,P73063
+52,NA,NA,ssr3129,ssr3129,P73064
+52,NA,NA,sll1946,sll1946,P73065
+52,NA,NA,ycf23,slr2032,P73066
+52,Thiamine metabolism,syn00730,sll1945,sll1945,P73067
+52,NA,NA,rub,slr2033,P73068
+52,NA,NA,slr2034,slr2034,P73069
+53,Photosynthesis,syn00195,psbE,ssr3451,P09190
+53,Photosynthesis,syn00195,psbF,smr0006,P09191
+53,Photosynthesis,syn00195,psbL,smr0007,Q55354
+53,Photosynthesis,syn00195,psbJ,smr0008,P73070
+53,Arginine and proline metabolism,syn00330,proB,slr2035,P73071
+53,NA,NA,ssr3452,ssr3452,P73072
+53,NA,NA,slr2036,slr2036,P73073
+53,NA,NA,slr2037,slr2037,P73074
+53,NA,NA,slr2038,slr2038,P73075
+53,NA,NA,sll1942,sll1942,P73076
+54,NA,NA,gyrA,sll1941,P73077
+54,NA,NA,divK,slr2041,P73078
+54,NA,NA,slr2042,slr2042,P73079
+54,NA,NA,sll1940,sll1940,P73080
+54,NA,NA,sll1939,sll1939,P73081
+54,NA,NA,ssr3465,ssr3465,P73082
+54,NA,NA,sll1938,sll1938,P73083
+54,NA,NA,fur,sll1937,P73084
+54,ABC transporters,syn02010,zntC,slr2043,P73085
+54,ABC transporters,syn02010,slr2044,slr2044,P73086
+55,ABC transporters,syn02010,slr2045,slr2045,P73087
+55,NA,NA,ssr3467,ssr3467,P73088
+55,NA,NA,slr2046,slr2046,P73089
+55,NA,NA,phoH,slr2047,P73090
+55,NA,NA,slr2048,slr2048,P73091
+55,NA,NA,slr2049,slr2049,P73092
+55,Photosynthesis - antenna proteins,syn00196,cpcG,slr2051,P73093
+55,NA,NA,slr2052,slr2052,P73094
+55,NA,NA,sll1934,sll1934,P73095
+55,NA,NA,slr2053,slr2053,P73096
+56,NA,NA,dnaJ,sll1933,P73097
+56,RNA degradation,syn03018,dnaK,sll1932,P73098
+56,"Glycine, serine and threonine metabolism",syn00260,gylA,sll1931,P77962
+56,NA,NA,sll1930,sll1930,P73099
+56,NA,NA,comEc,sll1929,P73100
+56,NA,NA,slr1906,slr1906,P73101
+56,NA,NA,slr1907,slr1907,P73102
+56,NA,NA,slr1908,slr1908,P73103
+56,NA,NA,slr1909,slr1909,P73104
+56,Cationic antimicrobial peptide (CAMP) resistance,syn01503,amiA,slr1910,P73105
+57,NA,NA,slr1911,slr1911,P73106
+57,NA,NA,sll1837,sll1837,P73107
+57,NA,NA,slr1912,slr1912,P73108
+57,NA,NA,slr1913,slr1913,P73109
+57,NA,NA,slr1914,slr1914,P73110
+57,NA,NA,sll1835,sll1835,P73111
+57,NA,NA,sll1834,sll1834,P73112
+57,NA,NA,slr1915,slr1915,P73113
+57,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,slr1916,slr1916,P73114
+57,NA,NA,slr1917,slr1917,P73115
+58,NA,NA,slr1918,slr1918,P73116
+58,Peptidoglycan biosynthesis,syn00550,ftsI,sll1833,P73117
+58,NA,NA,sll1832,sll1832,P73118
+58,Glyoxylate and dicarboxylate metabolism,syn00630,glcF,sll1831,P73119
+58,NA,NA,sll1830,sll1830,P73120
+58,NA,NA,slr1919,slr1919,P73121
+58,NA,NA,slr1920,slr1920,P73122
+58,NA,NA,sll0998,sll0998,P73123
+58,NA,NA,ssl1911,ssl1911,P73124
+58,Phenazine biosynthesis,syn00405,slr1019,slr1019,P73125
+59,Aminoacyl-tRNA biosynthesis,syn00970,trnL-UAG,trnL-UAG,NA
+59,NA,NA,sll0997,sll0997,P73126
+59,NA,NA,sll0996,sll0996,P73127
+59,Amino sugar and nucleotide sugar metabolism,syn00520,sqdB,slr1020,P73128
+59,NA,NA,ssr1698,ssr1698,P73129
+59,NA,NA,sll0995,sll0995,P73130
+59,NA,NA,sll0994,sll0994,P73131
+59,NA,NA,sll0993,sll0993,P73132
+59,Arginine biosynthesis,syn00220,argD,slr1022,P73133
+59,NA,NA,slr1023,slr1023,P73134
+60,NA,NA,slr1024,slr1024,P73135
+60,NA,NA,slr1025,slr1025,P73136
+60,Methane metabolism,syn00680,sll0992,sll0992,P73137
+60,Glycolysis / Gluconeogenesis,syn00010,sll0990,sll0990,P73138
+60,Aminoacyl-tRNA biosynthesis,syn00970,trnR-UCU,trnR-UCU,NA
+60,NA,NA,slr1028,slr1028,P73139
+60,Porphyrin and chlorophyll metabolism,syn00860,chlI,slr1030,P51634
+60,Aminoacyl-tRNA biosynthesis,syn00970,tyrS,slr1031,P73141
+60,NA,NA,slr1032,slr1032,P73142
+60,NA,NA,slr1033,slr1033,P73143
+61,Aminoacyl-tRNA biosynthesis,syn00970,tyrS,ssr1720,P73144
+61,NA,NA,slr1034,slr1034,P73145
+61,NA,NA,slr1035,slr1035,P73146
+61,NA,NA,sll0986,sll0986,P73147
+61,NA,NA,sll0985,sll0985,P73148
+61,NA,NA,sll0984,sll0984,P73149
+61,NA,NA,slr1037,slr1037,P73150
+61,NA,NA,sll0983,sll0983,P73151
+61,NA,NA,sll0982,sll0982,P73152
+62,NA,NA,sll0981,sll0981,P73153
+62,NA,NA,sll0980,sll0980,P73154
+62,NA,NA,slr1039,slr1039,P73155
+62,NA,NA,slr1376,slr1376,P73156
+62,Protein export,syn03060,lepB,slr1377,P73157
+62,NA,NA,slr1378,slr1378,P73158
+62,Oxidative phosphorylation,syn00190,cydA,slr1379,P73159
+62,Oxidative phosphorylation,syn00190,cydB,slr1380,P73160
+62,NA,NA,sll1300,sll1300,P73161
+62,Taurine and hypotaurine metabolism,syn00430,ackA,sll1299,P73162
+63,Chlorocyclohexane and chlorobenzene degradation,syn00361,clcD,sll1298,P73163
+63,NA,NA,ssr2315,ssr2315,P73164
+63,NA,NA,slr1383,slr1383,P73165
+63,NA,NA,ssr2317,ssr2317,P73166
+63,NA,NA,slr1384,slr1384,P73167
+63,NA,NA,slr1385,slr1385,P73168
+63,NA,NA,ssr2318,ssr2318,P73169
+63,NA,NA,pobA,sll1297,P73170
+63,NA,NA,ssl2559,ssl2559,P73171
+63,Two-component system,syn02020,sll1296,sll1296,P73172
+64,Two-component system,syn02020,pilJ,sll1294,P73173
+64,Two-component system,syn02020,sll1293,sll1293,P73174
+64,Two-component system,syn02020,sll1292,sll1292,P73175
+64,Two-component system,syn02020,sll1291,sll1291,P73176
+64,NA,NA,rnb,sll1290,P73177
+64,NA,NA,sll1289,sll1289,P73178
+64,NA,NA,ftsH,slr1390,P73179
+64,NA,NA,slr1391,slr1391,P73180
+64,NA,NA,ssr2333,ssr2333,P73181
+64,NA,NA,feoB,slr1392,P73182
+65,NA,NA,hliA,ssl2542,P73183
+65,NA,NA,slr1393,slr1393,P73184
+65,NA,NA,slr1394,slr1394,P73185
+65,NA,NA,sll1286,sll1286,P73186
+65,NA,NA,slr1395,slr1395,P73187
+65,NA,NA,slr1396,slr1396,P73188
+65,NA,NA,slr1397,slr1397,P73189
+65,NA,NA,slr1398,slr1398,P73190
+65,Methane metabolism,syn00680,sll1285,sll1285,P73191
+65,NA,NA,sll1284,sll1284,P73192
+66,NA,NA,spoIID,sll1283,P73193
+66,NA,NA,slr1699,slr1699,P73194
+66,NA,NA,sll1584,sll1584,P73195
+66,NA,NA,lig,sll1583,P73196
+66,NA,NA,sll1582,sll1582,P73197
+66,Two-component system,syn02020,gumB,sll1581,P73198
+66,NA,NA,ssr2843,ssr2843,P73199
+66,NA,NA,slr1702,slr1702,P73200
+66,Aminoacyl-tRNA biosynthesis,syn00970,serS,slr1703,P73201
+66,Photosynthesis - antenna proteins,syn00196,cpcD,ssl3093,P73202
+67,Photosynthesis - antenna proteins,syn00196,cpcC,sll1580,P73203
+67,Photosynthesis - antenna proteins,syn00196,cpcC,sll1579,P73204
+67,Photosynthesis - antenna proteins,syn00196,cpcA,sll1578,Q54715
+67,Photosynthesis - antenna proteins,syn00196,cpcB,sll1577,Q54714
+67,NA,NA,ssr2848,ssr2848,P73206
+67,NA,NA,slr1704,slr1704,P73207
+67,NA,NA,sll1575,sll1575,Q9FAB3
+67,NA,NA,sll1574,sll1574,Q9FAB3
+67,NA,NA,sll1573,sll1573,P73210
+67,"Alanine, aspartate and glutamate metabolism",syn00250,aspA,slr1705,P73211
+68,NA,NA,dfrA,slr1706,P73212
+68,NA,NA,ssr2857,ssr2857,P73213
+68,NA,NA,slr1708,slr1708,P73214
+68,DNA replication,syn03030,dnaE,sll1572,P74750
+68,NA,NA,sll1571,sll1571,P73216
+68,NA,NA,sll1570,sll1570,P73217
+68,NA,NA,mrcB,slr1710,P73218
+68,NA,NA,sll1568,sll1568,P73219
+68,Quorum sensing,syn02024,sll1927,sll1927,P73220
+68,NA,NA,sll1926,sll1926,P73221
+69,NA,NA,slr2005,slr2005,P73222
+69,NA,NA,sll1925,sll1925,P73223
+69,NA,NA,slr2006,slr2006,P73224
+69,NA,NA,ndhD,slr2007,P73225
+69,NA,NA,slr2008,slr2008,P73226
+69,NA,NA,ndhF,slr2009,P73227
+69,NA,NA,slr2010,slr2010,P73228
+69,NA,NA,ssr3409,ssr3409,P73229
+69,NA,NA,ssr3410,ssr3410,P73230
+69,NA,NA,slr2011,slr2011,P73231
+70,NA,NA,slr2012,slr2012,P73232
+70,NA,NA,slr2013,slr2013,P73233
+70,NA,NA,sll1924,sll1924,P73234
+70,NA,NA,slr2015,slr2015,P73235
+70,NA,NA,slr2016,slr2016,P73236
+70,NA,NA,slr2017,slr2017,P73237
+70,NA,NA,slr2018,slr2018,P73238
+70,NA,NA,slr2019,slr2019,P73239
+70,NA,NA,sll1921,sll1921,P73240
+70,NA,NA,sll1920,sll1920,P73241
+71,Fatty acid biosynthesis,syn00061,fabD,slr2023,P73242
+71,NA,NA,slr2024,slr2024,P73243
+71,NA,NA,slr2025,slr2025,P73244
+71,NA,NA,hemN,sll1917,P73245
+71,Nicotinate and nicotinamide metabolism,syn00760,sll1916,sll1916,P73246
+71,NA,NA,sll1915,sll1915,P73247
+71,Folate biosynthesis,syn00790,folP,slr2026,P73248
+71,NA,NA,slr2027,slr2027,P73249
+71,NA,NA,sll1913,sll1913,P73250
+71,NA,NA,sll1912,sll1912,P73251
+72,NA,NA,ssl3615,ssl3615,P73252
+72,NA,NA,sll1911,sll1911,P73253
+72,RNA degradation,syn03018,zam,sll1910,Q46363
+72,NA,NA,slr2030,slr2030,P73255
+72,NA,NA,slr2031,slr2031,P73256
+72,Arginine biosynthesis,syn00220,argH,slr1133,P73257
+72,Purine metabolism,syn00230,slr1134,slr1134,P73258
+72,NA,NA,slr1135,slr1135,P73259
+72,NA,NA,sll1084,sll1084,P73260
+72,Oxidative phosphorylation,syn00190,ctaC,slr1136,Q06474
+73,Oxidative phosphorylation,syn00190,ctaD,slr1137,Q06473
+73,Oxidative phosphorylation,syn00190,ctaE,slr1138,Q06475
+73,NA,NA,trxA,slr1139,P73263
+73,NA,NA,slr1140,slr1140,P73264
+73,NA,NA,nrtD,sll1082,P73265
+73,NA,NA,sll1081,sll1081,P73266
+73,NA,NA,sll1080,sll1080,P73267
+73,NA,NA,hypB,sll1079,P73268
+73,NA,NA,sll1078,sll1078,P73269
+73,Arginine and proline metabolism,syn00330,speB,sll1077,P73270
+74,NA,NA,slr1142,slr1142,P73271
+74,NA,NA,slr1143,slr1143,P73272
+74,NA,NA,ziaA,sll1076,P73273
+74,Aminoacyl-tRNA biosynthesis,syn00970,leuS,sll1074,P73274
+74,NA,NA,gltS,slr1145,P73275
+74,NA,NA,slr1147,slr1147,P73276
+74,NA,NA,slr1148,slr1148,P73277
+74,ABC transporters,syn02010,slr1149,slr1149,P73278
+74,NA,NA,slr1150,slr1150,P73279
+74,NA,NA,sll1072,sll1072,P73280
+75,NA,NA,sll1071,sll1071,P73281
+75,Pentose phosphate pathway,syn00030,tktA,sll1070,P73282
+75,Fatty acid biosynthesis,syn00061,fabF,sll1069,P73283
+75,Metabolic pathways,syn01100,acp,ssl2084,P20804
+75,NA,NA,sll1068,sll1068,P73285
+75,NA,NA,ssl3451,ssl3451,P73286
+75,Porphyrin and chlorophyll metabolism,syn00860,bfr,slr1890,P73287
+75,NA,NA,sll1825,sll1825,P73288
+75,Ribosome,syn03010,sll1824,sll1824,P73289
+75,Purine metabolism,syn00230,purA,sll1823,P73290
+76,NA,NA,ssl3446,ssl3446,P73291
+76,Ribosome,syn03010,rpl31,ssl3445,P73292
+76,Ribosome,syn03010,rps9,sll1822,P73293
+76,Ribosome,syn03010,rpl13,sll1821,P73294
+76,NA,NA,truA,sll1820,P73295
+76,Ribosome,syn03010,rpl17,sll1819,P73296
+76,RNA polymerase,syn03020,rpoA,sll1818,P73297
+76,Ribosome,syn03010,rps11,sll1817,P73298
+76,Ribosome,syn03010,rps13,sll1816,P73299
+76,Ribosome,syn03010,rpl36,sml0006,P73300
+77,NA,NA,infA,ssl3441,P73301
+77,Purine metabolism,syn00230,adk,sll1815,P73302
+77,Quorum sensing,syn02024,secY,sll1814,P77964
+77,Ribosome,syn03010,rpl15,sll1813,P73303
+77,Ribosome,syn03010,rps5,sll1812,P73304
+77,Ribosome,syn03010,rpl18,sll1811,P73305
+77,Ribosome,syn03010,rpl6,sll1810,P73306
+77,Ribosome,syn03010,rps8,sll1809,P73307
+77,Ribosome,syn03010,rpl5,sll1808,P73308
+77,Ribosome,syn03010,rpl24,sll1807,P73309
+78,Ribosome,syn03010,rpl14,sll1806,P73310
+78,Ribosome,syn03010,rps17,ssl3437,P73311
+78,Ribosome,syn03010,rpl29,ssl3436,P73312
+78,Ribosome,syn03010,rpl16,sll1805,P73313
+78,Ribosome,syn03010,rps3,sll1804,P73314
+78,Ribosome,syn03010,rpl22,sll1803,P73315
+78,Ribosome,syn03010,rps19,ssl3432,P73316
+78,Ribosome,syn03010,rpl2,sll1802,P73317
+78,Ribosome,syn03010,rpl23,sll1801,P73318
+78,Ribosome,syn03010,rpl4,sll1800,P73319
+79,Ribosome,syn03010,rpl3,sll1799,P73320
+79,NA,NA,slr1894,slr1894,P73321
+79,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,ycf21,sll1797,P73322
+79,NA,NA,slr1895,slr1895,P73323
+79,NA,NA,slr1896,slr1896,P73324
+79,Photosynthesis,syn00195,petJ,sll1796,P46445
+79,ABC transporters,syn02010,srrA,slr1897,P73325
+79,Arginine biosynthesis,syn00220,argB,slr1898,P73326
+79,NA,NA,ureF,slr1899,P73327
+79,NA,NA,slr1900,slr1900,P73328
+80,NA,NA,slr1901,slr1901,P73329
+80,NA,NA,slr1902,slr1902,P73330
+80,NA,NA,slr1903,slr1903,P73331
+80,NA,NA,sll1792,sll1792,P73332
+80,NA,NA,sll1791,sll1791,P73333
+80,RNA polymerase,syn03020,rpoC2,sll1789,P73334
+80,RNA polymerase,syn03020,rpoB,sll1787,P77965
+80,NA,NA,sll1786,sll1786,P73335
+80,Ribosome,syn03010,rps20,ssl2233,P73336
+80,NA,NA,sll1124,sll1124,P73337
+81,NA,NA,sll1123,sll1123,P73338
+81,Nucleotide excision repair,syn03420,sll1121,sll1121,P73339
+81,NA,NA,sll1120,sll1120,P73340
+81,NA,NA,sll1119,sll1119,P73341
+81,NA,NA,slr1194,slr1194,P73342
+81,NA,NA,slr1195,slr1195,P73343
+81,NA,NA,slr1196,slr1196,P73344
+81,NA,NA,slr1197,slr1197,P73345
+81,NA,NA,sll1118,sll1118,P73346
+81,NA,NA,ssr2009,ssr2009,P73347
+82,NA,NA,slr1198,slr1198,P73348
+82,Mismatch repair,syn03430,mutL,slr1199,P73349
+82,ABC transporters,syn02010,livH,slr1200,P73350
+82,ABC transporters,syn02010,slr1201,slr1201,P73351
+82,ABC transporters,syn02010,lacF,slr1202,P73352
+82,NA,NA,slr1203,slr1203,P73353
+82,NA,NA,htrA,slr1204,P73354
+82,NA,NA,slr1205,slr1205,P73355
+82,NA,NA,slr1206,slr1206,P73356
+82,NA,NA,slr1207,slr1207,P73357
+83,NA,NA,ssr2016,ssr2016,P73358
+83,NA,NA,slr1208,slr1208,P73359
+83,NA,NA,slr1209,slr1209,P73360
+83,NA,NA,slr1210,slr1210,P73361
+83,Porphyrin and chlorophyll metabolism,syn00860,cobN,slr1211,P73362
+83,NA,NA,ETR1,slr1212,P73363
+83,NA,NA,slr1213,slr1213,P73364
+83,Two-component system,syn02020,slr1214,slr1214,P73365
+83,NA,NA,slr1215,slr1215,P73366
+83,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroQ,sll1112,P73367
+84,NA,NA,mgtE,slr1216,P73368
+84,NA,NA,sll1971,sll1971,P73369
+84,NA,NA,slr2070,slr2070,P73370
+84,NA,NA,slr2071,slr2071,P73371
+84,Glycerolipid metabolism,syn00561,sll1969,sll1969,P73372
+84,NA,NA,pmgA,sll1968,P73373
+84,NA,NA,sll1967,sll1967,P73374
+84,"Glycine, serine and threonine metabolism",syn00260,ilvA,slr2072,P73375
+84,NA,NA,slr2073,slr2073,P73376
+84,Fructose and mannose metabolism,syn00051,manA,slr2074,P73377
+85,NA,NA,sll1965,sll1965,P73378
+85,NA,NA,groES,slr2075,Q05971
+85,RNA degradation,syn03018,groEL,slr2076,Q05972
+85,NA,NA,slr2077,slr2077,P73380
+85,NA,NA,slr2078,slr2078,P73381
+85,NA,NA,ssl3712,ssl3712,P73382
+85,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroC,sll1747,P23353
+85,Ribosome,syn03010,rpl12,sll1746,P23349
+85,Ribosome,syn03010,rpl10,sll1745,P23350
+85,Ribosome,syn03010,rpl1,sll1744,P36236
+86,Ribosome,syn03010,rpl11,sll1743,P36237
+86,NA,NA,nusG,sll1742,P36265
+86,Quorum sensing,syn02024,secE,ssl3335,P38382
+86,Aminoacyl-tRNA biosynthesis,syn00970,trnW-CCA,trnW-CCA,NA
+86,Ribosome,syn03010,rpl19,sll1740,P36239
+86,NA,NA,slr1826,slr1826,P73383
+86,NA,NA,slr1827,slr1827,P73384
+86,NA,NA,sll1739,sll1739,P73385
+86,NA,NA,sll1738,sll1738,P73386
+86,NA,NA,sll1737,sll1737,P73387
+87,Photosynthesis,syn00195,petF,slr1828,P73388
+87,Butanoate metabolism,syn00650,slr1829,slr1829,P73389
+87,Butanoate metabolism,syn00650,phbC,slr1830,P73390
+87,NA,NA,sll1736,sll1736,P73391
+87,NA,NA,sll1735,sll1735,P73392
+87,NA,NA,sll1734,sll1734,P73393
+87,Oxidative phosphorylation,syn00190,ndhD3,sll1733,P73394
+87,Oxidative phosphorylation,syn00190,ndhF,sll1732,P73395
+87,NA,NA,sll1730,sll1730,P73396
+87,Photosynthesis,syn00195,psaA,slr1834,P29254
+88,Photosynthesis,syn00195,psaB,slr1835,P29255
+88,NA,NA,sll1726,sll1726,P73399
+88,NA,NA,sll1725,sll1725,P73400
+88,NA,NA,icsA,sll1724,P73401
+88,NA,NA,sll1723,sll1723,P73402
+88,NA,NA,sll1722,sll1722,P73403
+88,Two-component system,syn02020,slr1837,slr1837,P73404
+88,Glycolysis / Gluconeogenesis,syn00010,pdhB,sll1721,P73405
+88,NA,NA,ccmK,slr1838,P73406
+88,NA,NA,ccmK,slr1839,P73407
+89,"Glycine, serine and threonine metabolism",syn00260,slr1840,slr1840,P73408
+89,NA,NA,slr1841,slr1841,P73409
+89,Cysteine and methionine metabolism,syn00270,cysK,slr1842,P73410
+89,Pentose phosphate pathway,syn00030,zwf,slr1843,P73411
+89,Nucleotide excision repair,syn03420,uvrA,slr1844,P73412
+89,NA,NA,sll1717,sll1717,P73413
+89,NA,NA,sll1716,sll1716,P73414
+89,NA,NA,sll1715,sll1715,P73415
+89,NA,NA,sll1714,sll1714,P73416
+89,NA,NA,hisC,sll1713,P73417
+90,NA,NA,sll1712,sll1712,P73418
+90,NA,NA,sll1469,sll1469,P73419
+90,NA,NA,slr1535,slr1535,P73420
+90,RNA degradation,syn03018,recQ,slr1536,P73421
+90,NA,NA,slr1537,slr1537,P73422
+90,Porphyrin and chlorophyll metabolism,syn00860,cbiD,slr1538,P73423
+90,NA,NA,slr1540,slr1540,P73424
+90,NA,NA,slr1541,slr1541,P73425
+90,Terpenoid backbone biosynthesis,syn00900,slr1542,slr1542,P73426
+90,NA,NA,slr1543,slr1543,P73427
+91,Carotenoid biosynthesis,syn00906,bhy,sll1468,P73428
+91,NA,NA,ssr2595,ssr2595,P73429
+91,NA,NA,slr1544,slr1544,P73430
+91,NA,NA,rpoE,slr1545,P73431
+91,NA,NA,slr1546,slr1546,P73432
+91,NA,NA,slr1547,slr1547,P73433
+91,Aminoacyl-tRNA biosynthesis,syn00970,trnL-GAG,trnL-GAG,NA
+91,NA,NA,sll1466,sll1466,P73434
+91,Protein export,syn03060,ssl2823,ssl2823,P73435
+91,NA,NA,sll1464,sll1464,P73436
+92,NA,NA,ftsH,sll1463,P73437
+92,NA,NA,hypE,sll1462,P73438
+92,NA,NA,sll1461,sll1461,P73439
+92,Purine metabolism,syn00230,sll1459,sll1459,P73440
+92,NA,NA,def,slr1549,P73441
+92,NA,NA,ssr2611,ssr2611,P73442
+92,Aminoacyl-tRNA biosynthesis,syn00970,lysS,slr1550,P73443
+92,NA,NA,rfbJ,sll1457,P73444
+92,NA,NA,sll1456,sll1456,P73445
+92,NA,NA,slr1552,slr1552,P73446
+93,NA,NA,sll1455,sll1455,P73447
+93,Nitrogen metabolism,syn00910,narB,sll1454,P73448
+93,Nitrogen metabolism,syn00910,nrtD,sll1453,P73449
+93,Nitrogen metabolism,syn00910,nrtC,sll1452,P73450
+93,Nitrogen metabolism,syn00910,nrtB,sll1451,P73451
+93,Nitrogen metabolism,syn00910,nrtA,sll1450,P73452
+93,NA,NA,sll1634,sll1634,P73453
+93,Porphyrin and chlorophyll metabolism,syn00860,slr1748,slr1748,P73454
+93,NA,NA,repA,ssl3177,P73455
+93,NA,NA,ftsZ,sll1633,P73456
+94,NA,NA,sll1632,sll1632,P73457
+94,NA,NA,prc,slr1751,P73458
+94,NA,NA,slr1752,slr1752,P73459
+94,NA,NA,sll1144,sll1144,P73460
+94,NA,NA,slr1218,slr1218,P73461
+94,NA,NA,ureE,slr1219,P73462
+94,NA,NA,slr1220,slr1220,P73463
+94,NA,NA,slr1222,slr1222,P73464
+94,Nucleotide excision repair,syn03420,uvrD,sll1143,P73465
+94,NA,NA,sll1142,sll1142,P73466
+95,NA,NA,sulA,slr1223,P73467
+95,ABC transporters,syn02010,malK,slr1224,P73468
+95,NA,NA,pknA,slr1225,P73469
+95,Starch and sucrose metabolism,syn00500,sll1138,sll1138,P73470
+95,Purine metabolism,syn00230,purC,slr1226,P73471
+95,NA,NA,IAP75,slr1227,P73472
+95,NA,NA,prfC,slr1228,P73473
+95,NA,NA,slr1229,slr1229,P73474
+95,NA,NA,slr1230,slr1230,P73475
+95,NA,NA,sll1135,sll1135,P73476
+96,NA,NA,slr1232,slr1232,P73477
+96,NA,NA,ssr2047,ssr2047,P73478
+96,Citrate cycle (TCA cycle),syn00020,frdA,slr1233,P73479
+96,NA,NA,bchB,ssr2049,P73480
+96,NA,NA,slr1234,slr1234,P73481
+96,NA,NA,slr1235,slr1235,P73482
+96,NA,NA,slr1236,slr1236,P73483
+96,NA,NA,ssl2250,ssl2250,P73484
+96,NA,NA,sll1132,sll1132,P73485
+96,NA,NA,sll1131,sll1131,P73486
+97,Pyrimidine metabolism,syn00240,codA,slr1237,P73487
+97,NA,NA,sll1130,sll1130,P73488
+97,NA,NA,ssl2245,ssl2245,P73489
+97,NA,NA,todF,sll1129,P73490
+97,NA,NA,ssr2060,ssr2060,P73491
+97,NA,NA,grxC,ssr2061,P73492
+97,Cysteine and methionine metabolism,syn00270,gshB,slr1238,P73493
+97,NA,NA,ssr2062,ssr2062,P73494
+97,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,menB,sll1127,P73495
+97,Nicotinate and nicotinamide metabolism,syn00760,pntA,slr1239,P73496
+98,NA,NA,slr1240,slr1240,P73497
+98,NA,NA,slr1241,slr1241,P73498
+98,NA,NA,ssr2067,ssr2067,P73499
+98,Nicotinate and nicotinamide metabolism,syn00760,pntB,slr1434,P73500
+98,NA,NA,pmbA,slr1435,P73501
+98,NA,NA,slr1436,slr1436,P73502
+98,NA,NA,slr1437,slr1437,P73503
+98,NA,NA,slr1438,slr1438,P73504
+98,Aminoacyl-tRNA biosynthesis,syn00970,ileS,sll1362,P73505
+98,NA,NA,ssr2406,ssr2406,P73506
+99,DNA replication,syn03030,dnaX,sll1360,P73507
+99,NA,NA,slr1440,slr1440,P73508
+99,NA,NA,sll1359,sll1359,P73509
+99,Glyoxylate and dicarboxylate metabolism,syn00630,sll1358,sll1358,P73510
+99,Starch and sucrose metabolism,syn00500,glgP,sll1356,P73511
+99,NA,NA,slr1441,slr1441,P73512
+99,NA,NA,sll1355,sll1355,P73513
+99,NA,NA,slr1442,slr1442,P73514
+99,NA,NA,pknA,slr1443,P73515
+99,NA,NA,slr1444,slr1444,P73516
+100,NA,NA,ssr2422,ssr2422,P73517
+100,NA,NA,trnM-CAU,trnM-CAU,NA
+100,Base excision repair,syn03410,recJ,sll1354,P73518
+100,NA,NA,sll1353,sll1353,P73519
+100,NA,NA,sll1352,sll1352,P73520
+100,Fructose and mannose metabolism,syn00051,cscK,slr1448,P73521
+100,NA,NA,slr1449,slr1449,P73522
+100,NA,NA,slr1450,slr1450,P73523
+100,NA,NA,sll1350,sll1350,P73524
+100,Glyoxylate and dicarboxylate metabolism,syn00630,cbbZp,sll1349,P73525
+101,NA,NA,sll1348,sll1348,P73526
+101,Riboflavin metabolism,syn00740,ribH,sll1282,P73527
+101,Photosynthesis,syn00195,ycf9,sll1281,P73528
+101,Aminoacyl-tRNA biosynthesis,syn00970,trnL-CAA,trnL-CAA,NA
+101,NA,NA,sll1280,sll1280,P73529
+101,Ribosome,syn03010,rps1,slr1356,P73530
+101,NA,NA,slr1357,slr1357,P73531
+101,Homologous recombination,syn03440,recF,sll1277,P73532
+101,NA,NA,sll1276,sll1276,P73533
+101,Glycolysis / Gluconeogenesis,syn00010,pykF,sll1275,P73534
+102,NA,NA,slr1362,slr1362,P73535
+102,NA,NA,sll1274,sll1274,P73536
+102,NA,NA,slr1363,slr1363,P73537
+102,Biotin metabolism,syn00780,bioB,slr1364,P73538
+102,ABC transporters,syn02010,bioY,slr1365,P73539
+102,Protein export,syn03060,lspA,slr1366,P73540
+102,NA,NA,sll1273,sll1273,P73541
+102,NA,NA,sll1272,sll1272,P73542
+102,NA,NA,sll1271,sll1271,P73543
+102,ABC transporters,syn02010,glnH_glnP,sll1270,P73544
+103,NA,NA,ssl2501,ssl2501,P73545
+103,Starch and sucrose metabolism,syn00500,glgP,slr1367,P73546
+103,Porphyrin and chlorophyll metabolism,syn00860,cbiT,slr1368,P73547
+103,Glycerophospholipid metabolism,syn00564,cdsA,slr1369,P73548
+103,NA,NA,sll1268,sll1268,P73549
+103,NA,NA,sll1267,sll1267,P73550
+103,NA,NA,sll1265,sll1265,P73551
+103,NA,NA,sll0877,sll0877,P73552
+103,NA,NA,mscL,slr0875,P73553
+103,Homologous recombination,syn03440,ruvA,sll0876,P73554
+104,NA,NA,sll0875,sll0875,P73555
+104,Sulfur metabolism,syn00920,slr0876,slr0876,P73556
+104,NA,NA,ssr1480,ssr1480,P73557
+104,Aminoacyl-tRNA biosynthesis,syn00970,slr0877,slr0877,P73558
+104,NA,NA,slr0878,slr0878,P73559
+104,"Glycine, serine and threonine metabolism",syn00260,gcvH,slr0879,P73560
+104,NA,NA,slr0880,slr0880,P73561
+104,Arginine and proline metabolism,syn00330,napC,sll0873,P73562
+104,NA,NA,ssl1633,ssl1633,P73563
+104,NA,NA,slr0881,slr0881,P73564
+105,NA,NA,sll0872,sll0872,P73565
+105,ABC transporters,syn02010,slr0882,slr0882,P73566
+105,NA,NA,psr,slr0883,P73567
+105,NA,NA,sll0871,sll0871,P73568
+105,Glycolysis / Gluconeogenesis,syn00010,gap1,slr0884,P49433
+105,NA,NA,slr0885,slr0885,P73570
+105,NA,NA,aat,sll0869,P73571
+105,Lipoic acid metabolism,syn00785,lipA,sll0868,P73572
+105,NA,NA,sll0867,sll0867,P73573
+105,Fatty acid biosynthesis,syn00061,fabG,slr0886,P73574
+106,Folate biosynthesis,syn00790,slr0887,slr0887,P73575
+106,NA,NA,slr0888,slr0888,P73576
+106,NA,NA,slr0889,slr0889,P73577
+106,NA,NA,ssr1499,ssr1499,P73578
+106,NA,NA,slr0890,slr0890,P73579
+106,Nucleotide excision repair,syn03420,uvrC,sll0865,P73580
+106,Cationic antimicrobial peptide (CAMP) resistance,syn01503,amiA,slr0891,P73581
+106,NA,NA,sll0864,sll0864,P73582
+106,NA,NA,sll0863,sll0863,P73583
+106,NA,NA,sll0862,sll0862,P73584
+107,Amino sugar and nucleotide sugar metabolism,syn00520,sll0861,sll0861,P73585
+107,NA,NA,sll0860,sll0860,P73586
+107,Photosynthesis,syn00195,petA,sll1317,P26287
+107,Photosynthesis,syn00195,petC,sll1316,P26290
+107,Photosynthesis,syn00195,psbH,ssl2598,P14835
+107,NA,NA,psbN,smr0009,P26286
+107,NA,NA,ssl2595,ssl2595,P73587
+107,NA,NA,sll1315,sll1315,P73588
+107,NA,NA,dctP,sll1314,P73589
+107,NA,NA,slr1403,slr1403,P73590
+108,NA,NA,sll1308,sll1308,P73591
+108,NA,NA,slr1406,slr1406,P73592
+108,NA,NA,slr1407,slr1407,P73593
+108,NA,NA,slr1409,slr1409,P73594
+108,NA,NA,slr1410,slr1410,P73595
+108,NA,NA,sll1307,sll1307,P73596
+108,NA,NA,sll1306,sll1306,P73597
+108,NA,NA,sll1305,sll1305,P73598
+108,NA,NA,sll1304,sll1304,P73599
+108,NA,NA,sll1785,sll1785,P73600
+109,NA,NA,sll1784,sll1784,P73601
+109,NA,NA,sll1783,sll1783,P73602
+109,NA,NA,slr1852,slr1852,P73603
+109,NA,NA,slr1853,slr1853,P73604
+109,NA,NA,slr1854,slr1854,P73605
+109,NA,NA,slr1855,slr1855,P73606
+109,NA,NA,slr1856,slr1856,P73607
+109,Starch and sucrose metabolism,syn00500,glgX,slr1857,P73608
+109,NA,NA,slr1859,slr1859,P73609
+109,NA,NA,ICFG,slr1860,P37979
+110,NA,NA,slr1861,slr1861,P73611
+110,NA,NA,slr1862,slr1862,P73612
+110,NA,NA,sll1780,sll1780,Q55566
+110,NA,NA,slr1863,slr1863,P73613
+110,NA,NA,slr1864,slr1864,P73614
+110,NA,NA,slr1865,slr1865,P73615
+110,NA,NA,slr1866,slr1866,P73616
+110,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,trpD,slr1867,P73617
+110,Pentose phosphate pathway,syn00030,deoC,sll1776,P73618
+110,Other glycan degradation,syn00511,sll1775,sll1775,P73619
+111,NA,NA,sll1774,sll1774,P73620
+111,NA,NA,slr1869,slr1869,P73621
+111,NA,NA,slr1870,slr1870,P73622
+111,NA,NA,sll1773,sll1773,P73623
+111,NA,NA,slr1871,slr1871,P73624
+111,Mismatch repair,syn03430,mutS,sll1772,P73625
+111,NA,NA,sll1771,sll1771,P73626
+111,NA,NA,sll1770,sll1770,P73627
+111,NA,NA,sll1769,sll1769,P73628
+111,NA,NA,ssl3383,ssl3383,P73629
+112,NA,NA,ssl3382,ssl3382,P73630
+112,Quorum sensing,syn02024,sll1768,sll1768,P73631
+112,D-Alanine metabolism,syn00473,ddlA,slr1874,P73632
+112,NA,NA,exoD,slr1875,P73633
+112,NA,NA,ssl3379,ssl3379,P73634
+112,NA,NA,slr1876,slr1876,P73635
+112,Ribosome,syn03010,rps6,sll1767,P73636
+112,NA,NA,hpcE,slr1877,P73637
+112,Photosynthesis - antenna proteins,syn00196,cpcE,slr1878,P73638
+112,NA,NA,aslB,sll1766,P73639
+113,NA,NA,sll1765,sll1765,P73640
+113,NA,NA,sll1764,sll1764,P73641
+113,NA,NA,sll1763,sll1763,P73642
+113,NA,NA,sll1762,sll1762,P73643
+113,Porphyrin and chlorophyll metabolism,syn00860,cbiL,slr1879,P73644
+113,NA,NA,sll1761,sll1761,P73645
+113,"Glycine, serine and threonine metabolism",syn00260,thrB,sll1760,P73646
+113,NA,NA,slr1880,slr1880,P73647
+113,Amino sugar and nucleotide sugar metabolism,syn00520,sll1758,sll1758,P73648
+113,NA,NA,ssr3184,ssr3184,P73649
+114,ABC transporters,syn02010,livF,slr1881,P73650
+114,Riboflavin metabolism,syn00740,slr1882,slr1882,P73651
+114,NA,NA,sll1757,sll1757,P73652
+114,NA,NA,ssr3188,ssr3188,P73653
+114,NA,NA,ssl3364,ssl3364,P73654
+114,Aminoacyl-tRNA biosynthesis,syn00970,trpS,slr1884,P73655
+114,NA,NA,ssr3189,ssr3189,P73656
+114,NA,NA,slr1885,slr1885,P73657
+114,NA,NA,slr1886,slr1886,P73658
+114,NA,NA,sll1755,sll1755,P73659
+115,Porphyrin and chlorophyll metabolism,syn00860,hemC,slr1887,P73660
+115,NA,NA,slr1888,slr1888,P73661
+115,Taurine and hypotaurine metabolism,syn00430,pta,slr2132,P73662
+115,NA,NA,sll2015,sll2015,P73663
+115,NA,NA,sfsA,sll2014,P73664
+115,NA,NA,sll2013,sll2013,P73665
+115,NA,NA,rpoD,sll2012,P73666
+115,Folate biosynthesis,syn00790,sll2011,sll2011,P73667
+115,D-Glutamine and D-glutamate metabolism,syn00471,murD,sll2010,P73668
+115,NA,NA,sll2009,sll2009,P73669
+116,NA,NA,sll2008,sll2008,P73670
+116,NA,NA,hupE,slr2135,P73671
+116,Terpenoid backbone biosynthesis,syn00900,gcpE,slr2136,P73672
+116,NA,NA,sll2007,sll2007,P73673
+116,NA,NA,sll2006,sll2006,P73674
+116,NA,NA,gyrB,sll2005,P77966
+116,NA,NA,ssl3829,ssl3829,P73675
+116,Photosynthesis,syn00195,ycf32,sml0007,P73676
+116,NA,NA,slr2141,slr2141,P73677
+116,NA,NA,sll2003,sll2003,P73678
+117,NA,NA,cefD,slr2143,P73679
+117,NA,NA,sll2002,sll2002,P73680
+117,NA,NA,slr2144,slr2144,P73681
+117,Mismatch repair,syn03430,mbpA,slr1803,P73682
+117,NA,NA,sll1710,sll1710,P73683
+117,Pentose phosphate pathway,syn00030,gdh,sll1709,P73684
+117,NA,NA,ssl3291,ssl3291,P73685
+117,NA,NA,sll1708,sll1708,P73686
+117,NA,NA,slr1805,slr1805,P73687
+117,NA,NA,csgA,sll1704,P73688
+118,NA,NA,sppA,sll1703,P73689
+118,NA,NA,sll1702,sll1702,P73690
+118,NA,NA,slr1807,slr1807,P73691
+118,Porphyrin and chlorophyll metabolism,syn00860,hemA,slr1808,P28463
+118,NA,NA,slr1809,slr1809,P73692
+118,Quorum sensing,syn02024,sll1699,sll1699,P73693
+118,NA,NA,sll1698,sll1698,P73694
+118,NA,NA,sll1697,sll1697,P73695
+118,NA,NA,slr1811,slr1811,P73696
+118,NA,NA,slr1812,slr1812,P73697
+119,NA,NA,slr1813,slr1813,P73698
+119,NA,NA,slr1814,slr1814,P73699
+119,NA,NA,slr1815,slr1815,P73700
+119,NA,NA,slr1816,slr1816,P73701
+119,NA,NA,sll1696,sll1696,P73702
+119,Two-component system,syn02020,hofG,sll1695,P73703
+119,Two-component system,syn02020,hofG,sll1694,P73704
+119,NA,NA,sll1693,sll1693,P73705
+119,NA,NA,slr1818,slr1818,P73706
+119,NA,NA,sll1692,sll1692,P73707
+120,NA,NA,sll1691,sll1691,P73708
+120,NA,NA,slr1819,slr1819,P73709
+120,NA,NA,rpoD,sll1689,P73710
+120,"Glycine, serine and threonine metabolism",syn00260,thrC,sll1688,P73711
+120,NA,NA,slr1820,slr1820,P73712
+120,NA,NA,sll1687,sll1687,P73713
+120,NA,NA,slr1821,slr1821,P73714
+120,Base excision repair,syn03410,nth,slr1822,P73715
+120,NA,NA,slr1732,slr1732,P73716
+120,NA,NA,sll1631,sll1631,P73717
+121,NA,NA,sll1630,sll1630,P73718
+121,NA,NA,phr,sll1629,P77967
+121,NA,NA,sll1628,sll1628,P73719
+121,NA,NA,opcA,slr1734,P73720
+121,ABC transporters,syn02010,slr1735,slr1735,P73721
+121,NA,NA,lexA,sll1626,P73722
+121,Citrate cycle (TCA cycle),syn00020,sdhB,sll1625,P73723
+121,NA,NA,sll1624,sll1624,P73724
+121,ABC transporters,syn02010,sll1623,sll1623,P73725
+122,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,slr1736,slr1736,P73726
+122,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,slr1737,slr1737,P73727
+122,NA,NA,sll1621,sll1621,P73728
+122,NA,NA,slr1738,slr1738,P73729
+122,NA,NA,sll1620,sll1620,P73730
+122,Photosynthesis,syn00195,slr1739,slr1739,P73731
+122,Quorum sensing,syn02024,slr1740,slr1740,P73732
+122,Aminoacyl-tRNA biosynthesis,syn00970,trnD-GUC,trnD-GUC,NA
+122,NA,NA,sll1618,sll1618,P73733
+122,Peptidoglycan biosynthesis,syn00550,slr1742,slr1742,P73734
+123,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,ndh,slr1743,P73735
+123,Cationic antimicrobial peptide (CAMP) resistance,syn01503,amiA,slr1744,P73736
+123,D-Glutamine and D-glutamate metabolism,syn00471,murI,slr1746,P73737
+123,NA,NA,slr1747,slr1747,P73738
+123,Oxidative phosphorylation,syn00190,ndh,slr0851,P73739
+123,NA,NA,slr0852,slr0852,P73740
+123,NA,NA,rimI,slr0853,P73741
+123,NA,NA,phr,slr0854,Q55081
+123,NA,NA,sll0858,sll0858,P73742
+123,NA,NA,sll0857,sll0857,P73743
+124,NA,NA,rpoE,sll0856,P73744
+124,NA,NA,sll0855,sll0855,P73745
+124,NA,NA,sll0854,sll0854,P73746
+124,NA,NA,sll0853,sll0853,P73747
+124,NA,NA,slr0856,slr0856,P73748
+124,NA,NA,slr0857,slr0857,Q55696
+124,Photosynthesis,syn00195,psbC,sll0851,P09193
+124,Photosynthesis,syn00195,psbD,sll0849,P09192
+124,Two-component system,syn02020,dnaA,sll0848,P49995
+124,NA,NA,sll0847,sll0847,P73751
+125,Purine metabolism,syn00230,purT,slr0861,Q55336
+125,NA,NA,sll0846,sll0846,P73752
+125,Lipopolysaccharide biosynthesis,syn00540,lmbP,slr0862,P73753
+125,NA,NA,slr0863,slr0863,P73754
+125,Sulfur relay system,syn04122,sll0844,sll0844,P73755
+125,NA,NA,sll0843,sll0843,P73756
+125,Starch and sucrose metabolism,syn00500,nplT,sll0842,P73757
+125,NA,NA,slr0864,slr0864,P73758
+125,NA,NA,slr0865,slr0865,P73759
+125,NA,NA,sll0839,sll0839,P73760
+126,Pyrimidine metabolism,syn00240,pyrF,sll0838,P73761
+126,NA,NA,sll0837,sll0837,P73762
+126,NA,NA,slr0867,slr0867,P73763
+126,NA,NA,slr0868,slr0868,P73764
+126,NA,NA,slr0869,slr0869,P73765
+126,NA,NA,slr0870,slr0870,P73766
+126,NA,NA,slr0871,slr0871,P73767
+126,NA,NA,slr0872,slr0872,P73768
+126,Mismatch repair,syn03430,mutS,sll1165,P73769
+126,NA,NA,slr1243,slr1243,P73770
+127,NA,NA,sll1164,sll1164,P73771
+127,NA,NA,sll1163,sll1163,P73772
+127,NA,NA,sll1162,sll1162,P73773
+127,Purine metabolism,syn00230,sll1161,sll1161,P73774
+127,NA,NA,sll1160,sll1160,P73775
+127,NA,NA,sll1159,sll1159,P73776
+127,NA,NA,sll1158,sll1158,P73777
+127,NA,NA,slr1245,slr1245,P73778
+127,NA,NA,ssr2078,ssr2078,P73779
+127,NA,NA,slr1246,slr1246,P73780
+128,NA,NA,sll1157,sll1157,P73781
+128,NA,NA,sll1156,sll1156,P73782
+128,NA,NA,sll1155,sll1155,P73783
+128,NA,NA,norA,sll1154,P73784
+128,ABC transporters,syn02010,pstS,slr1247,P73785
+128,ABC transporters,syn02010,pstC,slr1248,P73786
+128,ABC transporters,syn02010,pstA,slr1249,P73787
+128,ABC transporters,syn02010,pstB,slr1250,P73788
+128,NA,NA,cyp,slr1251,P73789
+128,Folate biosynthesis,syn00790,dcoH,ssl2296,P73790
+129,NA,NA,sll1151,sll1151,P73791
+129,NA,NA,ssr2087,ssr2087,P73792
+129,NA,NA,sll1150,sll1150,P73793
+129,NA,NA,slr1253,slr1253,P73794
+129,Carotenoid biosynthesis,syn00906,pds,slr1254,P29273
+129,Carotenoid biosynthesis,syn00906,pys,slr1255,P37294
+129,Glutathione metabolism,syn00480,sll1147,sll1147,P73795
+129,Arginine biosynthesis,syn00220,ureA,slr1256,P73796
+129,Aminoacyl-tRNA biosynthesis,syn00970,trnE-UUC,trnE-UUC,NA
+129,NA,NA,slr1257,slr1257,P73797
+130,NA,NA,slr1258,slr1258,P73798
+130,NA,NA,slr1259,slr1259,P73799
+130,NA,NA,slr1260,slr1260,P73800
+130,NA,NA,slr1261,slr1261,P73801
+130,NA,NA,slr1262,slr1262,P73802
+130,NA,NA,slr1263,slr1263,P73803
+130,NA,NA,sll1961,sll1961,P73804
+130,NA,NA,sll1960,sll1960,P73805
+130,NA,NA,suhB,sll1959,P73806
+130,Histidine metabolism,syn00340,hisC,sll1958,P73807
+131,NA,NA,arsA,sll1957,P73808
+131,NA,NA,apqZ,slr2057,P73809
+131,NA,NA,topA,slr2058,P73810
+131,Cysteine and methionine metabolism,syn00270,slr2059,slr2059,P73811
+131,NA,NA,slr2060,slr2060,P73812
+131,NA,NA,sll1956,sll1956,P73813
+131,NA,NA,sll1954,sll1954,P73814
+131,NA,NA,ssl3692,ssl3692,P73815
+131,NA,NA,slr2062,slr2062,P73816
+131,NA,NA,sll1951,sll1951,P73817
+132,NA,NA,sll1950,sll1950,P73818
+132,NA,NA,sll1949,sll1949,P73819
+132,Photosynthesis - antenna proteins,syn00196,apcA,slr2067,Q01951
+132,Photosynthesis - antenna proteins,syn00196,apcB,slr1986,Q01952
+132,Photosynthesis - antenna proteins,syn00196,apcC,ssr3383,Q01950
+132,NA,NA,prmA,sll1909,P73820
+132,"Glycine, serine and threonine metabolism",syn00260,serA,sll1908,P73821
+132,NA,NA,slr1990,slr1990,P73822
+132,Purine metabolism,syn00230,cyaA,slr1991,P73823
+132,NA,NA,slr1992,slr1992,P73824
+133,Fatty acid degradation,syn00071,thl,slr1993,P73825
+133,Glyoxylate and dicarboxylate metabolism,syn00630,fabG,slr1994,P73826
+133,NA,NA,sll1906,sll1906,P73827
+133,NA,NA,sll1905,sll1905,P73828
+133,NA,NA,slr1998,slr1998,P73829
+133,NA,NA,slr1999,slr1999,P73830
+133,NA,NA,slr2000,slr2000,P73831
+133,NA,NA,slr2001,slr2001,P73832
+133,NA,NA,slr2002,slr2002,P73833
+133,NA,NA,slr2003,slr2003,P73834
+134,Glutathione metabolism,syn00480,sll1902,sll1902,P73835
+134,NA,NA,ssr3402,ssr3402,P73836
+134,NA,NA,slr2004,slr2004,P73837
+134,NA,NA,slr1712,slr1712,P73838
+134,NA,NA,thdF,sll1615,P73839
+134,NA,NA,pma1,sll1614,P37367
+134,NA,NA,sll1613,sll1613,P73841
+134,Folate biosynthesis,syn00790,folC,sll1612,P73842
+134,NA,NA,sll1611,sll1611,P73843
+134,NA,NA,slr1715,slr1715,Q55697
+135,NA,NA,slr1716,slr1716,Q55696
+135,NA,NA,sll1609,sll1609,P73844
+135,NA,NA,sll1608,sll1608,P73845
+135,NA,NA,slr1717,slr1717,P73846
+135,NA,NA,sll1606,sll1606,P73847
+135,Fatty acid biosynthesis,syn00061,fabZ,sll1605,P73848
+135,Methane metabolism,syn00680,slr1718,slr1718,P73849
+135,NA,NA,drgA,slr1719,Q55233
+135,Aminoacyl-tRNA biosynthesis,syn00970,aspS,slr1720,P73851
+135,NA,NA,slr1721,slr1721,P73852
+136,Purine metabolism,syn00230,guaB,slr1722,P73853
+136,ABC transporters,syn02010,lacG,slr1723,P73854
+136,NA,NA,sll1601,sll1601,P73855
+136,NA,NA,slr1724,slr1724,P73856
+136,NA,NA,ssl3127,ssl3127,P73857
+136,ABC transporters,syn02010,mntB,sll1600,Q55282
+136,ABC transporters,syn02010,mntA,sll1599,Q55281
+136,ABC transporters,syn02010,mntC,sll1598,Q79EF9
+136,NA,NA,ssr2898,ssr2898,P73858
+136,NA,NA,sll1596,sll1596,P73859
+137,NA,NA,sll1595,sll1595,P73860
+137,NA,NA,slr1726,slr1726,P73861
+137,NA,NA,rbcR,sll1594,P73862
+137,NA,NA,slr1727,slr1727,P73863
+137,NA,NA,sll1592,sll1592,P73864
+137,NA,NA,sll1590,sll1590,P73865
+137,Two-component system,syn02020,kdpA,slr1728,P73866
+137,Two-component system,syn02020,kdpB,slr1729,P73867
+137,NA,NA,ssr2912,ssr2912,P73868
+137,Two-component system,syn02020,kdpC,slr1730,P73869
+138,Two-component system,syn02020,kdpD,slr1731,P73870
+138,NA,NA,sll1586,sll1586,P73871
+138,Carotenoid biosynthesis,syn00906,sll0254,sll0254,P73872
+138,NA,NA,sll0253,sll0253,P73873
+138,Porphyrin and chlorophyll metabolism,syn00860,cobA,slr0260,P73874
+138,NA,NA,ssl0467,ssl0467,P73875
+138,NA,NA,sll0252,sll0252,P73876
+138,Oxidative phosphorylation,syn00190,ndhH,slr0261,P27724
+138,NA,NA,slr0262,slr0262,P73877
+138,NA,NA,slr0263,slr0263,P73878
+139,NA,NA,slr0264,slr0264,P73879
+139,NA,NA,slr0265,slr0265,P73880
+139,Pantothenate and CoA biosynthesis,syn00770,dfp,sll0250,P73881
+139,NA,NA,ssl0461,ssl0461,P73882
+139,NA,NA,sll0249,sll0249,P73883
+139,NA,NA,isiB,sll0248,P27319
+139,NA,NA,isiA,sll0247,Q55274
+139,NA,NA,slr0267,slr0267,P73885
+139,NA,NA,sll0245,sll0245,P73886
+139,Galactose metabolism,syn00052,galE,sll0244,P73887
+140,NA,NA,slr0269,slr0269,P73888
+140,NA,NA,slr0270,slr0270,P73889
+140,NA,NA,nblA,ssl0453,P73890
+140,NA,NA,nblA,ssl0452,P73891
+140,NA,NA,slr0271,slr0271,P73892
+140,NA,NA,slr0272,slr0272,P73893
+140,NA,NA,slr0273,slr0273,P73894
+140,NA,NA,sll0243,sll0243,P73895
+140,NA,NA,sll0242,sll0242,P73896
+140,NA,NA,sll0241,sll0241,P73897
+141,ABC transporters,syn02010,sll0240,sll0240,P73898
+141,ABC transporters,syn02010,sll0238,sll0238,P73899
+141,ABC transporters,syn02010,sll0237,sll0237,P73900
+141,NA,NA,ssl0438,ssl0438,P73901
+141,NA,NA,sll0236,sll0236,P73902
+141,Arginine biosynthesis,syn00220,slr2079,slr2079,P73903
+141,NA,NA,ssr3532,ssr3532,P73904
+141,NA,NA,slr2080,slr2080,P73905
+141,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,tyrA,slr2081,P73906
+141,Oxidative phosphorylation,syn00190,ctaD,slr2082,P73907
+142,Oxidative phosphorylation,syn00190,ctaE,slr2083,P73908
+142,NA,NA,slr2084,slr2084,P73909
+142,NA,NA,sll1988,sll1988,P73910
+142,Phenylalanine metabolism,syn00360,katG,sll1987,P73911
+142,NA,NA,ycf44,slr2087,P73912
+142,"Valine, leucine and isoleucine biosynthesis",syn00290,ilvG,slr2088,P73913
+142,Sesquiterpenoid and triterpenoid biosynthesis,syn00909,shc,slr2089,P73914
+142,Aminoacyl-tRNA biosynthesis,syn00970,trnP-UGG,trnP-UGG,NA
+142,NA,NA,sll1985,sll1985,P73915
+142,NA,NA,sll1984,sll1984,Q55696
+143,NA,NA,sll1983,sll1983,Q55697
+143,NA,NA,sll1982,sll1982,P73916
+143,NA,NA,slr2092,slr2092,P73917
+143,"Valine, leucine and isoleucine biosynthesis",syn00290,ilvB,sll1981,P73918
+143,NA,NA,ssl3769,ssl3769,P73919
+143,NA,NA,trxA,sll1980,P73920
+143,NA,NA,sll1979,sll1979,P73921
+143,Glycolysis / Gluconeogenesis,syn00010,glpX,slr2094,P73922
+143,NA,NA,slr2095,slr2095,P73923
+143,NA,NA,slr2096,slr2096,P73924
+144,NA,NA,glbN,slr2097,P73925
+144,NA,NA,slr2098,slr2098,P73926
+144,NA,NA,slr2099,slr2099,P73927
+144,NA,NA,slr2100,slr2100,P73928
+144,NA,NA,slr2101,slr2101,P73929
+144,Quorum sensing,syn02024,ftsY,slr2102,P73930
+144,NA,NA,slr2103,slr2103,P73931
+144,NA,NA,slr2104,slr2104,P73932
+144,Glycerolipid metabolism,syn00561,sll1973,sll1973,P73933
+144,NA,NA,slr2105,slr2105,P73934
+145,Purine metabolism,syn00230,apt,sll1430,P73935
+145,NA,NA,sll1429,sll1429,P73936
+145,NA,NA,ssl2789,ssl2789,P73937
+145,NA,NA,sll1428,sll1428,P73938
+145,Vitamin B6 metabolism,syn00750,slr1503,slr1503,P73939
+145,NA,NA,hhoB,sll1427,P73940
+145,NA,NA,sll1426,sll1426,P73941
+145,Aminoacyl-tRNA biosynthesis,syn00970,proS,sll1425,P73942
+145,NA,NA,slr1505,slr1505,P73943
+145,NA,NA,sll1424,sll1424,P73944
+146,NA,NA,ntcA,sll1423,P33779
+146,NA,NA,ssl2781,ssl2781,P73945
+146,NA,NA,slr1506,slr1506,P73946
+146,NA,NA,slr1507,slr1507,P73947
+146,NA,NA,slr1508,slr1508,P73948
+146,NA,NA,ntpJ,slr1509,P73949
+146,Glycerolipid metabolism,syn00561,plsX,slr1510,P73950
+146,Fatty acid biosynthesis,syn00061,fabH,slr1511,P73951
+146,Photosynthesis,syn00195,sll1418,sll1418,P73952
+146,NA,NA,slr1512,slr1512,P73953
+147,NA,NA,slr1513,slr1513,P73954
+147,Nicotinate and nicotinamide metabolism,syn00760,sll1415,sll1415,P73955
+147,NA,NA,sll1414,sll1414,P73956
+147,NA,NA,ssr2549,ssr2549,P73957
+147,NA,NA,slr1515,slr1515,P73958
+147,NA,NA,ssr2551,ssr2551,P73959
+147,NA,NA,sodB,slr1516,P77968
+147,"Valine, leucine and isoleucine biosynthesis",syn00290,leuB,slr1517,P73960
+147,NA,NA,ssr2554,ssr2554,P73961
+147,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,menA,slr1518,P73962
+148,NA,NA,hglK,slr1519,P73963
+148,NA,NA,slr1520,slr1520,P73964
+148,NA,NA,hflX,slr1521,P73965
+148,NA,NA,slr1522,slr1522,P73966
+148,NA,NA,slr1523,slr1523,P73967
+148,NA,NA,slr1524,slr1524,P73968
+148,NA,NA,sll1411,sll1411,P73969
+148,NA,NA,ssl2749,ssl2749,P73970
+148,Glutathione metabolism,syn00480,lap,sll2001,P73971
+148,Aminoacyl-tRNA biosynthesis,syn00970,trnF-GAA,trnF-GAA,NA
+149,NA,NA,ssr3570,ssr3570,P73972
+149,NA,NA,ssr3571,ssr3571,P73973
+149,ABC transporters,syn02010,kpsM,slr2107,P73974
+149,ABC transporters,syn02010,kpsT,slr2108,P73975
+149,NA,NA,sll1999,sll1999,P97153
+149,NA,NA,sll1998,sll1998,P73976
+149,NA,NA,sll1997,sll1997,P73977
+149,NA,NA,slr2110,slr2110,P73978
+149,NA,NA,slr2111,slr2111,P73979
+149,NA,NA,slr2112,slr2112,P73980
+150,NA,NA,slr2113,slr2113,Q55696
+150,Amino sugar and nucleotide sugar metabolism,syn00520,spsC,slr2114,P73981
+150,NA,NA,slr2115,slr2115,P73982
+150,NA,NA,spsA,slr2116,P73983
+150,NA,NA,slr2117,slr2117,P73984
+150,NA,NA,slr2118,slr2118,P73985
+150,NA,NA,slr2119,slr2119,P73986
+150,NA,NA,slr2120,slr2120,P73987
+150,Tryptophan metabolism,syn00380,slr2121,slr2121,P73988
+150,NA,NA,slr2122,slr2122,P73989
+151,NA,NA,slr2123,slr2123,P73990
+151,NA,NA,slr2124,slr2124,P73991
+151,NA,NA,slr2125,slr2125,P73992
+151,NA,NA,slr2126,slr2126,P73993
+151,NA,NA,slr2127,slr2127,P73994
+151,NA,NA,slr2128,slr2128,P73995
+151,NA,NA,sll1995,sll1995,P73996
+151,Porphyrin and chlorophyll metabolism,syn00860,hemB,sll1994,P77969
+151,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroB,slr2130,P73997
+151,NA,NA,slr2131,slr2131,P73998
+152,NA,NA,sll1241,sll1241,P73999
+152,NA,NA,sll1240,sll1240,P74000
+152,NA,NA,sll1239,sll1239,P74001
+152,NA,NA,slr1322,slr1322,P74002
+152,NA,NA,hemK,sll1237,P74003
+152,NA,NA,slr1324,slr1324,P74004
+152,NA,NA,ssr2194,ssr2194,P74005
+152,NA,NA,sll1236,sll1236,P74006
+152,Purine metabolism,syn00230,spoT,slr1325,P74007
+152,Cysteine and methionine metabolism,syn00270,ahcY,sll1234,P74008
+153,NA,NA,ssr2201,ssr2201,P74009
+153,NA,NA,slr1327,slr1327,P74010
+153,NA,NA,sll1233,sll1233,P74011
+153,NA,NA,sll1232,sll1232,P74012
+153,NA,NA,mtfB,sll1231,P74013
+153,NA,NA,sll1229,sll1229,P74014
+153,NA,NA,sll1228,sll1228,P74015
+153,Oxidative phosphorylation,syn00190,atpB,slr1329,P26527
+153,Oxidative phosphorylation,syn00190,atpE,slr1330,P26533
+153,NA,NA,ymxG,slr1331,P74016
+154,Fatty acid biosynthesis,syn00061,fabF,slr1332,P74017
+154,NA,NA,hoxH,sll1226,P74018
+154,NA,NA,sll1225,sll1225,P74019
+154,NA,NA,ssl2420,ssl2420,P74020
+154,NA,NA,hoxY,sll1224,P74021
+154,Oxidative phosphorylation,syn00190,hoxU,sll1223,P74022
+154,NA,NA,sll1222,sll1222,P74023
+154,Oxidative phosphorylation,syn00190,hoxF,sll1221,P74024
+154,Oxidative phosphorylation,syn00190,sll1220,sll1220,P74025
+154,NA,NA,ssr2227,ssr2227,P74026
+155,NA,NA,slr1334,slr1334,P74027
+155,NA,NA,sll1219,sll1219,P74028
+155,NA,NA,ycf39,sll1218,P74029
+155,NA,NA,sll1217,sll1217,P74030
+155,NA,NA,ssr1375,ssr1375,P74031
+155,Peptidoglycan biosynthesis,syn00550,dacB,slr0804,P74032
+155,NA,NA,slr0806,slr0806,P74033
+155,Photosynthesis,syn00195,psaJ,sml0008,Q55329
+155,Photosynthesis,syn00195,psaF,sll0819,P29256
+155,NA,NA,gcp,slr0807,P74034
+156,NA,NA,slr0808,slr0808,P74035
+156,Amino sugar and nucleotide sugar metabolism,syn00520,rfbB,slr0809,P74036
+156,NA,NA,slr0810,slr0810,P74037
+156,NA,NA,sll0818,sll0818,P74038
+156,NA,NA,ssl1520,ssl1520,P74039
+156,Metabolic pathways,syn01100,miaA,sll0817,P74040
+156,NA,NA,sll0816,sll0816,P74041
+156,NA,NA,sll0815,sll0815,P74042
+156,NA,NA,sll0814,sll0814,P74043
+156,Oxidative phosphorylation,syn00190,ctaC,sll0813,P74044
+157,Pantothenate and CoA biosynthesis,syn00770,slr0812,slr0812,P74045
+157,Sphingolipid metabolism,syn00600,slr0813,slr0813,P74046
+157,NA,NA,sll0812,sll0812,P74047
+157,Oxidative phosphorylation,syn00190,ndhL,ssr1386,P27372
+157,NA,NA,slr0815,slr0815,P74048
+157,NA,NA,slr0816,slr0816,P74049
+157,NA,NA,sll0811,sll0811,P74050
+157,NA,NA,sll0810,sll0810,P74051
+157,Lipoic acid metabolism,syn00785,sll0809,sll0809,P74052
+157,Aminoacyl-tRNA biosynthesis,syn00970,trnG-UCC,trnG-UCC,NA
+158,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,entC,slr0817,P74053
+158,NA,NA,slr0818,slr0818,P74054
+158,NA,NA,int,slr0819,P74055
+158,NA,NA,ssr1391,ssr1391,P74056
+158,NA,NA,slr0820,slr0820,P74057
+158,NA,NA,ssl1507,ssl1507,P74058
+158,NA,NA,sll0808,sll0808,P74059
+158,Sulfur relay system,syn04122,slr0821,slr0821,P74060
+158,Pentose phosphate pathway,syn00030,cfxE,sll0807,P74061
+158,NA,NA,slr0822,slr0822,P74062
+159,NA,NA,ycf3,slr0823,P74063
+159,NA,NA,sll0804,sll0804,P74064
+159,NA,NA,sll0803,sll0803,P74065
+159,NA,NA,sll0802,sll0802,P74066
+159,NA,NA,ssl1498,ssl1498,P74067
+159,NA,NA,sll1263,sll1263,P74068
+159,Oxidative phosphorylation,syn00190,sll1262,sll1262,P74069
+159,NA,NA,tsf,sll1261,P74070
+159,Ribosome,syn03010,rps2,sll1260,P74071
+159,Aminoacyl-tRNA biosynthesis,syn00970,trnI-CAU,trnI-CAU,NA
+160,NA,NA,slr1336,slr1336,P74072
+160,Pyrimidine metabolism,syn00240,sll1258,sll1258,P74073
+160,NA,NA,sll1257,sll1257,Q55696
+160,NA,NA,sll1256,sll1256,Q55697
+160,NA,NA,slr1338,slr1338,P74074
+160,NA,NA,slr1339,slr1339,P74075
+160,NA,NA,slr1340,slr1340,P74076
+160,NA,NA,sll1255,sll1255,P74077
+160,NA,NA,sll1254,sll1254,P74078
+160,NA,NA,slr1342,slr1342,P74079
+161,NA,NA,slr1343,slr1343,P74080
+161,NA,NA,pcnB,sll1253,P74081
+161,NA,NA,sll1252,sll1252,P74082
+161,ABC transporters,syn02010,slr1344,slr1344,P74083
+161,NA,NA,sll1251,sll1251,P74084
+161,NA,NA,ssl2471,ssl2471,P74085
+161,NA,NA,sll1250,sll1250,P74086
+161,Pyrimidine metabolism,syn00240,panC_kcy,sll1249,Q55074
+161,Nitrogen metabolism,syn00910,icfA,slr1347,Q54735
+161,Cysteine and methionine metabolism,syn00270,cysE,slr1348,P74089
+162,Glycolysis / Gluconeogenesis,syn00010,pgi,slr1349,P52983
+162,Two-component system,syn02020,desA,slr1350,P20388
+162,NA,NA,sll1247,sll1247,P45451
+162,Lysine biosynthesis,syn00300,murF,slr1351,P45450
+162,NA,NA,cytM,sll1245,P42351
+162,Ribosome,syn03010,rpl9,sll1244,P42352
+162,NA,NA,slr1353,slr1353,P42350
+162,NA,NA,sll1242,sll1242,P42349
+162,NA,NA,slr1956,slr1956,P74092
+162,NA,NA,slr1957,slr1957,P74093
+163,NA,NA,slr1958,slr1958,P74094
+163,NA,NA,act,sll1900,Q79EF3
+163,NA,NA,hypC,ssl3580,P74095
+163,Oxidative phosphorylation,syn00190,ctaB,sll1899,Q79EF2
+163,Oxidative phosphorylation,syn00190,sll1898,sll1898,P74096
+163,NA,NA,slr1959,slr1959,P74097
+163,NA,NA,sll1897,sll1897,P74098
+163,NA,NA,ssl3573,ssl3573,P74099
+163,NA,NA,slr1962,slr1962,P74100
+163,NA,NA,sll1895,sll1895,P74101
+164,NA,NA,slr1963,slr1963,P74102
+164,NA,NA,slr1964,slr1964,P74103
+164,Riboflavin metabolism,syn00740,ribA,sll1894,P74104
+164,NA,NA,slr1966,slr1966,P74105
+164,Histidine metabolism,syn00340,hisF,sll1893,P74106
+164,NA,NA,sll1892,sll1892,P74107
+164,NA,NA,slr1968,slr1968,P74108
+164,NA,NA,sll1891,sll1891,P74109
+164,Porphyrin and chlorophyll metabolism,syn00860,cobN,sll1890,P74110
+164,Two-component system,syn02020,slr1969,slr1969,P74111
+165,Quorum sensing,syn02024,ssr3341,ssr3341,P74112
+165,NA,NA,slr1970,slr1970,P74113
+165,NA,NA,slr1971,slr1971,P74114
+165,NA,NA,sll1888,sll1888,P74115
+165,NA,NA,ssl3549,ssl3549,P74116
+165,NA,NA,slr1972,slr1972,P74117
+165,NA,NA,sll1886,sll1886,P74118
+165,NA,NA,sll1885,sll1885,P74119
+165,NA,NA,slr1974,slr1974,P74120
+165,NA,NA,sll1884,sll1884,P74121
+166,Arginine biosynthesis,syn00220,argJ,sll1883,P74122
+166,NA,NA,sll1882,sll1882,P74123
+166,Amino sugar and nucleotide sugar metabolism,syn00520,slr1975,slr1975,P74124
+166,NA,NA,sll1880,sll1880,P74125
+166,NA,NA,sll1879,sll1879,P74126
+166,ABC transporters,syn02010,sll1878,sll1878,P74127
+166,NA,NA,slr1977,slr1977,P74128
+166,ABC transporters,syn02010,slr1978,slr1978,P74129
+166,Folate biosynthesis,syn00790,trpE,slr1979,P74130
+166,NA,NA,slr1980,slr1980,P74131
+167,Porphyrin and chlorophyll metabolism,syn00860,hemN,sll1876,P74132
+167,Porphyrin and chlorophyll metabolism,syn00860,ho2,sll1875,P74133
+167,Porphyrin and chlorophyll metabolism,syn00860,AT103,sll1874,P74134
+167,NA,NA,sll1873,sll1873,P74135
+167,NA,NA,lytR,sll1872,P74136
+167,NA,NA,sll1871,sll1871,P74137
+167,NA,NA,slr1982,slr1982,P74138
+167,NA,NA,slr1983,slr1983,P74139
+167,ABC transporters,syn02010,sll1870,sll1870,P74140
+167,NA,NA,cbaB,sll1869,P74141
+168,Ribosome,syn03010,rps1,slr1984,P74142
+168,DNA replication,syn03030,dnaG,sll1868,P74143
+168,Photosynthesis,syn00195,psbA3,sll1867,P16033
+168,NA,NA,sll1866,sll1866,P74144
+168,NA,NA,sll1390,sll1390,P74145
+168,NA,NA,ssl2717,ssl2717,P74146
+168,NA,NA,sll1389,sll1389,P74147
+168,NA,NA,sll1388,sll1388,P74148
+168,Aminoacyl-tRNA biosynthesis,syn00970,trnR-ACG,trnR-ACG,NA
+168,Photosynthesis,syn00195,petG,smr0010,P74149
+169,NA,NA,sll1387,sll1387,P74150
+169,NA,NA,sll1386,sll1386,P74151
+169,Porphyrin and chlorophyll metabolism,syn00860,slr1467,slr1467,P74152
+169,NA,NA,slr1468,slr1468,P74153
+169,Ribosome,syn03010,rpl34,smr0011,Q55004
+169,NA,NA,rnpA,slr1469,Q55005
+169,NA,NA,slr1470,slr1470,P74154
+169,Quorum sensing,syn02024,slr1471,slr1471,P74155
+169,NA,NA,slr1472,slr1472,P74156
+169,NA,NA,sll1384,sll1384,P74157
+170,Streptomycin biosynthesis,syn00521,suhB,sll1383,P74158
+170,Photosynthesis,syn00195,petF,sll1382,P74159
+170,Aminoacyl-tRNA biosynthesis,syn00970,trnS-GGA,trnS-GGA,NA
+170,NA,NA,slr1474,slr1474,P74160
+170,NA,NA,sll1381,sll1381,P74161
+170,NA,NA,sll1380,sll1380,P74162
+170,Pyrimidine metabolism,syn00240,pyrB,slr1476,P74163
+170,Aminoacyl-tRNA biosynthesis,syn00970,trnS-GCU,trnS-GCU,NA
+170,NA,NA,sll1378,sll1378,P74164
+170,Glycerolipid metabolism,syn00561,sll1377,sll1377,P74165
+171,NA,NA,slr1478,slr1478,P74166
+171,Glycerolipid metabolism,syn00561,sll1376,sll1376,P74167
+171,NA,NA,melB,sll1374,P74168
+171,NA,NA,sll1373,sll1373,P74169
+171,NA,NA,sll1372,sll1372,P74170
+171,Two-component system,syn02020,sll1371,sll1371,P74171
+171,Fructose and mannose metabolism,syn00051,rfbM,sll1370,P74172
+171,NA,NA,sll1369,sll1369,P74173
+171,Photosynthesis,syn00195,petC,sll1182,P74174
+171,NA,NA,hlyD,sll1181,P74175
+172,NA,NA,hlyB,sll1180,P74176
+172,RNA polymerase,syn03020,rpoC1,slr1265,P74177
+172,NA,NA,sll1178,sll1178,P74178
+172,NA,NA,slr1266,slr1266,P74179
+172,NA,NA,mrdB,slr1267,P74180
+172,Taurine and hypotaurine metabolism,syn00430,ggt,slr1269,P74181
+172,NA,NA,slr1270,slr1270,P74182
+172,NA,NA,rffM,slr1271,P74183
+172,NA,NA,slr1272,slr1272,P74184
+172,NA,NA,slr1273,slr1273,P74185
+173,NA,NA,pilM,slr1274,P74186
+173,NA,NA,slr1275,slr1275,P74187
+173,NA,NA,slr1276,slr1276,P74188
+173,NA,NA,gspD,slr1277,P74189
+173,NA,NA,sll1174,sll1174,P74190
+173,NA,NA,sll1173,sll1173,P74191
+173,NA,NA,slr1278,slr1278,P74192
+173,"Glycine, serine and threonine metabolism",syn00260,thrC,sll1172,P74193
+173,Oxidative phosphorylation,syn00190,ndhC,slr1279,P19045
+173,Oxidative phosphorylation,syn00190,ndhK,slr1280,P19050
+174,Oxidative phosphorylation,syn00190,ndhJ,slr1281,P19125
+174,NA,NA,slr1282,slr1282,P74195
+174,NA,NA,slr1283,slr1283,P74196
+174,NA,NA,sll1170,sll1170,P74197
+174,NA,NA,sll1169,sll1169,P74198
+174,NA,NA,slr1285,slr1285,P74199
+174,NA,NA,pbp,sll1167,P74200
+174,NA,NA,ssr2130,ssr2130,P74201
+174,NA,NA,slr1287,slr1287,P74202
+174,NA,NA,slr1288,slr1288,P74203
+175,NA,NA,sll1166,sll1166,P74204
+175,NA,NA,sll1447,sll1447,P74205
+175,NA,NA,sll1446,sll1446,P74206
+175,"Valine, leucine and isoleucine biosynthesis",syn00290,leuD,sll1444,P74207
+175,Pyrimidine metabolism,syn00240,pyrG,sll1443,P74208
+175,NA,NA,sll1442,sll1442,P74209
+175,NA,NA,slr1529,slr1529,P74210
+175,NA,NA,desB,sll1441,Q79EF1
+175,Vitamin B6 metabolism,syn00750,pdxH,sll1440,P74211
+175,NA,NA,slr1530,slr1530,P74212
+176,NA,NA,sll1439,sll1439,P74213
+176,Quorum sensing,syn02024,ffh,slr1531,P74214
+176,NA,NA,sll1437,sll1437,Q55696
+176,NA,NA,sll1436,sll1436,Q55697
+176,Aminoacyl-tRNA biosynthesis,syn00970,pet112,sll1435,P74215
+176,NA,NA,mrcA,sll1434,P74216
+176,NA,NA,sll1433,sll1433,P74217
+176,NA,NA,hypB,sll1432,P74218
+176,NA,NA,slr1533,slr1533,P74219
+176,NA,NA,slr1534,slr1534,P74220
+177,NA,NA,slr1152,slr1152,P74221
+177,NA,NA,ssl2162,ssl2162,P74222
+177,NA,NA,glnH,sll1104,P74223
+177,NA,NA,sll1103,sll1103,P74224
+177,NA,NA,sll1102,sll1102,P74225
+177,Ribosome,syn03010,rps10,sll1101,P74226
+177,NA,NA,tufA,sll1099,P74227
+177,NA,NA,fus,sll1098,P74228
+177,Ribosome,syn03010,rps7,sll1097,P74229
+177,Ribosome,syn03010,rps12,sll1096,P74230
+178,NA,NA,sll1095,sll1095,P74231
+178,Purine metabolism,syn00230,purD,slr1159,P74232
+178,NA,NA,slr1160,slr1160,P74233
+178,Pentose phosphate pathway,syn00030,rpiB,ssl2153,P74234
+178,NA,NA,sll1094,sll1094,P74235
+178,NA,NA,slr1161,slr1161,P74236
+178,NA,NA,slr1162,slr1162,P74237
+178,NA,NA,slr1163,slr1163,P74238
+178,NA,NA,ssl2148,ssl2148,P74239
+178,Purine metabolism,syn00230,nrdA,slr1164,P74240
+179,Purine metabolism,syn00230,met3,slr1165,P74241
+179,NA,NA,slr1166,slr1166,P74242
+179,NA,NA,sll1092,sll1092,P74243
+179,NA,NA,ssl2138,ssl2138,P74244
+179,Porphyrin and chlorophyll metabolism,syn00860,sll1091,sll1091,Q55087
+179,Glycerolipid metabolism,syn00561,gldA,slr1167,P74246
+179,NA,NA,slr1168,slr1168,P74247
+179,NA,NA,slr1169,slr1169,P74248
+179,NA,NA,slr1170,slr1170,P74249
+179,NA,NA,slr1171,slr1171,P74250
+180,NA,NA,sll1089,sll1089,P74251
+180,NA,NA,sll1087,sll1087,P74252
+180,NA,NA,sll1086,sll1086,P74253
+180,NA,NA,slr1173,slr1173,P74254
+180,NA,NA,ssr1951,ssr1951,P74255
+180,NA,NA,slr1174,slr1174,P74256
+180,Glycerophospholipid metabolism,syn00564,glpD,sll1085,P74257
+180,Metabolic pathways,syn01100,otsA,sll1566,P74258
+180,NA,NA,slr1670,slr1670,P74259
+180,Glycerolipid metabolism,syn00561,glpK,slr1672,P74260
+181,NA,NA,spoU,slr1673,P74261
+181,NA,NA,slr1674,slr1674,P74262
+181,NA,NA,hypA,slr1675,P74263
+181,NA,NA,slr1676,slr1676,P74264
+181,Lipopolysaccharide biosynthesis,syn00540,slr1677,slr1677,P74265
+181,Ribosome,syn03010,rpl21,slr1678,P74266
+181,Ribosome,syn03010,rpl27,ssr2799,P74267
+181,Vancomycin resistance,syn01502,slr1679,slr1679,P74268
+181,"Valine, leucine and isoleucine biosynthesis",syn00290,leuA,sll1564,P74269
+182,NA,NA,ssr2802,ssr2802,P74270
+182,NA,NA,ssr2803,ssr2803,P74271
+182,NA,NA,ssr2806,ssr2806,P74272
+182,NA,NA,sll1563,sll1563,P74273
+182,NA,NA,sll1562,sll1562,P74274
+182,"Alanine, aspartate and glutamate metabolism",syn00250,putA,sll1561,P74275
+182,NA,NA,slr1681,slr1681,P74276
+182,NA,NA,slr1682,slr1682,P74277
+182,NA,NA,sll1560,sll1560,P74278
+182,NA,NA,slr1683,slr1683,P74279
+183,NA,NA,slr1684,slr1684,P74280
+183,NA,NA,sll1559,sll1559,P74281
+183,NA,NA,slr1686,slr1686,P74282
+183,NA,NA,ssl3044,ssl3044,P74283
+183,NA,NA,slr1687,slr1687,P74284
+183,Fructose and mannose metabolism,syn00051,sll1558,sll1558,P74285
+183,Citrate cycle (TCA cycle),syn00020,sucD,sll1557,P74286
+183,Terpenoid backbone biosynthesis,syn00900,sll1556,sll1556,P74287
+183,NA,NA,sll1555,sll1555,P74288
+183,Photosynthesis,syn00195,psaE,ssr2831,P12975
+184,Base excision repair,syn03410,mutM,slr1689,P74290
+184,NA,NA,slr1690,slr1690,P74291
+184,Nicotinate and nicotinamide metabolism,syn00760,nadE,slr1691,P74292
+184,NA,NA,slr1692,slr1692,P74293
+184,NA,NA,slr1693,slr1693,P74294
+184,NA,NA,slr1694,slr1694,P74295
+184,Aminoacyl-tRNA biosynthesis,syn00970,pheT,sll1553,P74296
+184,NA,NA,pknA,slr1697,P74297
+184,NA,NA,sll0921,sll0921,P74298
+184,Pyruvate metabolism,syn00620,ppc,sll0920,P74299
+185,NA,NA,slr0935,slr0935,P74300
+185,Nicotinate and nicotinamide metabolism,syn00760,nadC,slr0936,P74301
+185,NA,NA,slr0937,slr0937,P74302
+185,Peptidoglycan biosynthesis,syn00550,slr0938,slr0938,P74303
+185,Porphyrin and chlorophyll metabolism,syn00860,cbiC,sll0916,P74304
+185,NA,NA,pqqE,sll0915,P74305
+185,Carotenoid biosynthesis,syn00906,crtQ,slr0940,P74306
+185,NA,NA,slr0941,slr0941,P74307
+185,Glycolysis / Gluconeogenesis,syn00010,slr0942,slr0942,P74308
+185,Glycolysis / Gluconeogenesis,syn00010,fda,slr0943,P74309
+186,NA,NA,sll0914,sll0914,P74310
+186,NA,NA,slr0944,slr0944,P74311
+186,NA,NA,slr0945,slr0945,P74312
+186,NA,NA,arsC,slr0946,P74313
+186,Two-component system,syn02020,slr0947,slr0947,P74314
+186,NA,NA,slr0948,slr0948,P74315
+186,NA,NA,sll0913,sll0913,P74316
+186,NA,NA,sll0912,sll0912,P74317
+186,ABC transporters,syn02010,livH,slr0949,P74318
+186,NA,NA,slr0950,slr0950,P74319
+187,NA,NA,sll0911,sll0911,P74320
+187,NA,NA,sll0910,sll0910,P74321
+187,NA,NA,sll0909,sll0909,P74322
+187,Terpenoid backbone biosynthesis,syn00900,slr0951,slr0951,P74323
+187,Glycolysis / Gluconeogenesis,syn00010,fbp,slr0952,P74324
+187,Starch and sucrose metabolism,syn00500,slr0953,slr0953,P74325
+187,NA,NA,ssr1600,ssr1600,P74326
+187,NA,NA,slr0954,slr0954,P74327
+187,NA,NA,slr0955,slr0955,P74328
+187,NA,NA,slr0957,slr0957,P74329
+188,Aminoacyl-tRNA biosynthesis,syn00970,cysS,slr0958,P74330
+188,NA,NA,maf,sll0905,P74331
+188,NA,NA,slr0959,slr0959,P74332
+188,NA,NA,slr0960,slr0960,P74333
+188,NA,NA,sll1541,sll1541,P74334
+188,NA,NA,ssr2723,ssr2723,P74335
+188,Metabolic pathways,syn01100,dpm1,sll1540,P74336
+188,Oxidative phosphorylation,syn00190,ppa,slr1622,P80507
+188,Oxidative phosphorylation,syn00190,slr1623,slr1623,P74338
+188,NA,NA,slr1624,slr1624,P74339
+189,Cyanoamino acid metabolism,syn00460,bgl,sll1538,P74340
+189,NA,NA,sll1537,sll1537,P74341
+189,Folate biosynthesis,syn00790,slr1626,slr1626,P74342
+189,NA,NA,slr1627,slr1627,P74343
+189,Sulfur relay system,syn04122,moeB,sll1536,P74344
+189,NA,NA,slr1628,slr1628,P74345
+189,NA,NA,slr1629,slr1629,P74346
+189,NA,NA,rfbP,sll1535,P74347
+189,NA,NA,sll1534,sll1534,P74348
+189,NA,NA,pilT,sll1533,P74349
+190,NA,NA,slr1634,slr1634,P74350
+190,NA,NA,sll1532,sll1532,P74351
+190,RNA polymerase,syn03020,ssl2982,ssl2982,P74352
+190,NA,NA,slr1635,slr1635,Q55566
+190,NA,NA,slr1636,slr1636,P74353
+190,Aminoacyl-tRNA biosynthesis,syn00970,trnH-GUG,trnH-GUG,NA
+190,NA,NA,slr1638,slr1638,P74354
+190,NA,NA,smpB,slr1639,P74355
+190,NA,NA,sll1531,sll1531,P74356
+190,NA,NA,sll1530,sll1530,P74357
+191,NA,NA,sll1528,sll1528,P74358
+191,NA,NA,sll1527,sll1527,P74359
+191,NA,NA,sll1526,sll1526,P74360
+191,NA,NA,clpB,slr1641,P74361
+191,NA,NA,ssl2971,ssl2971,P74362
+191,Carbon fixation in photosynthetic organisms,syn00710,prk,sll1525,P37101
+191,Photosynthesis,syn00195,petH,slr1643,Q55318
+191,NA,NA,sll1524,sll1524,P74365
+191,NA,NA,slr1644,slr1644,P74366
+191,Photosynthesis,syn00195,psbZ,slr1645,P74367
+192,NA,NA,rnc,slr1646,P74368
+192,NA,NA,slr1647,slr1647,P74369
+192,NA,NA,slr1648,slr1648,P74370
+192,NA,NA,ssr2754,ssr2754,P58235
+192,NA,NA,slr1649,slr1649,P74371
+192,Glycerophospholipid metabolism,syn00564,pgsA,sll1522,P74372
+192,NA,NA,sll1521,sll1521,P74373
+192,NA,NA,recN,sll1520,P74374
+192,NA,NA,slr0442,slr0442,P74375
+192,NA,NA,sll0428,sll0428,P74376
+193,NA,NA,ssr0756,ssr0756,P74377
+193,NA,NA,ssr0759,ssr0759,P74378
+193,NA,NA,ssr0761,ssr0761,P58236
+193,Photosynthesis,syn00195,psbO,sll0427,P10549
+193,NA,NA,slr0443,slr0443,P74379
+193,Aminoacyl-tRNA biosynthesis,syn00970,trnQ-UUG,trnQ-UUG,NA
+193,NA,NA,sll0426,sll0426,P74380
+193,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroA,slr0444,Q59975
+193,NA,NA,sll0424,sll0424,P74381
+193,NA,NA,sll0423,sll0423,P74382
+194,Aminoacyl-tRNA biosynthesis,syn00970,trnN-GUU,trnN-GUU,NA
+194,"Alanine, aspartate and glutamate metabolism",syn00250,sll0422,sll0422,P74383
+194,Purine metabolism,syn00230,purB,sll0421,P74384
+194,NA,NA,slr0445,slr0445,P74385
+194,Arginine biosynthesis,syn00220,ureB,sll0420,P74386
+194,NA,NA,sll0419,sll0419,P74387
+194,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,sll0418,sll0418,P74388
+194,DNA replication,syn03030,dnaX_and_dnaZ,slr0446,P74389
+194,ABC transporters,syn02010,amiC,slr0447,P74390
+194,NA,NA,sms,slr0448,P74391
+195,NA,NA,sll0274,sll0274,P74392
+195,NA,NA,sll0273,sll0273,P74393
+195,NA,NA,sll0272,sll0272,P74394
+195,NA,NA,nusB,sll0271,P74395
+195,NA,NA,slr0280,slr0280,P74396
+195,Homologous recombination,syn03440,priA,sll0270,P74397
+195,NA,NA,sll0269,sll0269,P74398
+195,NA,NA,sll0268,sll0268,P74399
+195,NA,NA,sll0267,sll0267,P74400
+195,NA,NA,sll0266,sll0266,P74401
+196,NA,NA,sll0265,sll0265,P74402
+196,NA,NA,sll0264,sll0264,P74403
+196,NA,NA,sll0263,sll0263,P74404
+196,Metabolic pathways,syn01100,desD(des6),sll0262,Q08871
+196,NA,NA,sll0261,sll0261,P74405
+196,NA,NA,slr0284,slr0284,P74406
+196,NA,NA,slr0285,slr0285,P74407
+196,NA,NA,slr0286,slr0286,P74408
+196,NA,NA,sll0260,sll0260,P74409
+196,Ribosome,syn03010,rps16,ssr0482,P74410
+197,NA,NA,slr0287,slr0287,P74411
+197,Arginine biosynthesis,syn00220,glnN,slr0288,P77970
+197,NA,NA,slr0291,slr0291,P74412
+197,Photosynthesis,syn00195,psbV,sll0258,Q55013
+197,NA,NA,ssl0483,ssl0483,P74413
+197,NA,NA,slr0292,slr0292,P74414
+197,NA,NA,sll0257,sll0257,P74415
+197,"Glycine, serine and threonine metabolism",syn00260,gcvP,slr0293,P74416
+197,NA,NA,slr0294,slr0294,P74417
+197,NA,NA,slr0392,slr0392,P74418
+198,NA,NA,slr0393,slr0393,P74419
+198,NA,NA,sll0364,sll0364,P74420
+198,Glycolysis / Gluconeogenesis,syn00010,pgk,slr0394,P74421
+198,NA,NA,ntcB,slr0395,P74422
+198,Aminoacyl-tRNA biosynthesis,syn00970,alaS,sll0362,P74423
+198,NA,NA,sll0361,sll0361,P74424
+198,NA,NA,sll0360,sll0360,P74425
+198,NA,NA,sll0359,sll0359,P74426
+198,NA,NA,slr0397,slr0397,P74427
+198,NA,NA,slr0398,slr0398,P74428
+199,NA,NA,ycf39,slr0399,P74429
+199,Nicotinate and nicotinamide metabolism,syn00760,slr0400,slr0400,P74430
+199,Quorum sensing,syn02024,slr0401,slr0401,P74431
+199,Aminoacyl-tRNA biosynthesis,syn00970,trnT-UGU,trnT-UGU,NA
+199,Purine metabolism,syn00230,slr0402,slr0402,P74432
+199,Two-component system,syn02020,glnB,ssl0707,Q55247
+199,NA,NA,slr0404,slr0404,P74433
+199,NA,NA,ssr0657,ssr0657,P74434
+199,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,trpF,sll0356,P74435
+199,NA,NA,sll0355,sll0355,P74436
+200,NA,NA,sll0354,sll0354,P74437
+200,Pyrimidine metabolism,syn00240,pyrC,slr0406,P74438
+200,NA,NA,slr0407,slr0407,P74439
+200,NA,NA,slr0408,slr0408,P74440
+200,NA,NA,slr0142,slr0142,P74441
+200,NA,NA,slr0143,slr0143,P74442
+200,NA,NA,slr0144,slr0144,P74443
+200,NA,NA,slr0145,slr0145,P74444
+200,NA,NA,slr0146,slr0146,P74445
+200,NA,NA,slr0147,slr0147,P74446
+201,NA,NA,slr0148,slr0148,P74447
+201,NA,NA,slr0149,slr0149,P74448
+201,Photosynthesis,syn00195,petF,slr0150,P74449
+201,NA,NA,slr0151,slr0151,P74450
+201,NA,NA,slr0152,slr0152,P74451
+201,NA,NA,sll0149,sll0149,P74452
+201,NA,NA,sll0148,sll0148,P74453
+201,Carotenoid biosynthesis,syn00906,sll0147,sll0147,P74454
+201,ABC transporters,syn02010,sll0146,sll0146,P74455
+201,NA,NA,frr,sll0145,P74456
+202,Pyrimidine metabolism,syn00240,pyrH,sll0144,P74457
+202,NA,NA,ssl0259,ssl0259,P74458
+202,NA,NA,clpB,slr0156,P74459
+202,NA,NA,slr0157,slr0157,P74460
+202,NA,NA,sll0142,sll0142,P74461
+202,NA,NA,sll0141,sll0141,P74462
+202,NA,NA,pilT,slr0161,P74463
+202,NA,NA,gspF,slr0162,P74464
+202,NA,NA,pilC,slr0163,P74465
+202,NA,NA,clpP,slr0164,P74466
+203,NA,NA,clpP,slr0165,P74467
+203,NA,NA,pepP,sll0136,P74468
+203,Cysteine and methionine metabolism,syn00270,sll0135,sll0135,P0DJF8
+203,NA,NA,ssl0242,ssl0242,P74470
+203,NA,NA,ssr0256,ssr0256,P74471
+203,NA,NA,slr0166,slr0166,P74472
+203,Porphyrin and chlorophyll metabolism,syn00860,slr1923,slr1923,P74473
+203,NA,NA,slr1924,slr1924,P74474
+203,Porphyrin and chlorophyll metabolism,syn00860,cbiB,slr1925,P74475
+203,NA,NA,prfB,sll1865,P74476
+204,NA,NA,sll1864,sll1864,P74477
+204,NA,NA,slr1926,slr1926,P74478
+204,NA,NA,slr1927,slr1927,P74479
+204,NA,NA,slr1928,slr1928,P74480
+204,NA,NA,slr1929,slr1929,P74481
+204,NA,NA,slr1930,slr1930,P74482
+204,NA,NA,slr1931,slr1931,P74483
+204,NA,NA,slr1932,slr1932,P74484
+204,NA,NA,sll1863,sll1863,P74485
+204,NA,NA,sll1862,sll1862,P74486
+205,NA,NA,sll1861,sll1861,P74487
+205,NA,NA,sll1860,sll1860,Q57495
+205,Streptomycin biosynthesis,syn00521,rfbC,slr1933,P74488
+205,NA,NA,sll1858,sll1858,P74489
+205,Glycolysis / Gluconeogenesis,syn00010,slr1934,slr1934,P74490
+205,NA,NA,slr1935,slr1935,P74491
+205,Base excision repair,syn03410,xthA,sll1854,P74492
+205,NA,NA,sll1853,sll1853,P74493
+205,Purine metabolism,syn00230,ndkR,sll1852,P74494
+205,Aminoacyl-tRNA biosynthesis,syn00970,trnA-GGC,trnA-GGC,NA
+206,NA,NA,sll1851,sll1851,P74495
+206,NA,NA,slr1936,slr1936,Q55697
+206,NA,NA,slr1937,slr1937,Q55696
+206,NA,NA,sll1849,sll1849,P74496
+206,Cysteine and methionine metabolism,syn00270,slr1938,slr1938,P74497
+206,Glycerolipid metabolism,syn00561,sll1848,sll1848,P74498
+206,NA,NA,slr1939,slr1939,P74499
+206,NA,NA,slr1940,slr1940,P74500
+206,NA,NA,ssr3300,ssr3300,P74501
+206,NA,NA,sll1845,sll1845,P74502
+207,NA,NA,slr1942,slr1942,P74503
+207,NA,NA,ssr3304,ssr3304,P74504
+207,NA,NA,dpm1,slr1943,P74505
+207,NA,NA,slr1944,slr1944,P74506
+207,Glycolysis / Gluconeogenesis,syn00010,yibO,slr1945,P74507
+207,Quorum sensing,syn02024,ycf47,ssr3307,P74508
+207,NA,NA,slr1946,slr1946,P74509
+207,Glycolysis / Gluconeogenesis,syn00010,odhB,sll1841,P74510
+207,NA,NA,slr1949,slr1949,P74511
+207,NA,NA,slr1950,slr1950,P74512
+208,NA,NA,slr1951,slr1951,P74513
+208,NA,NA,slr0989,slr0989,P74514
+208,NA,NA,slr0990,slr0990,P74515
+208,NA,NA,slr0992,slr0992,P74516
+208,NA,NA,nlpD,slr0993,P74517
+208,NA,NA,lrtA,sll0947,P74518
+208,Lipoic acid metabolism,syn00785,lipB,slr0994,P74519
+208,NA,NA,ssl1807,ssl1807,P74520
+208,Aminoacyl-tRNA biosynthesis,syn00970,trnK-UUU,trnK-UUU,NA
+208,Starch and sucrose metabolism,syn00500,glgA,sll0945,P74521
+209,NA,NA,sll0944,sll0944,P77971
+209,NA,NA,slr0320,slr0320,Q55524
+209,NA,NA,rpoD,sll0306,Q55525
+209,NA,NA,Era,slr0321,Q55526
+209,Two-component system,syn02020,slr0322,slr0322,Q55527
+209,Other glycan degradation,syn00511,ams1,slr0323,Q55528
+209,Quorum sensing,syn02024,slr0324,slr0324,Q55529
+209,NA,NA,slr0325,slr0325,Q55530
+209,NA,NA,sll0301,sll0301,Q55531
+209,Riboflavin metabolism,syn00740,ribC,sll0300,Q55532
+210,NA,NA,slr0326,slr0326,Q55533
+210,ABC transporters,syn02010,hitB,slr0327,Q55534
+210,Two-component system,syn02020,slr0328,slr0328,Q55535
+210,Glycolysis / Gluconeogenesis,syn00010,xylR,slr0329,Q55536
+210,NA,NA,sll0298,sll0298,Q55537
+210,NA,NA,sll0297,sll0297,Q55538
+210,NA,NA,sll0296,sll0296,Q55539
+210,NA,NA,ssl0564,ssl0564,Q55540
+210,Photosynthesis,syn00195,psaC,ssl0563,P32422
+210,Oxidative phosphorylation,syn00190,ndhD,slr0331,P32421
+211,NA,NA,slr0333,slr0333,Q55541
+211,NA,NA,slr0334,slr0334,Q55542
+211,NA,NA,ssr0536,ssr0536,P74784
+211,NA,NA,sll0295,sll0295,Q55543
+211,Photosynthesis - antenna proteins,syn00196,apcE,slr0335,Q55544
+211,NA,NA,slr0337,slr0337,Q55545
+211,NA,NA,sll0294,sll0294,Q55546
+211,NA,NA,sll0293,sll0293,Q55547
+211,NA,NA,slr0338,slr0338,Q55548
+211,NA,NA,slr0168,slr0168,Q55549
+212,NA,NA,slr0169,slr0169,Q55550
+212,NA,NA,ycf37,slr0171,Q55551
+212,NA,NA,guaB,slr0172,Q55552
+212,NA,NA,sll0177,sll0177,Q55553
+212,NA,NA,sll0176,sll0176,Q55554
+212,NA,NA,ssl0312,ssl0312,P74785
+212,NA,NA,sll0175,sll0175,Q55555
+212,NA,NA,sll0174,sll0174,Q55556
+212,NA,NA,sll0173,sll0173,Q55557
+212,NA,NA,sll0172,sll0172,Q55558
+213,"Glycine, serine and threonine metabolism",syn00260,gcvT,sll0171,P54261
+213,RNA degradation,syn03018,dnaK,sll0170,P22358
+213,NA,NA,sll0169,sll0169,Q55559
+213,NA,NA,sll0168,sll0168,Q55560
+213,NA,NA,sll0167,sll0167,Q55561
+213,Porphyrin and chlorophyll metabolism,syn00860,hemD,sll0166,Q55562
+213,NA,NA,sll0163,sll0163,Q55563
+213,NA,NA,sll0162,sll0162,Q55564
+213,NA,NA,slr0179,slr0179,Q55565
+213,NA,NA,slr0180,slr0180,Q55566
+214,NA,NA,sll0161,sll0161,Q55567
+214,NA,NA,ssl0296,ssl0296,Q55568
+214,Homologous recombination,syn03440,slr0181,slr0181,Q55569
+214,NA,NA,ssl0294,ssl0294,P74786
+214,NA,NA,sll0160,sll0160,Q55570
+214,Starch and sucrose metabolism,syn00500,glgB,sll0158,P52981
+214,NA,NA,sll0157,sll0157,Q55571
+214,NA,NA,sll0156,sll0156,Q55572
+214,NA,NA,slr0184,slr0184,Q55573
+214,Pyrimidine metabolism,syn00240,umpS,slr0185,Q55574
+215,NA,NA,sll0154,sll0154,Q55575
+215,"Valine, leucine and isoleucine biosynthesis",syn00290,leuA,slr0186,P48576
+215,NA,NA,slr0359,slr0359,Q55576
+215,NA,NA,slr0360,slr0360,Q55577
+215,NA,NA,slr0361,slr0361,Q55578
+215,NA,NA,slr0362,slr0362,Q55579
+215,NA,NA,sll0350,sll0350,Q55580
+215,Photosynthesis,syn00195,psbI,sml0001,Q54697
+215,NA,NA,slr0363,slr0363,Q55581
+215,NA,NA,slr0364,slr0364,Q55582
+216,NA,NA,slr0366,slr0366,Q55583
+216,NA,NA,slr0369,slr0369,Q55584
+216,"Alanine, aspartate and glutamate metabolism",syn00250,gabD,slr0370,Q55585
+216,Two-component system,syn02020,sphS,sll0337,Q55586
+216,Fatty acid biosynthesis,syn00061,accD,sll0336,Q57417
+216,NA,NA,sll0335,sll0335,Q55587
+216,NA,NA,slr0373,slr0373,Q55588
+216,NA,NA,slr0374,slr0374,Q55589
+216,NA,NA,slr0376,slr0376,Q55590
+216,NA,NA,slr0377,slr0377,Q55591
+217,NA,NA,slr0378,slr0378,Q55592
+217,Pyrimidine metabolism,syn00240,slr0379,slr0379,Q55593
+217,NA,NA,slr0380,slr0380,Q55594
+217,Pyruvate metabolism,syn00620,slr0381,slr0381,Q55595
+217,NA,NA,fabG,sll0330,Q55596
+217,NA,NA,slr0383,slr0383,Q55597
+217,NA,NA,slr0384,slr0384,Q55598
+217,Pentose phosphate pathway,syn00030,gnd,sll0329,P52208
+217,NA,NA,sll0328,sll0328,Q55599
+217,NA,NA,sll0327,sll0327,Q55600
+218,NA,NA,slr0386,slr0386,Q55601
+218,Thiamine metabolism,syn00730,nifS,slr0387,Q55602
+218,NA,NA,slr0388,slr0388,Q55603
+218,NA,NA,slr0769,slr0769,Q55604
+218,NA,NA,slr0770,slr0770,Q55605
+218,NA,NA,slr0771,slr0771,Q55606
+218,Porphyrin and chlorophyll metabolism,syn00860,chlB,slr0772,Q55607
+218,NA,NA,slr0773,slr0773,Q55608
+218,NA,NA,sll0772,sll0772,P15730
+218,NA,NA,glcP,sll0771,P15729
+219,Protein export,syn03060,secD,slr0774,Q55610
+219,Protein export,syn03060,secF,slr0775,Q55611
+219,Lipopolysaccharide biosynthesis,syn00540,lpxD,slr0776,Q55612
+219,Ribosome,syn03010,rpl20,sll0767,P48957
+219,Ribosome,syn03010,rpl35,ssl1426,P48959
+219,NA,NA,radC,sll0766,P52601
+219,NA,NA,sll0765,sll0765,Q55613
+219,NA,NA,trnA-UGC,trnA-UGC,NA
+219,ABC transporters,syn02010,livG,sll0764,Q55614
+219,NA,NA,sll0763,sll0763,Q55615
+220,NA,NA,sll0762,sll0762,Q55616
+220,NA,NA,sll0761,sll0761,Q55617
+220,NA,NA,ycf38,sll0760,Q55618
+220,NA,NA,sll0759,sll0759,Q55619
+220,NA,NA,slr0779,slr0779,Q55620
+220,Purine metabolism,syn00230,purF,sll0757,Q55621
+220,Photosynthesis,syn00195,psbT,smr0001,P74787
+220,NA,NA,slr0780,slr0780,Q55622
+220,NA,NA,sll0756,sll0756,Q55623
+220,NA,NA,sll0755,sll0755,Q55624
+221,NA,NA,sll0754,sll0754,Q55625
+221,NA,NA,ycf33,ssl1417,P74788
+221,One carbon pool by folate,syn00670,folD,sll0753,Q55626
+221,NA,NA,sll0752,sll0752,Q55627
+221,ABC transporters,syn02010,ycf22,sll0751,Q55628
+221,NA,NA,slr0782,slr0782,Q55629
+221,Two-component system,syn02020,sarA,sll0750,Q55630
+221,NA,NA,sll0749,sll0749,Q55631
+221,Glycolysis / Gluconeogenesis,syn00010,tpi,slr0783,Q59994
+221,NA,NA,slr0784,slr0784,Q55632
+222,NA,NA,slr0341,slr0341,Q55633
+222,NA,NA,sll0325,sll0325,Q55634
+222,Photosynthesis,syn00195,petB,slr0342,Q57038
+222,Photosynthesis,syn00195,petD,slr0343,P27589
+222,NA,NA,rfbW,slr0344,Q55635
+222,NA,NA,slr0345,slr0345,Q55636
+222,NA,NA,rnc,slr0346,Q55637
+222,NA,NA,hypF,sll0322,Q55638
+222,NA,NA,sll0321,sll0321,Q55639
+222,NA,NA,slr0347,slr0347,Q55640
+223,NA,NA,rnd,sll0320,Q55641
+223,NA,NA,sll0319,sll0319,P74789
+223,Terpenoid backbone biosynthesis,syn00900,slr0348,slr0348,Q55643
+223,NA,NA,sll0318,sll0318,Q57473
+223,NA,NA,slr0350,slr0350,Q57495
+223,NA,NA,slr0351,slr0351,Q57456
+223,NA,NA,sll0317,sll0317,Q55644
+223,NA,NA,slr0352,slr0352,Q55645
+223,NA,NA,sll0315,sll0315,Q55646
+223,NA,NA,slr0353,slr0353,Q55647
+224,NA,NA,sll0314,sll0314,Q55648
+224,ABC transporters,syn02010,slr0354,slr0354,Q55649
+224,Ribosome,syn03010,rps21,ssl0601,P48949
+224,Ribosome,syn03010,rrn5Sa,rrn5Sa,NA
+224,Ribosome,syn03010,rrn23Sa,rrn23Sa,NA
+224,Aminoacyl-tRNA biosynthesis,syn00970,trnI-GAU-1,trnI-GAU-1,NA
+224,Ribosome,syn03010,rrn16Sa,rrn16Sa,NA
+224,NA,NA,slr0355,slr0355,Q55650
+224,NA,NA,slr0356,slr0356,Q55651
+224,Quorum sensing,syn02024,sll0312,sll0312,Q55652
+225,Aminoacyl-tRNA biosynthesis,syn00970,hisS,slr0357,Q55653
+225,NA,NA,slr0358,slr0358,Q55654
+225,NA,NA,sll0310,sll0310,Q55655
+225,NA,NA,sll0309,sll0309,Q55656
+225,NA,NA,sll0024,sll0024,Q55657
+225,NA,NA,sll0023,sll0023,Q55658
+225,NA,NA,sll0022,sll0022,Q55659
+225,NA,NA,slr0001,slr0001,Q55660
+225,NA,NA,sll0021,sll0021,Q55661
+225,NA,NA,clpC,sll0020,Q55662
+226,Terpenoid backbone biosynthesis,syn00900,sll0019,sll0019,Q55663
+226,Glycolysis / Gluconeogenesis,syn00010,cbbA,sll0018,Q55664
+226,Porphyrin and chlorophyll metabolism,syn00860,hemL,sll0017,Q55665
+226,NA,NA,mltA,sll0016,Q55666
+226,NA,NA,slr0006,slr0006,Q55667
+226,NA,NA,slr0007,slr0007,Q55668
+226,NA,NA,ctpA,slr0008,Q55669
+226,Glyoxylate and dicarboxylate metabolism,syn00630,rbcL,slr0009,P54205
+226,NA,NA,rbcX,slr0011,Q55670
+226,Glyoxylate and dicarboxylate metabolism,syn00630,rbcS,slr0012,P54206
+227,NA,NA,slr0013,slr0013,Q55671
+227,NA,NA,mgtC,slr0014,Q57208
+227,NA,NA,sll0012,sll0012,Q57495
+227,Lipopolysaccharide biosynthesis,syn00540,lpxB,slr0015,Q57310
+227,Photosynthesis,syn00195,petF,ssl0020,P27320
+227,NA,NA,slr0016,slr0016,Q55672
+227,Amino sugar and nucleotide sugar metabolism,syn00520,murZ,slr0017,Q55673
+227,Citrate cycle (TCA cycle),syn00020,fumC,slr0018,Q55674
+227,NA,NA,sll0010,sll0010,Q55675
+227,Aminoacyl-tRNA biosynthesis,syn00970,trnG-CCC,trnG-CCC,NA
+228,NA,NA,slr0019,slr0019,Q55676
+228,NA,NA,sll0008,sll0008,Q55677
+228,NA,NA,sll0007,sll0007,Q55678
+228,Lysine biosynthesis,syn00300,aspC,sll0006,Q55679
+228,NA,NA,sll0005,sll0005,Q55680
+228,Homologous recombination,syn03440,recG,slr0020,Q55681
+228,NA,NA,sppA,slr0021,Q55682
+228,Peptidoglycan biosynthesis,syn00550,ponA,sll0002,Q55683
+228,Aminoacyl-tRNA biosynthesis,syn00970,trnS-CGA,trnS-CGA,NA
+228,Purine metabolism,syn00230,guaA,slr0213,P49057
+229,Cysteine and methionine metabolism,syn00270,slr0214,slr0214,Q59995
+229,Peptidoglycan biosynthesis,syn00550,sll0210,sll0210,Q55684
+229,Porphyrin and chlorophyll metabolism,syn00860,cobU,slr0216,Q55685
+229,NA,NA,slr0217,slr0217,Q55686
+229,NA,NA,ssr0349,ssr0349,P74790
+229,NA,NA,sll0209,sll0209,Q55687
+229,NA,NA,sll0208,sll0208,Q55688
+229,Streptomycin biosynthesis,syn00521,rfbA,sll0207,Q55689
+229,Aminoacyl-tRNA biosynthesis,syn00970,glyS,slr0220,Q55690
+229,NA,NA,sll0205,sll0205,Q55691
+230,NA,NA,gidA,sll0204,Q55692
+230,NA,NA,slr0222,slr0222,Q55693
+230,NA,NA,gidA,sll0202,Q55694
+230,NA,NA,slr0224,slr0224,Q55695
+230,NA,NA,sll0201,sll0201,Q55696
+230,NA,NA,sll0200,sll0200,Q55697
+230,Photosynthesis,syn00195,petE,sll0199,P21697
+230,NA,NA,slr0226,slr0226,Q55698
+230,NA,NA,sll0198,sll0198,Q55699
+230,NA,NA,ftsH,slr0228,Q55700
+231,NA,NA,sll0195,sll0195,Q55701
+231,Protein export,syn03060,ycf43,sll0194,P54086
+231,"Valine, leucine and isoleucine degradation",syn00280,mmsB,slr0229,Q55702
+231,NA,NA,slr0230,slr0230,Q57248
+231,Base excision repair,syn03410,slr0231,slr0231,Q55703
+231,NA,NA,sll0192,sll0192,Q55704
+231,NA,NA,slr0232,slr0232,Q55705
+231,NA,NA,trxM,slr0233,P52232
+231,NA,NA,sll0191,sll0191,P22039
+231,RNA degradation,syn03018,groEL-2,sll0416,P22034
+232,NA,NA,sll0415,sll0415,P22040
+232,NA,NA,sll0414,sll0414,Q55112
+232,NA,NA,slr0431,slr0431,Q55113
+232,NA,NA,ssl0788,ssl0788,P72570
+232,NA,NA,ssl0787,ssl0787,P72571
+232,NA,NA,sll0413,sll0413,Q55114
+232,NA,NA,sll0412,sll0412,Q55115
+232,NA,NA,sll0410,sll0410,Q55116
+232,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,sll0409,sll0409,Q55117
+232,NA,NA,sll0408,sll0408,Q55118
+233,NA,NA,efp,slr0434,Q55119
+233,Fatty acid biosynthesis,syn00061,accB,slr0435,Q55120
+233,NA,NA,ccmK,slr0436,Q55121
+233,NA,NA,sll0406,sll0406,Q55122
+233,NA,NA,sll0405,sll0405,Q55123
+233,Glyoxylate and dicarboxylate metabolism,syn00630,glcD,sll0404,Q55124
+233,NA,NA,slr0438,slr0438,Q55125
+233,NA,NA,sll0403,sll0403,Q55126
+233,NA,NA,slr0439,slr0439,Q55127
+233,NA,NA,ssl0769,ssl0769,P72572
+234,Arginine biosynthesis,syn00220,aspC,sll0402,Q55128
+234,Citrate cycle (TCA cycle),syn00020,gltA,sll0401,Q59977
+234,NA,NA,sll0400,sll0400,Q55129
+234,NA,NA,slr0440,slr0440,Q55130
+234,Lysine biosynthesis,syn00300,slr0049,slr0049,Q55131
+234,Sulfur relay system,syn04122,ycf40,ssr0102,P72573
+234,NA,NA,slr0050,slr0050,Q55132
+234,NA,NA,sll0072,sll0072,Q55133
+234,NA,NA,sll0071,sll0071,Q55134
+234,Glyoxylate and dicarboxylate metabolism,syn00630,purU,sll0070,Q55135
+235,Nitrogen metabolism,syn00910,icfA,slr0051,Q55136
+235,NA,NA,sll0069,sll0069,Q55137
+235,NA,NA,sll0068,sll0068,Q55138
+235,Glutathione metabolism,syn00480,gst,sll0067,Q55139
+235,NA,NA,sll0066,sll0066,Q55140
+235,"Valine, leucine and isoleucine biosynthesis",syn00290,ilvN,sll0065,Q55141
+235,NA,NA,ssr0109,ssr0109,P72574
+235,NA,NA,slr0053,slr0053,Q55142
+235,Glycerolipid metabolism,syn00561,dgkA,slr0054,Q55143
+235,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,trpG,slr0055,Q55144
+236,Porphyrin and chlorophyll metabolism,syn00860,chlG,slr0056,Q55145
+236,NA,NA,sll0064,sll0064,Q55146
+236,NA,NA,sll0063,sll0063,Q55147
+236,NA,NA,sll0062,sll0062,Q55148
+236,NA,NA,slr0058,slr0058,Q55149
+236,Aminoacyl-tRNA biosynthesis,syn00970,trnA-CGC,trnA-CGC,NA
+236,NA,NA,slr0059,slr0059,Q55150
+236,NA,NA,slr0060,slr0060,Q55151
+236,NA,NA,slr0061,slr0061,Q55152
+236,NA,NA,sll0060,sll0060,Q55153
+237,RNA degradation,syn03018,dnaK,sll0058,Q55154
+237,NA,NA,grpE,sll0057,Q59978
+237,NA,NA,gspE,slr0063,Q55155
+237,NA,NA,slr0064,slr0064,Q55156
+237,NA,NA,slr0065,slr0065,Q55157
+237,Riboflavin metabolism,syn00740,ribG,slr0066,Q55158
+237,NA,NA,sll0055,sll0055,Q55159
+237,NA,NA,slr0067,slr0067,P53383
+237,Fatty acid biosynthesis,syn00061,accC,sll0053,Q55160
+237,NA,NA,slr0069,slr0069,Q55161
+238,NA,NA,sll0051,sll0051,Q55162
+238,One carbon pool by folate,syn00670,fmt,slr0070,Q55163
+238,ABC transporters,syn02010,natA,slr0467,Q55164
+238,NA,NA,slr0468,slr0468,Q55165
+238,Ribosome,syn03010,rps4,slr0469,P48939
+238,NA,NA,sll0462,sll0462,Q55166
+238,Arginine and proline metabolism,syn00330,proA,sll0461,Q55167
+238,Two-component system,syn02020,phy,slr0473,Q55168
+238,Two-component system,syn02020,slr0474,slr0474,Q55169
+238,Nucleotide excision repair,syn03420,uvrB,sll0459,Q55170
+239,NA,NA,slr0476,slr0476,Q55171
+239,Photosynthesis,syn00195,psbX,sml0002,P72575
+239,Purine metabolism,syn00230,purN,slr0477,Q55172
+239,NA,NA,slr0479,slr0479,Q55173
+239,NA,NA,ycf46,slr0480,Q55174
+239,NA,NA,slr0482,slr0482,Q55175
+239,NA,NA,slr0483,slr0483,Q55176
+239,NA,NA,slr0484,slr0484,Q55177
+239,NA,NA,slr0487,slr0487,Q55178
+239,NA,NA,slr0488,slr0488,Q55179
+240,NA,NA,slr0489,slr0489,Q55180
+240,NA,NA,slr0491,slr0491,Q55181
+240,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,menE,slr0492,Q55182
+240,Fructose and mannose metabolism,syn00051,rfbM,slr0493,Q55183
+240,NA,NA,sll0456,sll0456,Q55184
+240,"Glycine, serine and threonine metabolism",syn00260,thrA,sll0455,P52986
+240,Pantothenate and CoA biosynthesis,syn00770,slr0495,slr0495,Q55185
+240,NA,NA,slr0496,slr0496,Q55186
+240,Aminoacyl-tRNA biosynthesis,syn00970,pheS,sll0454,Q55187
+240,NA,NA,sll0691,sll0691,Q55188
+241,NA,NA,vapC,sll0690,Q55189
+241,NA,NA,ssl1300,ssl1300,P72576
+241,NA,NA,sll0689,sll0689,Q55190
+241,NA,NA,sll0688,sll0688,Q55191
+241,NA,NA,sll0687,sll0687,Q55192
+241,NA,NA,sll0686,sll0686,Q55193
+241,NA,NA,sll0685,sll0685,Q55194
+241,ABC transporters,syn02010,pstB,sll0684,Q55195
+241,ABC transporters,syn02010,pstB,sll0683,Q55196
+241,ABC transporters,syn02010,pstA,sll0682,Q55197
+242,ABC transporters,syn02010,pstC,sll0681,Q55198
+242,ABC transporters,syn02010,pstS,sll0680,Q55199
+242,ABC transporters,syn02010,sphX,sll0679,Q55200
+242,NA,NA,slr0719,slr0719,Q55201
+242,Aminoacyl-tRNA biosynthesis,syn00970,trnR-CCG,trnR-CCG,NA
+242,Ribosome,syn03010,rps14,slr0628,P48944
+242,NA,NA,im30,sll0617,Q55707
+242,NA,NA,slr0630,slr0630,Q55708
+242,Quorum sensing,syn02024,secA,sll0616,Q55709
+243,NA,NA,sll0615,sll0615,P52876
+243,NA,NA,sll0614,sll0614,Q79F24
+243,Homologous recombination,syn03440,ruvB,sll0613,Q57396
+243,Thiamine metabolism,syn00730,thiG,slr0633,Q55710
+243,NA,NA,slr0634,slr0634,Q55711
+243,NA,NA,slr0635,slr0635,Q55712
+243,NA,NA,sll0611,sll0611,Q55713
+243,Porphyrin and chlorophyll metabolism,syn00860,slr0636,slr0636,Q55714
+243,NA,NA,slr0637,slr0637,Q55715
+243,Aminoacyl-tRNA biosynthesis,syn00970,glyQ,slr0638,Q55716
+244,NA,NA,slr0639,slr0639,Q55717
+244,Two-component system,syn02020,slr0640,slr0640,Q55718
+244,NA,NA,sll0609,sll0609,Q55719
+244,NA,NA,sll0608,sll0608,Q55720
+244,NA,NA,slr0642,slr0642,Q55721
+244,NA,NA,slr0643,slr0643,Q55722
+244,ABC transporters,syn02010,sll0606,sll0606,Q55723
+244,NA,NA,slr0644,slr0644,Q55724
+244,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,menD,sll0603,Q55725
+244,NA,NA,sll0602,sll0602,Q55726
+245,NA,NA,slr0645,slr0645,Q55727
+245,Peptidoglycan biosynthesis,syn00550,dacB,slr0646,Q55728
+245,NA,NA,sll0601,sll0601,P55175
+245,Selenocompound metabolism,syn00450,metS,slr0649,Q55729
+245,NA,NA,slr0650,slr0650,Q55730
+245,Purine metabolism,syn00230,dgt,sll0398,Q55731
+245,NA,NA,sll0397,sll0397,Q55732
+245,NA,NA,sll0396,sll0396,Q55733
+245,NA,NA,sll0395,sll0395,Q55734
+245,NA,NA,sll0394,sll0394,Q55735
+246,NA,NA,napA,slr0415,Q55736
+246,NA,NA,slr0416,slr0416,Q55737
+246,NA,NA,gyrA,slr0417,Q55738
+246,NA,NA,slr0418,slr0418,Q55739
+246,ABC transporters,syn02010,sll0385,sll0385,Q55740
+246,ABC transporters,syn02010,sll0384,sll0384,Q55741
+246,ABC transporters,syn02010,cbiM,sll0383,Q55742
+246,ABC transporters,syn02010,sll0382,sll0382,Q55743
+246,NA,NA,sll0381,sll0381,Q55744
+246,NA,NA,ssr0692,ssr0692,P74791
+247,NA,NA,ssl0750,ssl0750,P74792
+247,NA,NA,ssr0693,ssr0693,P74793
+247,NA,NA,rfbW,sll0380,Q55745
+247,Lipopolysaccharide biosynthesis,syn00540,lpxA,sll0379,Q55746
+247,NA,NA,slr0420,slr0420,Q55747
+247,NA,NA,slr0421,slr0421,Q55748
+247,Porphyrin and chlorophyll metabolism,syn00860,cysG,sll0378,Q55749
+247,Nucleotide excision repair,syn03420,mfd,sll0377,Q55750
+247,NA,NA,sll0376,sll0376,Q55751
+247,NA,NA,rlpA,slr0423,Q55752
+248,ABC transporters,syn02010,braG_or_livF,sll0374,Q55753
+248,Arginine and proline metabolism,syn00330,proA,sll0373,P54902
+248,NA,NA,sll0372,sll0372,Q55754
+248,NA,NA,ssl0738,ssl0738,P74794
+248,NA,NA,sll0371,sll0371,Q55755
+248,Pyrimidine metabolism,syn00240,carB,sll0370,Q55756
+248,NA,NA,sll0369,sll0369,Q55757
+248,Pyrimidine metabolism,syn00240,pyrR,sll0368,Q55758
+248,Folate biosynthesis,syn00790,folE,slr0426,Q55759
+248,Nicotinate and nicotinamide metabolism,syn00760,slr0427,slr0427,Q55760
+249,NA,NA,sll0189,sll0189,Q55761
+249,NA,NA,sll0188,sll0188,Q55762
+249,NA,NA,lytB,slr0191,Q55763
+249,NA,NA,slr0192,slr0192,Q55764
+249,NA,NA,slr0193,slr0193,Q55765
+249,Pentose phosphate pathway,syn00030,rpiA,slr0194,Q55766
+249,NA,NA,slr0195,slr0195,Q55767
+249,NA,NA,slr0196,slr0196,Q55768
+249,NA,NA,slr0197,slr0197,Q55769
+249,NA,NA,sll0185,sll0185,Q55770
+250,NA,NA,slr0199,slr0199,P54004
+250,NA,NA,rpoD,sll0184,Q59996
+250,Citrate cycle (TCA cycle),syn00020,hdrB,slr0201,Q55771
+250,NA,NA,ssl0353,ssl0353,Q55772
+250,NA,NA,sll0183,sll0183,Q55773
+250,NA,NA,ssl0352,ssl0352,P74795
+250,ABC transporters,syn02010,sll0182,sll0182,Q55774
+250,NA,NA,sll0181,sll0181,Q55775
+250,NA,NA,ssl0350,ssl0350,P74796
+250,NA,NA,sll0180,sll0180,Q55776
+251,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,slr0204,slr0204,Q55777
+251,Porphyrin and chlorophyll metabolism,syn00860,gltX,sll0179,Q55778
+251,NA,NA,slr0207,slr0207,Q55779
+251,NA,NA,slr0208,slr0208,Q55780
+251,NA,NA,ftrV,ssr0330,Q55781
+251,NA,NA,slr0209,slr0209,Q55782
+251,NA,NA,slr0210,slr0210,Q55783
+251,NA,NA,ssr0332,ssr0332,P74797
+251,NA,NA,slr0211,slr0211,Q55784
+251,NA,NA,ssl0331,ssl0331,Q55785
+252,Cysteine and methionine metabolism,syn00270,metH,slr0212,Q55786
+252,NA,NA,ssr0336,ssr0336,P74798
+252,NA,NA,sll0178,sll0178,Q55359
+252,NA,NA,sll0888,sll0888,Q55360
+252,NA,NA,ssr1513,ssr1513,P74767
+252,NA,NA,sll0887,sll0887,Q55361
+252,NA,NA,sll0886,sll0886,Q55362
+252,NA,NA,slr0895,slr0895,Q55363
+252,NA,NA,slr0896,slr0896,Q55364
+252,Starch and sucrose metabolism,syn00500,slr0897,slr0897,Q55365
+253,Nitrogen metabolism,syn00910,nirA,slr0898,Q55366
+253,Nitrogen metabolism,syn00910,cynS,slr0899,Q55367
+253,Folate biosynthesis,syn00790,moeA,slr0900,Q55368
+253,Folate biosynthesis,syn00790,moaA,slr0901,Q55369
+253,Folate biosynthesis,syn00790,moaC,slr0902,Q55370
+253,Sulfur relay system,syn04122,ssr1527,ssr1527,P74768
+253,Folate biosynthesis,syn00790,moaE,slr0903,Q55371
+253,NA,NA,ssr1528,ssr1528,P74769
+253,NA,NA,slr0904,slr0904,Q55372
+253,Porphyrin and chlorophyll metabolism,syn00860,bchE,slr0905,Q55373
+254,Photosynthesis,syn00195,psbB,slr0906,P05429
+254,NA,NA,slr0907,slr0907,Q55374
+254,NA,NA,slr0909,slr0909,Q55375
+254,NA,NA,slr0912,slr0912,Q55376
+254,NA,NA,slr0913,slr0913,Q55377
+254,NA,NA,slr0914,slr0914,Q55378
+254,NA,NA,trnfM-CAU-1,trnfM-CAU-1,NA
+254,NA,NA,slr0915,slr0915,Q57253
+254,Biotin metabolism,syn00780,bioF,slr0917,P74770
+254,NA,NA,bioF,trnfM-CAU-2,NA
+255,NA,NA,"map, pepM",slr0918,P53579
+255,NA,NA,slr0919,slr0919,Q55380
+255,NA,NA,slr0920,slr0920,Q55381
+255,beta-Alanine metabolism,syn00410,panD,sll0892,Q55382
+255,Citrate cycle (TCA cycle),syn00020,citH,sll0891,Q55383
+255,NA,NA,ssl1690,ssl1690,P74771
+255,NA,NA,slr0921,slr0921,Q55384
+255,NA,NA,pth,slr0922,Q59989
+255,NA,NA,slr0923,slr0923,Q55385
+255,NA,NA,slr0924,slr0924,Q55386
+256,ABC transporters,syn02010,natB,slr0559,Q55387
+256,NA,NA,sll0556,sll0556,Q55388
+256,Aminoacyl-tRNA biosynthesis,syn00970,trnC-GCA,trnC-GCA,NA
+256,NA,NA,map,sll0555,P53581
+256,NA,NA,ftrC,sll0554,Q55389
+256,NA,NA,sll0553,sll0553,Q55390
+256,NA,NA,sll0552,sll0552,Q55391
+256,NA,NA,slr0565,slr0565,Q55392
+256,NA,NA,sll0550,sll0550,Q55393
+256,NA,NA,sll0549,sll0549,Q55394
+257,NA,NA,slr0569,slr0569,Q55395
+257,NA,NA,sll0547,sll0547,Q55396
+257,NA,NA,sll0546,sll0546,Q55397
+257,NA,NA,sll0545,sll0545,Q55398
+257,DNA replication,syn03030,sll0544,sll0544,Q55399
+257,NA,NA,slr0572,slr0572,Q55400
+257,NA,NA,sll0543,sll0543,Q55401
+257,NA,NA,ssl1046,ssl1046,P74772
+257,NA,NA,slr0573,slr0573,Q55402
+257,NA,NA,sgl0001,sgl0001,P74773
+258,NA,NA,ssl1045,ssl1045,P74774
+258,NA,NA,cyp,slr0574,Q59990
+258,NA,NA,slr0575,slr0575,Q55403
+258,Glycolysis / Gluconeogenesis,syn00010,acs,sll0542,Q55404
+258,NA,NA,slr0579,slr0579,Q55405
+258,NA,NA,desC(des9),sll0541,Q55406
+258,NA,NA,slr0580,slr0580,Q55407
+258,NA,NA,slr0581,slr0581,Q55408
+258,NA,NA,slr0582,slr0582,Q55409
+258,ABC transporters,syn02010,sll0540,sll0540,Q55410
+259,NA,NA,sll0539,sll0539,Q55411
+259,NA,NA,slr0583,slr0583,Q55412
+259,NA,NA,slr0825,slr0825,Q55413
+259,Ribosome,syn03010,rpl33,ssr1398,P48958
+259,Ribosome,syn03010,rps18,ssr1399,P48946
+259,D-Alanine metabolism,syn00473,alr,slr0827,P54918
+259,NA,NA,slr0829,slr0829,Q55414
+259,NA,NA,sll0834,sll0834,Q55415
+259,Quorum sensing,syn02024,sll0833,sll0833,Q55416
+259,NA,NA,sll0832,sll0832,Q55417
+260,NA,NA,ssr1407,ssr1407,P74775
+260,DNA replication,syn03030,dnaB,slr0833,Q55418
+260,NA,NA,moxR,slr0835,Q55419
+260,Streptomycin biosynthesis,syn00521,rfbB,slr0836,Q55420
+260,NA,NA,ssl1552,ssl1552,P74776
+260,NA,NA,fus,sll0830,Q55421
+260,Purine metabolism,syn00230,purM,slr0838,Q55422
+260,NA,NA,rapQ,sll0829,Q55423
+260,Porphyrin and chlorophyll metabolism,syn00860,hemH,slr0839,P54225
+260,Arginine and proline metabolism,syn00330,nylA,sll0828,Q55424
+261,NA,NA,sll0827,sll0827,Q55425
+261,NA,NA,slr0841,slr0841,Q55426
+261,NA,NA,slr0842,slr0842,Q55427
+261,NA,NA,pcnB,sll0825,Q55428
+261,NA,NA,ycf34,ssr1425,P74777
+261,Oxidative phosphorylation,syn00190,ndhF,slr0844,Q55429
+261,NA,NA,ssl1533,ssl1533,P74778
+261,NA,NA,slr0845,slr0845,Q55430
+261,Citrate cycle (TCA cycle),syn00020,sdhB,sll0823,Q55431
+261,NA,NA,sll0822,sll0822,Q55432
+262,NA,NA,slr0846,slr0846,Q55433
+262,NA,NA,sll0821,sll0821,Q55434
+262,Pantothenate and CoA biosynthesis,syn00770,kdtB,slr0847,Q55435
+262,NA,NA,slr0848,slr0848,Q55436
+262,NA,NA,gidB,slr0072,Q55787
+262,Two-component system,syn02020,slr0073,slr0073,Q55788
+262,NA,NA,sll0088,sll0088,Q55789
+262,NA,NA,ycf24,slr0074,Q55790
+262,NA,NA,ycf16,slr0075,Q55791
+262,NA,NA,slr0076,slr0076,Q55792
+263,Selenocompound metabolism,syn00450,nifS,slr0077,Q55793
+263,NA,NA,sll0086,sll0086,Q55794
+263,NA,NA,sll0085,sll0085,Q55795
+263,Lipopolysaccharide biosynthesis,syn00540,hisB,sll0084,Q55796
+263,Lipopolysaccharide biosynthesis,syn00540,gmhA,sll0083,Q55797
+263,Folate biosynthesis,syn00790,slr0078,slr0078,Q55798
+263,NA,NA,gspE,slr0079,Q55799
+263,NA,NA,sll0082,sll0082,Q55800
+263,DNA replication,syn03030,rnhA,slr0080,Q55801
+263,Two-component system,syn02020,slr0081,slr0081,Q55802
+264,NA,NA,slr0082,slr0082,Q55803
+264,RNA degradation,syn03018,deaD,slr0083,Q55804
+264,Arginine biosynthesis,syn00220,argC,sll0080,P54899
+264,Histidine metabolism,syn00340,hisH,slr0084,Q55805
+264,Aminoacyl-tRNA biosynthesis,syn00970,thrS,sll0078,Q55806
+264,NA,NA,slr0086,slr0086,Q55807
+264,Carotenoid biosynthesis,syn00906,crtO,slr0088,Q55808
+264,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,erg6,slr0089,Q55809
+264,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,ppd,slr0090,Q55810
+264,Glycolysis / Gluconeogenesis,syn00010,slr0091,slr0091,Q55811
+265,NA,NA,slr0092,slr0092,Q55812
+265,NA,NA,dnaJ,slr0093,P50027
+265,NA,NA,slr0095,slr0095,Q55813
+265,NA,NA,slr0096,slr0096,Q55814
+265,NA,NA,slr0498,slr0498,Q55815
+265,NA,NA,sll0489,sll0489,Q55816
+265,Histidine metabolism,syn00340,hisB,slr0500,P48054
+265,NA,NA,sll0488,sll0488,Q55817
+265,NA,NA,sll0487,sll0487,Q55818
+265,NA,NA,sll0486,sll0486,Q55819
+266,NA,NA,sll0485,sll0485,Q55820
+266,NA,NA,sll0484,sll0484,Q55821
+266,NA,NA,cobW,slr0502,Q55822
+266,NA,NA,slr0503,slr0503,Q55823
+266,NA,NA,slr0505,slr0505,Q55824
+266,Porphyrin and chlorophyll metabolism,syn00860,pcr,slr0506,Q59987
+266,NA,NA,sll0482,sll0482,Q55826
+266,NA,NA,sll0481,sll0481,Q55827
+266,Lysine biosynthesis,syn00300,sll0480,sll0480,Q55828
+266,NA,NA,slr0509,slr0509,Q55829
+267,NA,NA,slr0510,slr0510,Q55830
+267,NA,NA,ssr0871,ssr0871,P74799
+267,NA,NA,slr0511,slr0511,Q55831
+267,NA,NA,sll0479,sll0479,Q55832
+267,NA,NA,sll0478,sll0478,Q55833
+267,NA,NA,sll0477,sll0477,Q55834
+267,ABC transporters,syn02010,slr0513,slr0513,Q55835
+267,NA,NA,slr0514,slr0514,Q55836
+267,NA,NA,slr0516,slr0516,Q55837
+267,NA,NA,sll0474,sll0474,Q55838
+268,NA,NA,sll0473,sll0473,Q55839
+268,NA,NA,slr0517,slr0517,Q55840
+268,NA,NA,abfB,slr0518,Q55841
+268,Purine metabolism,syn00230,slr0519,slr0519,Q55842
+268,Arginine biosynthesis,syn00220,purL,slr0520,Q55843
+268,NA,NA,slr0521,slr0521,Q55844
+268,NA,NA,slr0522,slr0522,Q55845
+268,NA,NA,sll0471,sll0471,Q55846
+268,NA,NA,sll0470,sll0470,Q55847
+268,Pentose phosphate pathway,syn00030,prsA,sll0469,Q55848
+269,Biotin metabolism,syn00780,slr0523,slr0523,Q55849
+269,NA,NA,queA,sll0467,Q55850
+269,NA,NA,sll0597,sll0597,Q55851
+269,NA,NA,sll0596,sll0596,Q55852
+269,NA,NA,sll0595,sll0595,Q55853
+269,NA,NA,sll0594,sll0594,Q55854
+269,Glycolysis / Gluconeogenesis,syn00010,glk,sll0593,Q55855
+269,ABC transporters,syn02010,slr0615,slr0615,Q55856
+269,NA,NA,slr0616,slr0616,Q55857
+269,NA,NA,ssr1038,ssr1038,P74800
+270,NA,NA,slr0617,slr0617,Q55858
+270,NA,NA,sll0590,sll0590,Q55859
+270,Porphyrin and chlorophyll metabolism,syn00860,cbiP,slr0618,Q55860
+270,Benzoate degradation,syn00362,slr0619,slr0619,Q55861
+270,NA,NA,ssr1041,ssr1041,P74801
+270,NA,NA,sll0588,sll0588,Q55862
+270,Glycolysis / Gluconeogenesis,syn00010,pykF,sll0587,Q55863
+270,NA,NA,sll0586,sll0586,Q55864
+270,NA,NA,trxA,slr0623,P52231
+270,"Alanine, aspartate and glutamate metabolism",syn00250,sll0585,sll0585,Q55865
+271,NA,NA,ycf36,sll0584,Q55866
+271,Amino sugar and nucleotide sugar metabolism,syn00520,slr0624,slr0624,Q55867
+271,NA,NA,slr0625,slr0625,Q55868
+271,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroH,sll0109,Q55869
+271,NA,NA,slr0626,slr0626,Q55870
+271,NA,NA,slr0099,slr0099,Q55871
+271,NA,NA,amt1,sll0108,P54147
+271,Pentose phosphate pathway,syn00030,eda,sll0107,Q55872
+271,NA,NA,slr0103,slr0103,Q55873
+271,NA,NA,slr0104,slr0104,P54371
+272,NA,NA,sll0103,sll0103,Q55874
+272,NA,NA,sll0102,sll0102,Q55875
+272,NA,NA,slr0105,slr0105,Q55876
+272,NA,NA,slr0106,slr0106,Q55877
+272,NA,NA,sll0101,sll0101,Q55878
+272,NA,NA,ama,sll0100,P54984
+272,Porphyrin and chlorophyll metabolism,syn00860,cbiE,sll0099,Q55879
+272,NA,NA,sll0098,sll0098,Q55880
+272,Aminoacyl-tRNA biosynthesis,syn00970,trnG-GCC,trnG-GCC,NA
+272,NA,NA,slr0108,slr0108,Q55881
+273,NA,NA,slr0109,slr0109,Q55882
+273,NA,NA,sll0096,sll0096,Q55883
+273,NA,NA,sll0095,sll0095,Q55884
+273,NA,NA,sll0094,sll0094,Q55885
+273,NA,NA,slr0110,slr0110,Q55886
+273,NA,NA,slr0111,slr0111,Q55887
+273,NA,NA,slr0112,slr0112,Q55888
+273,NA,NA,slr0114,slr0114,Q55889
+273,Two-component system,syn02020,slr0115,slr0115,Q55890
+273,Porphyrin and chlorophyll metabolism,syn00860,slr0116,slr0116,Q55891
+274,NA,NA,ssl0172,ssl0172,Q55892
+274,NA,NA,sll0092,sll0092,Q55893
+274,Thiamine metabolism,syn00730,thiC,slr0118,Q55894
+274,NA,NA,brkB,slr0119,Q55895
+274,NA,NA,slr0120,slr0120,Q55896
+274,Biosynthesis of antibiotics,syn01130,slr0121,slr0121,Q55897
+274,Oxidative phosphorylation,syn00190,ppk,sll0290,Q55898
+274,NA,NA,minE,ssl0546,Q55899
+274,NA,NA,minD,sll0289,Q55900
+274,NA,NA,minC,sll0288,Q55901
+275,NA,NA,fraH,slr0298,Q55902
+275,NA,NA,slr0299,slr0299,Q55903
+275,NA,NA,slr0300,slr0300,Q55904
+275,Pyruvate metabolism,syn00620,ppsA,slr0301,Q55905
+275,NA,NA,slr0302,slr0302,Q55906
+275,NA,NA,slr0303,slr0303,Q55907
+275,NA,NA,slr0304,slr0304,Q55908
+275,NA,NA,slr0305,slr0305,Q55909
+275,NA,NA,slr0306,slr0306,Q55910
+275,NA,NA,sll0286,sll0286,Q55911
+276,NA,NA,sll0284,sll0284,Q55912
+276,NA,NA,sll0283,sll0283,Q55913
+276,NA,NA,slr0309,slr0309,Q55914
+276,NA,NA,sll0282,sll0282,Q55915
+276,NA,NA,sll0281,sll0281,Q55916
+276,NA,NA,sll0280,sll0280,Q55917
+276,NA,NA,slr0311,slr0311,Q55918
+276,NA,NA,slr0312,slr0312,Q55919
+276,NA,NA,slr0313,slr0313,Q55920
+276,NA,NA,slr0314,slr0314,Q55921
+277,NA,NA,slr0315,slr0315,Q55922
+277,NA,NA,slr0316,slr0316,Q55923
+277,NA,NA,slr0317,slr0317,Q55924
+277,NA,NA,slr0318,slr0318,Q55925
+277,beta-Lactam resistance,syn01501,blaOXA-3,slr0319,Q55926
+277,NA,NA,ssl0511,ssl0511,P74803
+277,NA,NA,map,slr0786,P53580
+277,NA,NA,sll0800,sll0800,Q55927
+277,Nicotinate and nicotinamide metabolism,syn00760,slr0787,slr0787,Q55928
+277,Nicotinate and nicotinamide metabolism,syn00760,slr0788,slr0788,Q55929
+278,NA,NA,slr0789,slr0789,Q55930
+278,NA,NA,umuC,slr0790,Q55931
+278,Two-component system,syn02020,sll0798,sll0798,Q55932
+278,Two-component system,syn02020,sll0797,sll0797,Q55933
+278,Two-component system,syn02020,slr0793,slr0793,Q55934
+278,Two-component system,syn02020,slr0794,slr0794,Q55935
+278,Two-component system,syn02020,slr0795,slr0795,Q55936
+278,Two-component system,syn02020,nreB,slr0796,Q55937
+278,Porphyrin and chlorophyll metabolism,syn00860,merR,sll0794,Q55938
+278,NA,NA,slr0797,slr0797,Q59997
+279,NA,NA,sll0793,sll0793,Q55939
+279,NA,NA,smtB,sll0792,Q55940
+279,NA,NA,slr0798,slr0798,Q59998
+279,NA,NA,sll0790,sll0790,Q55941
+279,NA,NA,sll0789,sll0789,Q55942
+279,NA,NA,sll0788,sll0788,Q55943
+279,NA,NA,slr0799,slr0799,Q55944
+279,NA,NA,slr0800,slr0800,Q55945
+279,NA,NA,ssl1464,ssl1464,P74804
+279,NA,NA,sll0787,sll0787,Q55946
+280,NA,NA,sll0786,sll0786,Q55947
+280,NA,NA,sll0785,sll0785,Q55948
+280,Tryptophan metabolism,syn00380,merR,sll0784,Q55949
+280,NA,NA,sll0783,sll0783,Q55950
+280,NA,NA,slr0801,slr0801,Q55951
+280,NA,NA,sll0782,sll0782,Q55952
+280,NA,NA,sll0781,sll0781,Q55953
+280,NA,NA,sll0780,sll0780,Q55954
+280,NA,NA,sll0779,sll0779,Q55955
+280,NA,NA,sll0778,sll0778,Q55956
+281,NA,NA,sll0777,sll0777,Q55957
+281,NA,NA,pknA,sll0776,P54735
+281,NA,NA,sll0775,sll0775,Q55958
+281,NA,NA,ESI3,ssr1169,P74805
+281,Glutathione metabolism,syn00480,slr0697,slr0697,Q55959
+281,NA,NA,slr0698,slr0698,Q55960
+281,NA,NA,slr0699,slr0699,Q55961
+281,NA,NA,slr0700,slr0700,Q55962
+281,NA,NA,merR,slr0701,Q55963
+281,NA,NA,slr0702,slr0702,Q55964
+282,NA,NA,sll0678,sll0678,Q55965
+282,NA,NA,sll0677,sll0677,Q57495
+282,NA,NA,ssl1277,ssl1277,P74806
+282,NA,NA,sll0676,sll0676,Q55966
+282,NA,NA,ssr1175,ssr1175,P74807
+282,NA,NA,slr0703,slr0703,Q57495
+282,NA,NA,smr0002,smr0002,P74808
+282,NA,NA,slr0704,slr0704,Q57248
+282,NA,NA,ssr1176,ssr1176,P97152
+282,NA,NA,sll0672,sll0672,Q59999
+283,NA,NA,sll0671,sll0671,Q55968
+283,NA,NA,sll0670,sll0670,Q55969
+283,NA,NA,sll0669,sll0669,Q55970
+283,DNA replication,syn03030,polA,slr0707,Q55971
+283,NA,NA,slr0708,slr0708,Q55972
+283,NA,NA,sll0668,sll0668,Q55973
+283,NA,NA,sll0667,sll0667,Q55974
+283,NA,NA,sll0666,sll0666,Q55975
+283,NA,NA,sll0665,sll0665,Q55976
+283,NA,NA,sll0664,sll0664,Q55977
+284,NA,NA,slr0709,slr0709,P52761
+284,Arginine biosynthesis,syn00220,gdhA,slr0710,P54386
+284,Folate biosynthesis,syn00790,slr0711,slr0711,Q55978
+284,NA,NA,slr0712,slr0712,Q55979
+284,NA,NA,sll0662,sll0662,Q55980
+284,NA,NA,ycf35,sll0661,Q55981
+284,NA,NA,ssl1263,ssl1263,P74809
+284,Vitamin B6 metabolism,syn00750,pdxA,sll0660,Q55982
+284,Photosynthesis,syn00195,petM,smr0003,P74810
+284,NA,NA,tgt,slr0713,Q55983
+285,Carotenoid biosynthesis,syn00906,sll0659,sll0659,Q55984
+285,NA,NA,sll0658,sll0658,Q55985
+285,NA,NA,ssl1255,ssl1255,P74811
+285,Peptidoglycan biosynthesis,syn00550,mraY,sll0657,Q55986
+285,NA,NA,slr0765,slr0765,Q55987
+285,Glycolysis / Gluconeogenesis,syn00010,pfkA,sll0745,Q55988
+285,Pyrimidine metabolism,syn00240,sll0744,sll0744,Q55989
+285,NA,NA,sll0743,sll0743,Q55990
+285,NA,NA,sll0742,sll0742,Q55991
+285,Glycolysis / Gluconeogenesis,syn00010,nifJ,sll0741,P52965
+286,NA,NA,sll0740,sll0740,Q55992
+286,ABC transporters,syn02010,sll0739,sll0739,Q55993
+286,ABC transporters,syn02010,modA,sll0738,Q55994
+286,NA,NA,sll0737,sll0737,O06944
+286,NA,NA,sll0048,sll0048,Q55437
+286,NA,NA,sll0047,sll0047,Q55438
+286,NA,NA,slr0022,slr0022,Q55439
+286,Starch and sucrose metabolism,syn00500,sps,sll0045,Q55440
+286,NA,NA,slr0023,slr0023,Q55441
+286,NA,NA,sll0044,sll0044,Q55442
+287,Two-component system,syn02020,sll0043,sll0043,Q55443
+287,NA,NA,tar,sll0042,Q55444
+287,Two-component system,syn02020,sll0041,sll0041,Q55445
+287,Two-component system,syn02020,sll0040,sll0040,Q55446
+287,Two-component system,syn02020,sll0039,sll0039,Q55447
+287,Two-component system,syn02020,sll0038,sll0038,Q55448
+287,NA,NA,slr0031,slr0031,Q55449
+287,Cysteine and methionine metabolism,syn00270,ilvE,slr0032,P54691
+287,Aminoacyl-tRNA biosynthesis,syn00970,slr0033,slr0033,Q55450
+287,Porphyrin and chlorophyll metabolism,syn00860,sll0037,sll0037,Q55451
+288,NA,NA,sll0036,sll0036,Q55452
+288,NA,NA,aspC,slr0036,Q55453
+288,Peptidoglycan biosynthesis,syn00550,sll0034,sll0034,Q55454
+288,Carotenoid biosynthesis,syn00906,sll0033,sll0033,Q55455
+288,NA,NA,sll0031,sll0031,Q55456
+288,NA,NA,slr0038,slr0038,Q55457
+288,NA,NA,slr0039,slr0039,Q55458
+288,NA,NA,cmpR,sll0030,Q55459
+288,ABC transporters,syn02010,cmpA,slr0040,Q55460
+288,ABC transporters,syn02010,cmpB,slr0041,Q55461
+289,NA,NA,slr0042,slr0042,Q59991
+289,ABC transporters,syn02010,nrtC,slr0043,Q55462
+289,ABC transporters,syn02010,nrtD,slr0044,Q55463
+289,Oxidative phosphorylation,syn00190,ndhD,sll0027,Q55464
+289,Oxidative phosphorylation,syn00190,ndhF,sll0026,Q55465
+289,NA,NA,sll0518,sll0518,Q55466
+289,NA,NA,rbpA,sll0517,Q57014
+289,Porphyrin and chlorophyll metabolism,syn00860,chlM,slr0525,Q55467
+289,Pantothenate and CoA biosynthesis,syn00770,panB,slr0526,P52997
+289,Folate biosynthesis,syn00790,exsB,slr0527,Q55468
+290,Lysine biosynthesis,syn00300,murE,slr0528,Q55469
+290,NA,NA,sll0514,sll0514,Q55470
+290,ABC transporters,syn02010,slr0529,slr0529,Q55471
+290,ABC transporters,syn02010,slr0530,slr0530,Q55472
+290,ABC transporters,syn02010,slr0531,slr0531,Q55473
+290,Steroid biosynthesis,syn00100,sll0513,sll0513,Q55474
+290,NA,NA,slr0533,slr0533,Q55475
+290,NA,NA,slt,slr0534,Q55476
+290,Quorum sensing,syn02024,slr0535,slr0535,Q55477
+290,Porphyrin and chlorophyll metabolism,syn00860,hemE,slr0536,P54224
+291,Purine metabolism,syn00230,sll0509,sll0509,Q55478
+291,NA,NA,sll0508,sll0508,Q55479
+291,NA,NA,slr0537,slr0537,Q55480
+291,NA,NA,sll0507,sll0507,Q55481
+291,Peptidoglycan biosynthesis,syn00550,sll0506,sll0506,Q55482
+291,NA,NA,sll0505,sll0505,Q55483
+291,Lysine biosynthesis,syn00300,lysA,sll0504,Q55484
+291,NA,NA,sll0503,sll0503,Q55485
+291,Aminoacyl-tRNA biosynthesis,syn00970,argS,sll0502,Q55486
+291,NA,NA,sll0501,sll0501,Q55487
+292,NA,NA,slr0541,slr0541,Q55488
+292,NA,NA,clpP,slr0542,P54416
+292,"Glycine, serine and threonine metabolism",syn00260,trpB,slr0543,Q59992
+292,NA,NA,sll0499,sll0499,Q55489
+292,NA,NA,slr0544,slr0544,Q55490
+292,NA,NA,sll0498,sll0498,Q55491
+292,NA,NA,sll0497,sll0497,Q55492
+292,NA,NA,slr0545,slr0545,Q55493
+292,ABC transporters,syn02010,sll0496,sll0496,Q55494
+292,Aminoacyl-tRNA biosynthesis,syn00970,asnS,sll0495,P52276
+293,Aminoacyl-tRNA biosynthesis,syn00970,trnY-GUA,trnY-GUA,NA
+293,Aminoacyl-tRNA biosynthesis,syn00970,trnT-GGU,trnT-GGU,NA
+293,NA,NA,sll0494,sll0494,Q55495
+293,NA,NA,sll0493,sll0493,Q55496
+293,Arginine biosynthesis,syn00220,argF,sll0902,Q55497
+293,Purine metabolism,syn00230,purE,sll0901,Q55498
+293,DNA replication,syn03030,ssb,slr0925,Q55499
+293,Ubiquinone and other terpenoid-quinone biosynthesis,syn00130,ubiA,slr0926,Q55500
+293,Photosynthesis,syn00195,psbD2,slr0927,P09192
+293,NA,NA,slr0929,slr0929,Q55501
+294,NA,NA,slr0930,slr0930,Q55502
+294,NA,NA,ssr1558,ssr1558,P74779
+294,Histidine metabolism,syn00340,hisG,sll0900,Q55503
+294,Amino sugar and nucleotide sugar metabolism,syn00520,glmU,sll0899,Q55504
+294,NA,NA,ssr1562,ssr1562,P74780
+294,Thiamine metabolism,syn00730,sll0898,sll0898,P52640
+294,NA,NA,ssl1707,ssl1707,P74781
+294,NA,NA,dnaJ,sll0897,Q55505
+294,Homologous recombination,syn03440,sll0896,sll0896,Q55506
+294,Sulfur metabolism,syn00920,cysQ,sll0895,Q55507
+295,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,trpC,slr0546,Q55508
+295,NA,NA,amt3,sll0537,P54148
+295,NA,NA,sll0536,sll0536,Q55509
+295,NA,NA,clpX,sll0535,Q55510
+295,NA,NA,clpP,sll0534,Q59993
+295,NA,NA,tig,sll0533,Q55511
+295,"Glycine, serine and threonine metabolism",syn00260,asd,slr0549,Q55512
+295,Monobactam biosynthesis,syn00261,dapA,slr0550,Q55513
+295,RNA degradation,syn03018,slr0551,slr0551,P54123
+295,NA,NA,slr0552,slr0552,Q55514
+296,Pantothenate and CoA biosynthesis,syn00770,slr0553,slr0553,Q55515
+296,NA,NA,slr0554,slr0554,Q55516
+296,NA,NA,sll0529,sll0529,Q55517
+296,NA,NA,sll0528,sll0528,Q55518
+296,NA,NA,slr0556,slr0556,P52056
+296,NA,NA,sll0525,sll0525,Q55519
+296,NA,NA,ssl1004,ssl1004,Q55520
+296,NA,NA,sll0524,sll0524,Q55521
+296,Aminoacyl-tRNA biosynthesis,syn00970,valS,slr0557,Q55522
+296,Oxidative phosphorylation,syn00190,ndhE,sll0522,P26524
+297,Oxidative phosphorylation,syn00190,ndhG,sll0521,P26523
+297,Oxidative phosphorylation,syn00190,ndhI,sll0520,P26525
+297,Oxidative phosphorylation,syn00190,ndhA,sll0519,P26522
+297,Pyrimidine metabolism,syn00240,pyrD,slr1418,P74782
+297,NA,NA,slr1419,slr1419,P74523
+297,Pentose and glucuronate interconversions,syn00040,slr1420,slr1420,P74524
+297,NA,NA,slr1421,slr1421,P74525
+297,NA,NA,sll1344,sll1344,P74526
+297,Glutathione metabolism,syn00480,ape2,sll1343,P74527
+297,Glycolysis / Gluconeogenesis,syn00010,gap2,sll1342,P80505
+298,D-Glutamine and D-glutamate metabolism,syn00471,murC,slr1423,P74528
+298,Amino sugar and nucleotide sugar metabolism,syn00520,slr1424,slr1424,P74529
+298,NA,NA,slr1425,slr1425,P74530
+298,Porphyrin and chlorophyll metabolism,syn00860,bfr,sll1341,P24602
+298,NA,NA,sll1340,sll1340,P74532
+298,Homologous recombination,syn03440,recR,slr1426,P74533
+298,NA,NA,sll1338,sll1338,P74534
+298,NA,NA,sll1336,sll1336,P74535
+298,NA,NA,slr1428,slr1428,P74536
+298,NA,NA,sll1334,sll1334,P74537
+299,NA,NA,slr1429,slr1429,P74538
+299,Aminoacyl-tRNA biosynthesis,syn00970,trnL-UAA,trnL-UAA,NA
+299,NA,NA,sll1333,sll1333,P74539
+299,NA,NA,slr1431,slr1431,P74540
+299,NA,NA,sll1330,sll1330,P74541
+299,Streptomycin biosynthesis,syn00521,sll1329,sll1329,P74542
+299,NA,NA,slr1451,slr1451,P74543
+299,NA,NA,sll1367,sll1367,P74544
+299,Sulfur metabolism,syn00920,sbpA,slr1452,Q01903
+299,NA,NA,ssr2439,ssr2439,Q01904
+300,Sulfur metabolism,syn00920,cysT,slr1453,Q01895
+300,Sulfur metabolism,syn00920,cysW,slr1454,P74547
+300,Sulfur metabolism,syn00920,cysA,slr1455,P74548
+300,Two-component system,syn02020,slr1456,slr1456,P74549
+300,NA,NA,chrA,slr1457,P74550
+300,Photosynthesis - antenna proteins,syn00196,apcF,slr1459,P74551
+300,NA,NA,sll1366,sll1366,P74552
+300,NA,NA,slr1461,slr1461,P74553
+300,NA,NA,sll1365,sll1365,P74554
+300,NA,NA,slr1462,slr1462,P74555
+301,NA,NA,fus,slr1463,P28371
+301,NA,NA,slr1464,slr1464,P74557
+301,NA,NA,ssl2667,ssl2667,P74558
+301,"Valine, leucine and isoleucine biosynthesis",syn00290,ilvC,sll1363,P29107
+301,NA,NA,slr0651,slr0651,P74560
+301,Histidine metabolism,syn00340,hisA,slr0652,P74561
+301,"Alanine, aspartate and glutamate metabolism",syn00250,nadB,sll0631,P74562
+301,NA,NA,sll0630,sll0630,P74563
+301,Photosynthesis,syn00195,psaK,sll0629,P74564
+301,NA,NA,rpoDI,slr0653,P74565
+302,Ribosome,syn03010,rrn16Sb,rrn16Sb,NA
+302,Aminoacyl-tRNA biosynthesis,syn00970,trnI-GAU-2,trnI-GAU-2,NA
+302,Ribosome,syn03010,rrn23Sb,rrn23Sb,NA
+302,Ribosome,syn03010,rrn5Sb,rrn5Sb,NA
+302,NA,NA,slr0654,slr0654,P74566
+302,NA,NA,slr0655,slr0655,P74567
+302,NA,NA,slr0656,slr0656,P74568
+302,Aminoacyl-tRNA biosynthesis,syn00970,trnL-CAG,trnL-CAG,NA
+302,"Glycine, serine and threonine metabolism",syn00260,lysC,slr0657,P74569
+303,NA,NA,slr0658,slr0658,P74570
+303,NA,NA,prlC,slr0659,P74571
+303,Arginine and proline metabolism,syn00330,proC,slr0661,P74572
+303,NA,NA,lim17,sll0626,P74573
+303,NA,NA,sll0625,sll0625,P74574
+303,NA,NA,sll0624,sll0624,P74575
+303,Arginine and proline metabolism,syn00330,speA,slr0662,P74576
+303,NA,NA,sll0623,sll0623,P74577
+303,Nicotinate and nicotinamide metabolism,syn00760,nadA,sll0622,P74578
+303,NA,NA,dsbD,sll0621,P74579
+304,NA,NA,ssr1114,ssr1114,P74580
+304,NA,NA,slr0664,slr0664,P74581
+304,Citrate cycle (TCA cycle),syn00020,slr0665,slr0665,P74582
+304,NA,NA,slr0666,slr0666,P74583
+304,NA,NA,slr0667,slr0667,P74584
+304,NA,NA,slr0668,slr0668,P74585
+304,Glyoxylate and dicarboxylate metabolism,syn00630,gltB,sll1499,P55038
+304,Pyruvate metabolism,syn00620,ddh,slr1556,P74586
+304,Pyrimidine metabolism,syn00240,carA,sll1498,P74587
+304,NA,NA,slr1557,slr1557,P74588
+305,Fructose and mannose metabolism,syn00051,sll1496,sll1496,P74589
+305,Lysine degradation,syn00310,sll1495,sll1495,P74590
+305,Aminoacyl-tRNA biosynthesis,syn00970,trnV-GAC,trnV-GAC,NA
+305,"Phenylalanine, tyrosine and tryptophan biosynthesis",syn00400,aroE,slr1559,P74591
+305,Histidine metabolism,syn00340,hisS,slr1560,P74592
+305,NA,NA,grxC,slr1562,P74593
+305,NA,NA,slr1563,slr1563,P74594
+305,NA,NA,rpoF,slr1564,P74595
+305,NA,NA,slr1565,slr1565,P74596
+305,NA,NA,slr1566,slr1566,P74597
+306,NA,NA,sll1491,sll1491,P74598
+306,NA,NA,slr1567,slr1567,P74599
+306,NA,NA,slr1568,slr1568,P74600
+306,NA,NA,sll1489,sll1489,P74601
+306,NA,NA,sll1488,sll1488,P74602
+306,NA,NA,slr1570,slr1570,P74603
+306,NA,NA,slr1571,slr1571,P74604
+306,NA,NA,slr1572,slr1572,P74605
+306,NA,NA,slr1573,slr1573,P74606
+306,NA,NA,ssl2874,ssl2874,P74607
+307,NA,NA,slr1575,slr1575,P74608
+307,NA,NA,slr1576,slr1576,P74609
+307,NA,NA,slr1577,slr1577,P74610
+307,NA,NA,slr1579,slr1579,P74611
+307,NA,NA,sll1486,sll1486,P74612
+307,NA,NA,sll1485,sll1485,P74613
+307,Oxidative phosphorylation,syn00190,ndh,sll1484,P74614
+307,NA,NA,sll1483,sll1483,P74615
+307,NA,NA,sll1482,sll1482,P74616
+307,NA,NA,sll1481,sll1481,P74617
+308,Pentose phosphate pathway,syn00030,devB,sll1479,P74618
+308,NA,NA,sll1477,sll1477,P74619
+308,NA,NA,sll1476,sll1476,P74620
+308,NA,NA,slr1583,slr1583,P74621
+308,NA,NA,sll1475,sll1475,P74622
+308,NA,NA,sll1474,sll1474,Q55566
+308,NA,NA,sll1473,sll1473,P74623
+308,NA,NA,sll1472,sll1472,P74624
+308,Photosynthesis - antenna proteins,syn00196,cpcG,sll1471,P74625
+308,NA,NA,slr1584,slr1584,P74626
+309,NA,NA,slr1585,slr1585,P74627
+309,NA,NA,slr1586,slr1586,P74628
+309,"Valine, leucine and isoleucine biosynthesis",syn00290,leuC,sll1470,P54384
+309,NA,NA,slr1588,slr1588,Q79EE5
+309,NA,NA,stpA,slr0746,Q55034
+309,ABC transporters,syn02010,ggtA,slr0747,Q79EE4
+309,NA,NA,sll0736,sll0736,P74629
+309,Starch and sucrose metabolism,syn00500,sll0735,sll0735,P74630
+309,NA,NA,slr0748,slr0748,P74631
+309,Porphyrin and chlorophyll metabolism,syn00860,chlL,slr0749,P28373
+310,Porphyrin and chlorophyll metabolism,syn00860,chlN,slr0750,P28372
+310,NA,NA,sll0733,sll0733,P74633
+310,NA,NA,slr0751,slr0751,Q04737
+310,Glycolysis / Gluconeogenesis,syn00010,eno,slr0752,P77972
+310,NA,NA,sll0732,sll0732,P74634
+310,NA,NA,p,slr0753,P74635
+310,NA,NA,ssl1378,ssl1378,P74636
+310,Mismatch repair,syn03430,sll0729,sll0729,P74637
+310,Fatty acid biosynthesis,syn00061,accA,sll0728,P74638
+310,NA,NA,ssr1256,ssr1256,P74639
+311,NA,NA,slr0755,slr0755,P74640
+311,NA,NA,ssr1258,ssr1258,P74641
+311,NA,NA,sll0727,sll0727,P74642
+311,Glycolysis / Gluconeogenesis,syn00010,pgm,sll0726,P74643
+311,NA,NA,slr0756,slr0756,P74644
+311,NA,NA,slr0757,slr0757,P74645
+311,NA,NA,slr0758,slr0758,P74646
+311,NA,NA,sll0723,sll0723,P74647
+311,NA,NA,sll0722,sll0722,P74648
+311,NA,NA,sll0721,sll0721,P74649
+312,NA,NA,sll0720,sll0720,P74650
+312,NA,NA,sll1552,sll1552,P74651
+312,NA,NA,hlyB,slr1651,P74652
+312,NA,NA,slr1652,slr1652,P74653
+312,NA,NA,ama,slr1653,P74654
+312,NA,NA,sll1550,sll1550,P74655
+312,NA,NA,sll1549,sll1549,P74656
+312,Photosynthesis,syn00195,psaL,slr1655,P37277
+312,Photosynthesis,syn00195,psaI,smr0004,Q55330
+312,Peptidoglycan biosynthesis,syn00550,murG,slr1656,P74657
+313,NA,NA,slr1657,slr1657,P74658
+313,NA,NA,slr1658,slr1658,P74659
+313,NA,NA,slr1659,slr1659,P74660
+313,NA,NA,slr1660,slr1660,P74661
+313,NA,NA,sll1547,sll1547,P74662
+313,Purine metabolism,syn00230,ppx,sll1546,P74663
+313,NA,NA,slr1661,slr1661,P74664
+313,Glutathione metabolism,syn00480,gst1,sll1545,P74665
+313,NA,NA,slr1664,slr1664,P74666
+313,Lysine biosynthesis,syn00300,dapF,slr1665,P74667
+314,NA,NA,degT,slr1666,P74668
+314,NA,NA,ssr2781,ssr2781,P74669
+314,NA,NA,sll1544,sll1544,P74670
+314,NA,NA,sll1543,sll1543,P74671
+314,NA,NA,slr1667,slr1667,P74672
+314,NA,NA,slr1668,slr1668,P74673
+314,NA,NA,ssr2786,ssr2786,P74674
+314,NA,NA,sll1542,sll1542,P74675
+314,NA,NA,sll0451,sll0451,P74676
+314,Nitrogen metabolism,syn00910,norB,sll0450,P74677
+315,NA,NA,slr0449,slr0449,P74678
+315,NA,NA,sll0449,sll0449,P74679
+315,NA,NA,sll0448,sll0448,P74680
+315,NA,NA,sll0447,sll0447,P74681
+315,NA,NA,sll0446,sll0446,P74682
+315,NA,NA,sll0445,sll0445,P74683
+315,NA,NA,sll0444,sll0444,P74684
+315,NA,NA,sll0443,sll0443,P74685
+315,NA,NA,ski2,slr0451,P74686
+315,NA,NA,sll0442,sll0442,P74687
+316,NA,NA,sll0441,sll0441,P74688
+316,"Valine, leucine and isoleucine biosynthesis",syn00290,ilvD,slr0452,P74689
+316,Pentose phosphate pathway,syn00030,slr0453,slr0453,P74690
+316,NA,NA,ssl0832,ssl0832,P74691
+316,NA,NA,sll0436,sll0436,P74692
+316,NA,NA,slr0454,slr0454,P74693
+316,NA,NA,slr0455,slr0455,P74694
+316,NA,NA,slr0456,slr0456,P74695
+316,NA,NA,truB,slr0457,P74696
+316,Glyoxylate and dicarboxylate metabolism,syn00630,slr0458,slr0458,P74697
+317,NA,NA,slr0459,slr0459,P74698
+317,NA,NA,slr0460,slr0460,P74699
+317,NA,NA,sll0431,sll0431,P75027
+317,NA,NA,ssr0817,ssr0817,P74700
+317,NA,NA,slr0462,slr0462,P74701
+317,NA,NA,htpG,sll0430,P74702
+317,Starch and sucrose metabolism,syn00500,agp,slr1176,P52415
+317,NA,NA,slr1177,slr1177,P74704
+317,NA,NA,slr1178,slr1178,P74705
+317,NA,NA,slr1179,slr1179,P74706
+318,NA,NA,prfA,sll1110,P74707
+318,NA,NA,sll1109,sll1109,P74708
+318,Purine metabolism,syn00230,sll1108,sll1108,P74709
+318,Photosynthesis,syn00195,psbA1,slr1181,P07826
+318,NA,NA,slr1182,slr1182,P74711
+318,NA,NA,slr1183,slr1183,P74712
+318,NA,NA,slr1184,slr1184,P74713
+318,Photosynthesis,syn00195,petC,slr1185,P74714
+318,NA,NA,slr1186,slr1186,P74715
+318,NA,NA,slr1187,slr1187,P74716
+319,NA,NA,im30,slr1188,P74717
+319,NA,NA,slr1189,slr1189,P74718
+319,NA,NA,sll1107,sll1107,P74719
+319,NA,NA,sll1106,sll1106,P74720
+319,NA,NA,slr1192,slr1192,P74721
+319,Arginine biosynthesis,syn00220,argG,slr0585,P77973
+319,NA,NA,slr0586,slr0586,P74722
+319,NA,NA,slr0587,slr0587,P74723
+319,Purine metabolism,syn00230,purK,sll0578,P74724
+319,NA,NA,sll0577,sll0577,P74725
+320,NA,NA,slr0588,slr0588,P74726
+320,NA,NA,slr0589,slr0589,P74727
+320,NA,NA,slr0590,slr0590,P74728
+320,NA,NA,sll0576,sll0576,P74729
+320,NA,NA,rfbB,sll0575,P74730
+320,ABC transporters,syn02010,rfbA,sll0574,P74731
+320,Purine metabolism,syn00230,slr0591,slr0591,P74732
+320,Arginine biosynthesis,syn00220,arcC,sll0573,P74733
+320,NA,NA,sll0572,sll0572,P74734
+320,NA,NA,slr0592,slr0592,P74735
+321,NA,NA,slr0593,slr0593,P74736
+321,Homologous recombination,syn03440,recA,sll0569,P74737
+321,NA,NA,slr0594,slr0594,P74738
+321,NA,NA,fur,sll0567,P74739
+321,Arginine and proline metabolism,syn00330,slr0596,slr0596,P74740
+321,Purine metabolism,syn00230,purH,slr0597,P74741
+321,NA,NA,sll0565,sll0565,P74742
+321,NA,NA,sll0564,sll0564,P74743
+321,NA,NA,slr0598,slr0598,P74744
+321,NA,NA,slr0599,slr0599,P74745
+322,Selenocompound metabolism,syn00450,slr0600,slr0600,P74746
+322,NA,NA,slr0601,slr0601,P74747
+322,NA,NA,slr0602,slr0602,P74748
+322,NA,NA,sll0563,sll0563,P74749
+322,DNA replication,syn03030,dnaE,slr0603,P74750
+322,NA,NA,lepA,slr0604,P74751
+322,NA,NA,slr0605,slr0605,P74752
+322,NA,NA,slr0606,slr0606,P74753
+322,NA,NA,slr0607,slr0607,P74754
+322,Histidine metabolism,syn00340,hisI,slr0608,P74755
+323,NA,NA,slr0609,slr0609,P74756
+323,NA,NA,slr0610,slr0610,P74757
+323,Homologous recombination,syn03440,sll7106,sll7106,Q6ZE92
+323,NA,NA,sll7001,sll7001,Q6ZEJ7
+323,NA,NA,sll7002,sll7002,Q6ZEJ6
+323,NA,NA,sll7003,sll7003,Q6ZEJ5
+323,NA,NA,ssl7004,ssl7004,Q6ZEJ4
+323,NA,NA,slr7005,slr7005,Q6ZEJ3
+323,NA,NA,sll7006,sll7006,Q6ZEJ2
+323,NA,NA,ssl7007,ssl7007,Q6ZEJ1
+324,NA,NA,slr7008,slr7008,Q6ZEJ0
+324,NA,NA,sll7009,sll7009,Q6ZEI9
+324,NA,NA,slr7010,slr7010,Q6ZEI8
+324,NA,NA,slr7011,slr7011,Q6ZEI7
+324,NA,NA,slr7012,slr7012,Q6ZEI6
+324,NA,NA,slr7013,slr7013,Q6ZEI5
+324,NA,NA,slr7014,slr7014,Q6ZEI4
+324,NA,NA,slr7015,slr7015,Q6ZEI3
+324,NA,NA,slr7016,slr7016,Q6ZEI2
+324,NA,NA,ssr7017,ssr7017,Q6ZEI1
+325,NA,NA,ssr7018,ssr7018,Q6ZEI0
+325,NA,NA,ssl7019,ssl7019,Q6ZEH9
+325,NA,NA,ssl7020,ssl7020,Q6ZEH8
+325,NA,NA,ssl7021,ssl7021,Q6ZEH7
+325,NA,NA,ssl7022,ssl7022,Q6ZEH6
+325,NA,NA,slr7023,slr7023,Q6ZEH5
+325,NA,NA,slr7024,slr7024,Q6ZEH4
+325,NA,NA,slr7025,slr7025,Q6ZEH3
+325,NA,NA,slr7026,slr7026,Q6ZEH2
+325,NA,NA,sll7027,sll7027,Q6ZEH1
+326,NA,NA,sll7028,sll7028,Q6ZEH0
+326,NA,NA,sll7029,sll7029,Q6ZEG9
+326,NA,NA,sll7030,sll7030,Q6ZEG8
+326,NA,NA,sll7031,sll7031,Q6ZEG7
+326,NA,NA,slr7032,slr7032,Q6ZEG6
+326,NA,NA,sll7033,sll7033,Q6ZEG5
+326,NA,NA,sll7034,sll7034,Q6ZEG4
+326,NA,NA,ssr7035,ssr7035,Q6ZEG3
+326,NA,NA,ssr7036,ssr7036,Q6ZEG2
+326,NA,NA,slr7037,slr7037,Q6ZEG1
+327,NA,NA,ssl7038,ssl7038,Q6ZEG0
+327,NA,NA,ssl7039,ssl7039,Q6ZEF9
+327,NA,NA,ssr7040,ssr7040,Q6ZEF8
+327,NA,NA,slr7041,slr7041,Q6ZEF7
+327,NA,NA,ssl7042,ssl7042,Q6ZEF6
+327,NA,NA,sll7043,sll7043,Q6ZEF5
+327,NA,NA,sll7044,sll7044,Q6ZEF4
+327,NA,NA,ssl7045,ssl7045,Q6ZEF3
+327,NA,NA,ssl7046,ssl7046,Q6ZEF2
+327,NA,NA,sll7047,sll7047,Q6ZEF1
+328,NA,NA,ssl7048,ssl7048,Q6ZEF0
+328,NA,NA,slr7049,slr7049,Q6ZEE9
+328,NA,NA,sll7050,sll7050,Q6ZEE8
+328,NA,NA,ssl7051,ssl7051,Q6ZEE7
+328,NA,NA,slr7052,slr7052,Q6ZEE6
+328,NA,NA,ssl7053,ssl7053,Q6ZEE5
+328,NA,NA,slr7054,slr7054,Q6ZEE4
+328,NA,NA,sll7055,sll7055,Q6ZEE3
+328,NA,NA,sll7056,sll7056,Q6ZEE2
+328,NA,NA,slr7057,slr7057,Q6ZEE1
+329,NA,NA,slr7058,slr7058,Q6ZEE0
+329,NA,NA,slr7059,slr7059,Q6ZED9
+329,NA,NA,slr7060,slr7060,Q6ZED8
+329,NA,NA,slr7061,slr7061,Q6ZED7
+329,NA,NA,sll7062,sll7062,Q6ZED6
+329,NA,NA,sll7063,sll7063,Q6ZED5
+329,NA,NA,sll7064,sll7064,Q6ZED4
+329,NA,NA,sll7065,sll7065,Q6ZED3
+329,NA,NA,sll7066,sll7066,Q6ZED2
+329,NA,NA,sll7067,sll7067,Q6ZED1
+330,NA,NA,slr7068,slr7068,Q6ZED0
+330,NA,NA,sll7069,sll7069,Q6ZEC9
+330,NA,NA,sll7070,sll7070,Q6ZEC8
+330,NA,NA,slr7071,slr7071,Q6ZEC7
+330,NA,NA,ssr7072,ssr7072,Q6ZEC6
+330,NA,NA,slr7073,slr7073,Q6ZEC5
+330,NA,NA,ssl7074,ssl7074,Q6ZEC4
+330,NA,NA,sll7075,sll7075,Q6ZEC3
+330,NA,NA,slr7076,slr7076,Q6ZEC2
+330,NA,NA,sll7077,sll7077,Q6ZEC1
+331,NA,NA,sll7078,sll7078,Q6ZEC0
+331,NA,NA,ssr7079,ssr7079,Q6ZEB9
+331,NA,NA,slr7080,slr7080,Q6ZEB8
+331,NA,NA,slr7081,slr7081,Q6ZEB7
+331,NA,NA,slr7082,slr7082,Q6ZEB6
+331,NA,NA,slr7083,slr7083,Q6ZEB5
+331,NA,NA,ssr7084,ssr7084,Q6ZEB4
+331,NA,NA,sll7085,sll7085,Q6ZEB3
+331,NA,NA,sll7086,sll7086,Q6ZEB2
+331,NA,NA,sll7087,sll7087,Q6ZEB1
+332,NA,NA,slr7088,slr7088,Q6ZEB0
+332,NA,NA,sll7089,sll7089,Q6ZEA9
+332,NA,NA,sll7090,sll7090,Q6ZEA8
+332,NA,NA,slr7091,slr7091,Q6ZEA7
+332,NA,NA,slr7092,slr7092,Q6ZEA6
+332,NA,NA,ssr7093,ssr7093,Q6ZEA5
+332,NA,NA,slr7094,slr7094,Q6ZEA4
+332,NA,NA,slr7095,slr7095,Q6ZEA3
+332,NA,NA,slr7096,slr7096,Q6ZEA2
+332,NA,NA,slr7097,slr7097,Q6ZEA1
+333,NA,NA,slr7098,slr7098,Q6ZEA0
+333,NA,NA,slr7099,slr7099,Q6ZE99
+333,NA,NA,slr7100,slr7100,Q6ZE98
+333,NA,NA,slr7101,slr7101,Q6ZE97
+333,NA,NA,slr7102,slr7102,Q6ZE96
+333,NA,NA,sll7103,sll7103,Q6ZE95
+333,NA,NA,slr7104,slr7104,Q55697
+333,NA,NA,slr7105,slr7105,Q55696
+333,NA,NA,sll8049,sll8049,Q6ZE43
+333,NA,NA,sll8001,sll8001,Q6ZE91
+334,NA,NA,sll8002,sll8002,Q6ZE90
+334,NA,NA,ssl8003,ssl8003,Q6ZE89
+334,NA,NA,sll8004,sll8004,Q6ZE88
+334,NA,NA,ssl8005,ssl8005,Q6ZE87
+334,NA,NA,sll8006,sll8006,Q6ZE86
+334,NA,NA,sll8007,sll8007,Q6ZE85
+334,NA,NA,ssl8008,ssl8008,Q6ZE84
+334,NA,NA,sll8009,sll8009,Q6ZE83
+334,NA,NA,ssl8010,ssl8010,Q6ZE82
+334,NA,NA,sll8011,sll8011,Q6ZE81
+335,NA,NA,sll8012,sll8012,Q6ZE80
+335,NA,NA,ssr8013,ssr8013,Q6ZE79
+335,NA,NA,slr8014,slr8014,Q6ZE78
+335,NA,NA,slr8015,slr8015,Q6ZE77
+335,NA,NA,slr8016,slr8016,Q6ZE76
+335,NA,NA,sll8017,sll8017,Q6ZE75
+335,NA,NA,sll8018,sll8018,Q6ZE74
+335,NA,NA,sll8019,sll8019,Q6ZE73
+335,NA,NA,sll8020,sll8020,Q6ZE72
+335,NA,NA,slr8021,slr8021,Q6ZE71
+336,NA,NA,slr8022,slr8022,Q6ZE70
+336,NA,NA,slr8023,slr8023,Q6ZE69
+336,NA,NA,ssl8024,ssl8024,Q6ZE68
+336,NA,NA,sll8025,sll8025,Q6ZE67
+336,NA,NA,slr8026,slr8026,Q6ZE66
+336,NA,NA,sll8027,sll8027,Q6ZE65
+336,NA,NA,ssl8028,ssl8028,Q6ZE64
+336,NA,NA,slr8029,slr8029,Q6ZE63
+336,NA,NA,slr8030,slr8030,Q6ZE62
+336,NA,NA,ndhK2,sll8031,P17062
+337,NA,NA,sll8032,sll8032,Q6ZE60
+337,NA,NA,sll8033,sll8033,Q6ZE59
+337,NA,NA,sll8034,sll8034,Q6ZE58
+337,NA,NA,sll8035,sll8035,Q6ZE57
+337,NA,NA,slr8036,slr8036,Q6ZE56
+337,NA,NA,slr8037,slr8037,Q6ZE55
+337,NA,NA,slr8038,slr8038,Q6ZE54
+337,NA,NA,ssl8039,ssl8039,Q6ZE53
+337,NA,NA,sll8040,sll8040,Q6ZE52
+337,NA,NA,ssl8041,ssl8041,Q6ZE51
+338,NA,NA,sll8042,sll8042,Q6ZE46
+338,NA,NA,sll8043,sll8043,Q6ZE47
+338,NA,NA,slr8044,slr8044,Q6ZE48
+338,NA,NA,slr8045,slr8045,Q6ZE47
+338,NA,NA,slr8046,slr8046,Q6ZE46
+338,NA,NA,ssr8047,ssr8047,Q6ZE45
+338,NA,NA,sll8048,sll8048,Q6ZE44
+338,NA,NA,sll5132,sll5132,Q6ZEJ8
+338,NA,NA,ssl5001,ssl5001,Q6ZEX9
+338,NA,NA,sll5002,sll5002,Q6ZEX8
+339,NA,NA,sll5003,sll5003,Q6ZEX7
+339,NA,NA,sll5004,sll5004,Q6ZEX6
+339,NA,NA,slr5005,slr5005,Q6ZEX5
+339,NA,NA,sll5006,sll5006,Q6ZEX4
+339,NA,NA,ssl5007,ssl5007,Q6ZEX3
+339,NA,NA,ssl5008,ssl5008,Q6ZEX2
+339,NA,NA,ssr5009,ssr5009,Q6ZEX1
+339,NA,NA,slr5010,slr5010,Q6ZEX0
+339,NA,NA,ssr5011,ssr5011,Q6ZEW9
+339,NA,NA,slr5012,slr5012,Q6ZEW8
+340,NA,NA,slr5013,slr5013,Q6ZEW7
+340,NA,NA,sll5014,sll5014,Q6ZEW6
+340,NA,NA,ssl5015,ssl5015,Q6ZEW5
+340,NA,NA,slr5016,slr5016,Q6ZEW4
+340,NA,NA,slr5017,slr5017,Q6ZEW3
+340,NA,NA,slr5018,slr5018,Q6ZEW2
+340,NA,NA,ssr5019,ssr5019,Q6ZEW1
+340,NA,NA,ssr5020,ssr5020,Q6ZEW0
+340,NA,NA,slr5021,slr5021,Q6ZEV9
+340,NA,NA,slr5022,slr5022,Q6ZEV8
+341,NA,NA,slr5023,slr5023,Q6ZEV7
+341,NA,NA,slr5024,slr5024,Q6ZEV6
+341,NA,NA,ssl5025,ssl5025,Q6ZEV5
+341,NA,NA,sll5026,sll5026,Q6ZEV4
+341,NA,NA,ssl5027,ssl5027,Q6ZEV3
+341,NA,NA,sll5028,sll5028,Q6ZEV2
+341,NA,NA,slr5029,slr5029,Q6ZEV1
+341,NA,NA,sll5030,sll5030,Q6ZEV0
+341,NA,NA,ssl5031,ssl5031,Q6ZEU9
+341,NA,NA,sll5032,sll5032,Q6ZEU8
+342,NA,NA,sll5033,sll5033,Q6ZEU7
+342,NA,NA,sll5034,sll5034,Q6ZEU6
+342,NA,NA,sll5035,sll5035,Q6ZEU5
+342,Sulfur metabolism,syn00920,sll5036,sll5036,Q6ZEU4
+342,NA,NA,slr5037,slr5037,Q6ZEU3
+342,NA,NA,slr5038,slr5038,Q6ZEU2
+342,NA,NA,ssl5039,ssl5039,Q6ZEU1
+342,NA,NA,slr5040,slr5040,Q6ZEU0
+342,NA,NA,sll5041,sll5041,Q6ZET9
+342,NA,NA,sll5042,sll5042,Q6ZET8
+343,NA,NA,sll5043,sll5043,Q6ZET7
+343,NA,NA,sll5044,sll5044,Q6ZET6
+343,NA,NA,ssl5045,ssl5045,Q6ZET5
+343,NA,NA,sll5046,sll5046,Q6ZET4
+343,NA,NA,sll5047,sll5047,Q6ZET3
+343,NA,NA,sll5048,sll5048,Q6ZET2
+343,NA,NA,sll5049,sll5049,Q6ZET1
+343,NA,NA,sll5050,sll5050,Q6ZET0
+343,NA,NA,slr5051,slr5051,Q6ZES9
+343,NA,NA,sll5052,sll5052,Q6ZES8
+344,NA,NA,slr5053,slr5053,Q6ZES7
+344,NA,NA,slr5054,slr5054,Q6ZES6
+344,NA,NA,slr5055,slr5055,Q6ZES5
+344,NA,NA,slr5056,slr5056,Q6ZES4
+344,NA,NA,sll5057,sll5057,Q6ZES3
+344,NA,NA,slr5058,slr5058,Q6ZES2
+344,NA,NA,sll5059,sll5059,Q6ZES1
+344,NA,NA,sll5060,sll5060,Q6ZES0
+344,NA,NA,sll5061,sll5061,Q6ZER9
+344,NA,NA,sll5062,sll5062,Q6ZER8
+345,NA,NA,sll5063,sll5063,Q6ZER7
+345,NA,NA,ssl5064,ssl5064,Q6ZER6
+345,NA,NA,ssl5065,ssl5065,Q6ZER5
+345,NA,NA,sll5066,sll5066,Q6ZER4
+345,NA,NA,sll5067,sll5067,Q6ZER3
+345,NA,NA,ssl5068,ssl5068,Q6ZER2
+345,NA,NA,sll5069,sll5069,Q6ZER1
+345,NA,NA,ssl5070,ssl5070,Q6ZER0
+345,NA,NA,slr5071,slr5071,Q6ZEQ9
+345,NA,NA,sll5072,sll5072,Q6ZEQ8
+346,NA,NA,slr5073,slr5073,Q6ZEQ7
+346,NA,NA,ssr5074,ssr5074,Q6ZEQ6
+346,NA,NA,sll5075,sll5075,Q6ZEQ5
+346,NA,NA,sll5076,sll5076,Q6ZEQ4
+346,NA,NA,slr5077,slr5077,Q6ZEQ3
+346,NA,NA,slr5078,slr5078,Q6ZEQ2
+346,Fatty acid biosynthesis,syn00061,sll5079,sll5079,Q6ZEQ1
+346,NA,NA,sll5080,sll5080,Q6ZEQ0
+346,NA,NA,sll5081,sll5081,Q6ZEP9
+346,NA,NA,slr5082,slr5082,Q6ZEP8
+347,NA,NA,sll5083,sll5083,Q6ZEP7
+347,NA,NA,sll5084,sll5084,Q6ZEP6
+347,NA,NA,slr5085,slr5085,Q6ZEP5
+347,NA,NA,sll5086,sll5086,Q6ZEP4
+347,NA,NA,slr5087,slr5087,Q6ZEP3
+347,NA,NA,slr5088,slr5088,Q6ZEP2
+347,NA,NA,sll5089,sll5089,Q6ZEP1
+347,NA,NA,sll5090,sll5090,Q6ZEP0
+347,NA,NA,ssl5091,ssl5091,Q6ZEN9
+347,NA,NA,ssr5092,ssr5092,Q6ZEN8
+348,NA,NA,slr5093,slr5093,Q6ZEN7
+348,NA,NA,sll5094,sll5094,Q6ZEN6
+348,NA,NA,ssl5095,ssl5095,Q6ZEN5
+348,NA,NA,ssl5096,ssl5096,Q6ZEN4
+348,NA,NA,sll5097,sll5097,Q6ZEN3
+348,NA,NA,ssl5098,ssl5098,Q6ZEN2
+348,NA,NA,ssl5099,ssl5099,Q6ZEN1
+348,NA,NA,ssl5100,ssl5100,Q6ZEN0
+348,NA,NA,slr5101,slr5101,Q6ZEM9
+348,NA,NA,slr5102,slr5102,Q6ZEM8
+349,NA,NA,ssl5103,ssl5103,Q6ZEM7
+349,NA,NA,sll5104,sll5104,Q6ZEM6
+349,NA,NA,slr5105,slr5105,Q6ZEM5
+349,NA,NA,ssr5106,ssr5106,Q6ZEM4
+349,NA,NA,sll5107,sll5107,Q6ZEM3
+349,NA,NA,ssl5108,ssl5108,Q6ZEM2
+349,NA,NA,sll5109,sll5109,Q6ZEM1
+349,NA,NA,slr5110,slr5110,Q6ZEM0
+349,NA,NA,slr5111,slr5111,Q6ZEL9
+349,NA,NA,slr5112,slr5112,Q6ZEL8
+350,NA,NA,ssl5113,ssl5113,Q6ZEL7
+350,NA,NA,ssl5114,ssl5114,Q6ZEL6
+350,NA,NA,slr5115,slr5115,Q6ZEL5
+350,NA,NA,slr5116,slr5116,Q6ZEL4
+350,NA,NA,ssr5117,ssr5117,Q6ZEL3
+350,NA,NA,slr5118,slr5118,Q6ZEL2
+350,NA,NA,slr5119,slr5119,Q6ZEL1
+350,NA,NA,ssr5120,ssr5120,Q6ZEL0
+350,NA,NA,ssr5121,ssr5121,Q6ZEK9
+350,NA,NA,sll5122,sll5122,Q6ZEK8
+351,NA,NA,sll5123,sll5123,Q6ZEK7
+351,NA,NA,slr5124,slr5124,Q6ZEK6
+351,NA,NA,ssl5125,ssl5125,Q6ZEK5
+351,NA,NA,slr5126,slr5126,Q6ZEK4
+351,NA,NA,slr5127,slr5127,Q6ZEK3
+351,NA,NA,sll5128,sll5128,Q6ZEK2
+351,NA,NA,ssl5129,ssl5129,Q6ZEK1
+351,NA,NA,sll5130,sll5130,Q6ZEK0
+351,NA,NA,sll5131,sll5131,Q6YRP9
+351,NA,NA,slr6110,slr6110,Q6YRP4
+352,NA,NA,slr6001,slr6001,Q6YS03
+352,NA,NA,ssr6002,ssr6002,Q6YS02
+352,NA,NA,ssr6003,ssr6003,Q6YS01
+352,NA,NA,slr6004,slr6004,Q6YS00
+352,NA,NA,slr6005,slr6005,Q6YRU0
+352,NA,NA,slr6006,slr6006,Q6YRT9
+352,NA,NA,slr6007,slr6007,Q6YRT8
+352,NA,NA,slr6008,slr6008,Q6YRT7
+352,NA,NA,slr6009,slr6009,Q6YRT6
+352,NA,NA,sll6010,sll6010,Q6YRT5
+353,NA,NA,slr6011,slr6011,Q6YRT4
+353,NA,NA,slr6012,slr6012,Q6YRT3
+353,NA,NA,slr6013,slr6013,Q6YRT2
+353,NA,NA,slr6014,slr6014,Q6YRT1
+353,NA,NA,slr6015,slr6015,Q6YRT0
+353,NA,NA,slr6016,slr6016,Q6YRS9
+353,NA,NA,sll6017,sll6017,Q6YRS8
+353,NA,NA,ssl6018,ssl6018,Q6YRS7
+353,NA,NA,ssr6019,ssr6019,Q6YRS6
+353,NA,NA,ssr6020,ssr6020,Q6YRS5
+354,NA,NA,slr6021,slr6021,Q6YRS4
+354,NA,NA,slr6022,slr6022,Q6YRS3
+354,NA,NA,ssl6023,ssl6023,Q6YRS2
+354,NA,NA,ssr6024,ssr6024,Q6YRS1
+354,NA,NA,slr6025,slr6025,Q6YRS0
+354,NA,NA,ssr6026,ssr6026,Q6YRR9
+354,NA,NA,ssr6027,ssr6027,Q6YRR8
+354,NA,NA,slr6028,slr6028,Q6YRR7
+354,NA,NA,slr6029,slr6029,Q6YRR6
+354,NA,NA,ssr6030,ssr6030,Q6YRX4
+355,NA,NA,slr6031,slr6031,Q6YRX3
+355,NA,NA,ssr6032,ssr6032,Q6YRX2
+355,NA,NA,slr6033,slr6033,Q6YRX1
+355,NA,NA,slr6034,slr6034,Q6YRX0
+355,NA,NA,ssl6035,ssl6035,Q6YRW9
+355,NA,NA,sll6036,sll6036,Q6YRW8
+355,NA,NA,slr6037,slr6037,Q6YRW7
+355,NA,NA,slr6038,slr6038,Q6YRW6
+355,NA,NA,slr6039,slr6039,Q6YRW5
+355,NA,NA,slr6040,slr6040,Q6YRW4
+356,NA,NA,slr6041,slr6041,Q6YRW3
+356,NA,NA,slr6042,slr6042,Q6YRW2
+356,NA,NA,slr6043,slr6043,Q6YRW1
+356,NA,NA,slr6044,slr6044,Q6YRW0
+356,NA,NA,slr6045,slr6045,Q6YRV9
+356,NA,NA,ssr6046,ssr6046,Q6YRV8
+356,NA,NA,slr6047,slr6047,Q6YRV7
+356,NA,NA,ssr6048,ssr6048,Q6YRV6
+356,NA,NA,slr6049,slr6049,Q6YRV5
+356,NA,NA,slr6050,slr6050,Q6YRV4
+357,NA,NA,slr6051,slr6051,Q6YRV3
+357,NA,NA,sll6052,sll6052,Q6YRV2
+357,NA,NA,sll6053,sll6053,Q6YRV1
+357,NA,NA,sll6054,sll6054,Q6YRV0
+357,NA,NA,sll6055,sll6055,Q6YRU9
+357,NA,NA,slr6056,slr6056,Q6YRU8
+357,NA,NA,slr6057,slr6057,Q6YRU7
+357,NA,NA,slr6058,slr6058,Q6YRU6
+357,NA,NA,sll6059,sll6059,Q6YRU5
+357,NA,NA,sll6060,sll6060,Q6YRU4
+358,NA,NA,ssl6061,ssl6061,Q6YRU3
+358,NA,NA,ssr6062,ssr6062,Q6YRU2
+358,NA,NA,slr6063,slr6063,Q6YRU1
+358,NA,NA,slr6064,slr6064,Q6YRU0
+358,NA,NA,slr6065,slr6065,Q6YRT9
+358,NA,NA,slr6066,slr6066,Q6YRT8
+358,NA,NA,slr6067,slr6067,Q6YRT7
+358,NA,NA,slr6068,slr6068,Q6YRT6
+358,NA,NA,sll6069,sll6069,Q6YRT5
+358,NA,NA,slr6070,slr6070,Q6YRT4
+359,NA,NA,slr6071,slr6071,Q6YRT3
+359,NA,NA,slr6072,slr6072,Q6YRT2
+359,NA,NA,slr6073,slr6073,Q6YRT1
+359,NA,NA,slr6074,slr6074,Q6YRT0
+359,NA,NA,slr6075,slr6075,Q6YRS9
+359,NA,NA,sll6076,sll6076,Q6YRS8
+359,NA,NA,ssl6077,ssl6077,Q6YRS7
+359,NA,NA,ssr6078,ssr6078,Q6YRS6
+359,NA,NA,ssr6079,ssr6079,Q6YRS5
+359,NA,NA,slr6080,slr6080,Q6YRS4
+360,NA,NA,slr6081,slr6081,Q6YRS3
+360,NA,NA,ssl6082,ssl6082,Q6YRS2
+360,NA,NA,ssr6083,ssr6083,Q6YRS1
+360,NA,NA,slr6084,slr6084,Q6YRS0
+360,NA,NA,ssr6085,ssr6085,Q6YRR9
+360,NA,NA,ssr6086,ssr6086,Q6YRR8
+360,NA,NA,slr6087,slr6087,Q6YRR7
+360,NA,NA,slr6088,slr6088,Q6YRR6
+360,NA,NA,ssr6089,ssr6089,Q6YRR5
+360,NA,NA,slr6090,slr6090,Q6YRR4
+361,NA,NA,slr6091,slr6091,Q6YRR3
+361,NA,NA,ssl6092,ssl6092,Q6YRR2
+361,NA,NA,sll6093,sll6093,Q6YRR1
+361,NA,NA,slr6094,slr6094,Q6YRR0
+361,NA,NA,slr6095,slr6095,Q6YRQ9
+361,NA,NA,slr6096,slr6096,Q6YRQ8
+361,NA,NA,slr6097,slr6097,Q6YRQ7
+361,NA,NA,sll6098,sll6098,Q6YRQ6
+361,NA,NA,ssr6099,ssr6099,Q6YRQ5
+361,NA,NA,slr6100,slr6100,Q6YRQ4
+362,NA,NA,slr6101,slr6101,Q6YRQ3
+362,NA,NA,slr6102,slr6102,Q6YRQ2
+362,NA,NA,slr6103,slr6103,Q6YRQ1
+362,NA,NA,slr6104,slr6104,Q6YRQ0
+362,NA,NA,slr6105,slr6105,Q6YRP9
+362,NA,NA,slr6106,slr6106,Q6YRP8
+362,NA,NA,slr6107,slr6107,Q6YRP7
+362,NA,NA,slr6108,slr6108,Q6YRP6
+362,NA,NA,sll6109,sll6109,Q6YRP5

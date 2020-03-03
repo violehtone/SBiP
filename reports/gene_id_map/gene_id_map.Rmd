@@ -100,10 +100,9 @@ uniprot.ids <- keggConv("syn", "uniprot")
 
 # make it into a data.frame
 df.uniprot.ids <- tibble(
-   gene_id = str_remove(uniprot.ids, "syn:"),
+  gene_id = str_remove(uniprot.ids, "syn:"),
   protein_id = str_remove(names(uniprot.ids), "up:")
 )
-
 ```
 
 ```{r}
@@ -117,7 +116,9 @@ df.gene.ids <- left_join(
 The following table shows the mapping:
 
 ```{r}
-kable(df.ids) %>%
+df.gene.ids %>%
+  select(-data) %>%
+  kable() %>%
   kable_styling(bootstrap_options = c("striped", "hover", "responsive"))
 ```
 
@@ -126,7 +127,7 @@ kable(df.ids) %>%
 ```{r export_gene_id_data}
 ids.output.file.path <- df.gene.ids %>% 
   select(-data) %>% 
-  write_output_csv("id_mapping")
+  write_output_csv("gene_id_map")
 ```
 
 Gene ID Mapping was exported to `r ids.output.file.path`.
