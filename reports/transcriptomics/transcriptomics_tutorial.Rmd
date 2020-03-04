@@ -803,7 +803,7 @@ df.deseq.results %>%
 
 ```{r}
 deseq.export.file.path <- df.deseq.results %>% 
-  write_output_csv("transcriptomics_deseq")
+  write_output_csv("transcriptomics", "transcriptomics_deseq")
 ```
 
 DEseq data was exported to `r deseq.export.file.path`
