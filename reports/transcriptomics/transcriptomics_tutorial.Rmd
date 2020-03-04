@@ -1,0 +1,810 @@
+---
+title: "Transcriptomics"
+author: "Hugo Pineda, Joeri Jongbloets"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: 
+  html_document:
+    toc: true
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE, message = FALSE
+  # dpi = 300, fig.width = 10, fig.height = 6
+)
+# install.packages("BiocManager") (only if you do not have BiocManager)
+# BiocManager::install("DESeq2")
+library(DESeq2)
+library(broom)
+# install.packages("patchwork")
+library(patchwork)
+# install.packages("ggfortify")
+library(ggfortify)
+# install.packages("colorspace")
+library(colorspace)
+# install.packages("GGally")
+library(GGally)
+# install.packages("ggrepel")
+library(ggrepel)
+# install.packages("tidyverse")
+library(tidyverse)
+```
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# Load pipeline functions
+source(file.path(functions.dir, "output.R"))
+# Load pca functions
+source(file.path(functions.dir, "pca.R"))
+
+# Load experimental design
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design()
+# load transcriptomics count data
+source(file.path(data.raw.dir, "transcriptomics.R"))
+df.submission <- load_transcriptomics_submission()
+df.counts.raw <- load_transcriptomics() %>%
+  filter(dataset == "20200221") %>% select(-dataset)
+```
+
+# Preparation
+
+In the `load_data` chunk we have loaded all the data we will need for the analysis. We have 3 data.frames:
+
+* `df.counts.raw`: contains the counts for each gene an sample.
+* `df.submission`: contains information about the RNA-extraction samples.
+* `df.design`: maps sample_ids to the conditions of the experiment.
+
+
+## Matching RNA-seq samples to conditions
+
+In the `df.counts.raw` data.frame, samples are identified by the `sequence_id` column:
+
+```{r}
+df.counts.raw %>% 
+  distinct(sequence_id)  %>%
+  knitr::kable()
+```
+
+In order to map `sequence_id` to `sample_id` we to combine the information in `df.submission` and `df.design`:
+
+```{r}
+df.submission %>%
+  knitr::kable(caption = "Submission file.")
+```
+
+```{r}
+head(df.design) %>%
+  knitr::kable(caption = "Design file.")
+```
+
+Create a data.frame called `df.transcriptomics.design` combining the required information:
+
+```{r}
+df.transcriptomics.design <- df.submission %>% 
+  select(sample_id, sequence_id) %>% 
+  left_join(df.design, by = "sample_id")
+```
+
+```{r}
+df.transcriptomics.design %>% 
+  knitr::kable()
+```
+
+# Inspecting Feature Assignment
+
+As mentioned above, the `df.counts.raw` data.frame contains the counts for each gene an sample. In addition, it contains some rows indicating the number of reads that  were not aligned, ambiguous and for which no feature was found. This information is stored in the last rows of each counts file.
+
+```{r}
+df.counts.raw %>% 
+  filter(str_starts(gene, "__")) %>% 
+  knitr::kable()
+```
+
+
+## Exercise:
+
+We want to have information about the alignment process. For each sample, make a plot showing the percentage of reads that were not aligned, ambiguous and for which no feature was found. 
+
+## Exercise:
+
+For further analyses, we will need a data.frame that do NOT contain these rows. Create such data.frame and name it `df.counts`.
+
+
+```{r}
+df.counts <- df.counts.raw %>%
+  filter(
+    # FILL IN
+  )
+```
+
+# Inspecting Raw Count Data
+
+The goal of this exercise is to perform a quality control of the count data. In order to do this you will visualize the data using different types of plots.
+
+## Total number of counts
+
+The total number of counts for each sample might be different due to multiple factors. 
+
+### Exercise:
+
+Create a barplot showing the total number of counts for each sample.
+
+How many reads do you (approximately) have from each sample? Are the samples different? Do you see outliers? Can you conclude that the values are consistent, or is a normalization step required?
+
+```{r }
+df.counts %>% 
+  # Calculate total number of counts per sample 
+  # Make a barplot
+  
+```
+
+## Ribosomal RNA 
+
+Out of all the RNA present in a prokaryotic cell, roughly 85% is ribosomal (r)RNAs. Thus when sequencing RNA 85% of the reads will be on non-coding rRNA, while we are interested in mRNA. To improve sensitivity and dynamic range on the mRNA levels we remove the rRNA, called ribosomal RNA depletion. We should check if this procedure was effective.
+
+### Exercise:
+
+Create a barplot showing the percentage of counts for each rRNA to the total number of counts.
+
+What percentage of the reads is mapped to rRNA? Has each sample roughly the same amount of rRNA reads? What would be the effect of deviations in rRNA level when we compare the samples? Should we correct the data somehow for this?
+
+```{r}
+df.counts %>% 
+  # Calculate total number of counts per sample 
+  # filter rows containing rRNA (hint: all of them start with 'rrn')
+  # calculate percentage of the total number of counts
+  # create barplot
+```
+
+## Filtering out low-count genes and rRNA
+
+Researchers often filter out the genes that are measured with a very little amount of reads. These measurements are then considered unreliable.
+
+### Exercise:
+
+Create a new data.frame called `df.counts.f` in which you filter out all rRNA genes and all the genes that are measured with less than 24 reads in all samples. In addition, create a new column named `counts_log2` that contains the counts in log space. We will need this column in the coming steps.
+
+Hint: to avoid getting infinite values for genes with 0 counts, add 1 to all counts before you calculate the log. This is usually referred as pseudo-counts.
+
+```{r}
+df.counts.f <- df.counts %>% 
+  # filter out all rRNA
+  # filter out genes for which all the genes have less than 24 counts. Hint: use the function `any` in combination with group_by and filter (don't forget to ungroup afterwards!)
+  # create the `counts_log2` column with mutate
+```
+
+
+### Exercise:
+
+Did the filtering step have an impact on your data? Re-create the figure made in Excercise 2.1.1
+
+
+```{r}
+df.counts.f %>% 
+  # Calculate total number of counts per sample 
+  # Make a barplot
+```
+
+## Visualizing counts' distribution:
+
+Another way to check if data needs to be normalized is to visualize the distribution of the counts. This is usually done in log space. 
+
+### Excercise:
+
+Make a boxplot to visualize the distribution in gene expression level, for every sample.
+
+Are the samples similar or different? Do you see outliers? Can you conclude that the values are consistent, or is a normalization step required?
+
+```{r}
+df.counts.f %>% 
+  # make a boxplot using the counts_log2 column
+```
+
+### Excercise: 
+
+Make a density plot to visualize the distribution in gene expression level, for every sample.
+
+Are the samples similar or different? Do you see outliers? Can you conclude that the values are consistent, or is a normalization step required?
+
+```{r }
+df.counts.f %>% 
+  # make a density using the counts_log2 column
+  # hint: use the geom_density function and colours for each sample
+```
+
+## Sample comparison 
+
+An important aspect of quality control is comparing the samples. A direct way of comparing the samples is to plot the gene expression levels of one sample against the gene expression levels of another sample. 
+
+### Excercise:
+
+In order to be able to plot the log2 count values of two samples against each other, we need to transform the `df.counts.f` to wide format, such that we have one row per gene and one sample per column. Create a new data.frame, `df.counts.f.wide`, that has this format:
+
+```{r}
+df.counts.f.wide <- df.counts.f %>% 
+  # use pivot_wider to change to long format. Take the values from the `counts_log2` column
+  # hint: you need to remove the `counts` column before pivoting 
+```
+
+
+### Excercise:
+
+Now you can plot the log2 count values of two sample against each other. Which sample is most similar to sample 1? In what way do the other samples differ from sample 1?
+
+```{r}
+df.counts.f.wide %>% 
+  # make a scatterplot of S01 vs S02
+  # hint: you can create a straight line with slope one with `geom_abline(intercept = 0, slope = 1)`
+```
+
+### Excercise:
+
+It is somewhat challenging to compare all 6 samples with each other. You can use the `ggpairs` function from the `GGally` package to do this automatically. 
+
+```{r}
+df.counts.f.wide %>% 
+ # hint: you need to remove the `gene` column before calling the ggpairs function
+```
+
+What is your overall impression? Are all samples very similar or do you see differences? Can you give examples of large differences?
+
+## MA plots
+
+Although this plot is very informative, it is often more informative and common to compare the gene expression values between samples (or conditions) using an MA plot. In an MA plot you plot the difference in gene expression for each gene on the y-axis. The total expression level is plotted on the x-axis. It was originally developed for microarray data (http://en.wikipedia.org/wiki/MA_plot), but is also widely used for RNA-seq data. It will become clear when you start making such plots:
+
+
+### Exercise:
+
+In this MA plot you will compare sample 1 with sample 3:
+
+First calculate the difference in log expression and then plot the difference against total expression:
+
+```{r}
+df.counts.f.wide %>% 
+  # create two new columns:
+    # M: difference between samples S01 and S03 
+    # A: total counts for both samples
+  # Make a scatterplot of M vs A 
+  # Draw a straight line with intercept = 0, hint: geom_hline
+```
+
+The advantage is that differences from zero in the y-axis directly indicate a difference in log2 fold change. Each dot indicates a gene, and dots on the left side in the graph have a low expression level, and genes on the right side in the graph have a high expression level.
+
+Note that log2 expression values are plotted. Are the samples similar? What can you conclude from this plot?
+
+### Excercise:
+
+To analyze all 6 samples, it is handy to compare them all with a common reference. This common reference is the based median expression level of each gene across all samples. Use the `df.counts.f` data.frame to first calculate the log2 of the median counts per gene and then calculate M and A per sample.
+
+```{r}
+df.MA <- df.counts.f %>% 
+  # calculate the log2 of the median counts per gene 
+    # hint: use group_by(gene) in combination with mutate
+    # hint: based median counts: log2(median(counts))
+  # calculate M and A per sample
+    # hint: use group_by(sequence_id) in combination with mutate
+  # remember to ungroup()
+```
+
+### Excercise:
+
+Make a plot comparing every sample to the common reference.
+
+```{r}
+df.MA %>% 
+  # Make a scatterplot of M vs A 
+  # Draw a straight line with intercept = 0, hint: geom_hline
+  # hint: facet_wrap
+```
+
+Note that log2 expression values are plotted. Do you see any outliers?
+
+## PCA
+
+An important plot for the Quality Control is the Principal Component Analysis plot. This allows you to infer the effect of the different experimental variables. In R, a PCA can be performed using prcomp() function. We already prepared helper functions for performing PCA's and generating associated plots, you can find them in `r file.path(functions.dir, "pca.R")`.
+
+(Adapted from https://tbradley1013.github.io/2018/02/01/pca-in-a-tidy-verse-framework )
+
+We can use the `f_pca` function to perform the PCA on our data and also extract the most important information. It returns you a nested data.frame.
+
+```{r}
+df.pca <- df.counts.f %>% 
+  select(gene, sequence_id, counts_log2) %>% 
+  f_pca(counts_from = "counts_log2", features_from = "gene", samples_from = "sequence_id")
+```
+
+```{r}
+df.pca %>% glimpse()
+```
+
+First look at the amount of variance explained by each component using the `f_pca_var_exp` function.
+
+```{r}
+df.pca.var.exp <- df.pca %>%
+  f_pca_var_exp()
+
+df.pca.var.exp
+```
+
+Or in plotted form using `f_pca_plot_var_exp`
+
+```{r}
+df.pca.var.exp %>%
+  f_pca_plot_var_exp()
+```
+
+Which components are most relevant for explaining the variance in our dataset?
+
+Let's inspect where our samples are placed on the first three components.
+
+```{r}
+df.pca %>%
+  mutate(
+    pca_graph = map2(
+      pca, data,
+      f_pca_plot,
+      x.pc = 1, y.pc = 2,
+      design = df.transcriptomics.design,
+      design.key = "sequence_id",
+      colour = "purpose", label = "sample_id"
+    )
+  ) %>% 
+  pull(pca_graph) %>% first()
+```
+
+```{r}
+df.pca %>%
+  mutate(
+    pca_graph = map2(
+      pca, data,
+      f_pca_plot,
+      x.pc = 2, y.pc = 3,
+      design = df.transcriptomics.design,
+      design.key = "sequence_id",
+      colour = "purpose", label = "sample_id"
+    )
+  ) %>% 
+  pull(pca_graph) %>% first()
+```
+
+# Normalization
+
+The goal of this exercise is to perform a quality control of the gene expression count data, after normalization. In order to do this you will visualize the data using different types of plots.
+You will analyze your data using a methodology that is called DESeq, which is described in:
+
+1. https://genomebiology.biomedcentral.com/articles/10.1186/gb-2010-11-10-r106 
+
+And in
+
+2. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4302049/
+
+
+## Size factors
+
+Normalizing count data is one of the steps in the DESeq workflow. It is done to correct for differences in sequencing depth among samples and it is based on the median-of-ratios method. You can find the mathematical formulation in link # 1 provided above. In short, size factors are calculated per sample and give a measure of the median distance all genes of one sample to the geometric mean of each gene across all samples.
+
+### Exercise:
+
+To calculate the size factors we will follow the next steps ([adapted from this tutorial](https://hbctraining.github.io/DGE_workshop/lessons/02_DGE_count_normalization.html)): 
+
+1. Create a pseudo-reference sample: for each gene, calculate the geometric mean of counts. Note: you can also use the [log-average](https://en.wikipedia.org/wiki/Geometric_mean#Relationship_with_logarithms) to calculate this but then you will have to modify the coming steps accordingly. 
+
+2. Calculate ratio of each sample to the pseudo-reference: for each sample, calculate the ratio of each gene to the the pseudo-reference. Note: if the pseudo-reference is equal to 0, make this ratio `NA`.  
+
+3. Calculate the size factor for each sample: this is done by calculating the median of all ratios per sample. Hint: set the argument `na.rm = T` in the median function.
+
+4. Normalize the count data: for each sample, divide the counts of each gene by the calculated size factor. 
+
+
+```{r}
+# define a geomtric_mean function
+geometric_mean <- function(x){
+  n <- length(x)
+  result <- prod(x)^(1/n)
+  return(result)
+}
+
+df.norm <- df.counts.f %>% 
+  # group_by gene and calculate the pseudo_reference using the geometric_mean function
+  # group_by sequence_id and calculate:
+    # the ratio (hint: you might want to use and ifelse statement to set this to NA when ratio = 0)
+    # the size_factor 
+    # normalized counts (name this column as `counts_norm`)
+  # remember to ungroup!
+```
+
+Print the calculate size factors for each sample in a table:
+
+```{r}
+df.norm %>% 
+  select(sequence_id, size_factor) %>% 
+  distinct() %>% 
+  knitr::kable()
+```
+
+## Visualizing the effect of normalization
+
+Remake the plots you created in sections 2.1 and 2.4 using the normalized data
+
+
+### Exercise:
+
+Plot the total number of counts per sample:
+
+```{r}
+df.norm %>% 
+  group_by(sequence_id) %>%
+  summarise(
+    total_counts_norm = sum(counts_norm)
+  ) %>%
+  ggplot(aes(sequence_id, y = total_counts_norm, fill=sequence_id)) +
+  geom_col() +
+  scale_fill_viridis_d() +
+  labs(
+    x= "", y = "Total Counts per Sample"
+  ) +
+  theme(legend.position = "hide")
+```
+
+How many reads do you (approximately) have from each sample? Are the samples different? Do you see outliers? Has the normalization worked?
+
+### Exercise:
+
+Make a boxplot to visualize the distribution of normalized counts, for every sample:
+
+```{r }
+df.norm %>% 
+  # make a boxplot using the log2 transformed normalized counts
+```
+
+Are the samples similar or different? Do you see outliers? Can you conclude that the normalization worked?
+
+### Exercise:
+
+You can also make density plots to visualize the distribution of normalized counts, for every sample:
+
+```{r }
+df.norm %>% 
+  # make a density using the log2 transformed normalized counts
+  # hint: use the geom_density function and colours for each sample
+```
+
+Are the samples similar or different? Do you see outliers? Can you conclude that the normalization worked?
+
+## PCA
+
+Repeat the PCA done section 2.7 using the normalized data.  
+
+
+
+```{r}
+df.norm.pca <- df.norm %>% 
+  # run PCA using provided functions
+```
+
+
+```{r}
+df.norm.pca.var.exp <- df.norm.pca %>% 
+  # extract the variance explained by each component using the provided functions
+```
+
+### Exercise:
+
+Make a plot showing the explained variance for each component
+
+```{r}
+df.norm.pca.var.exp %>% 
+  # plot the variance explained by each component using the provided functions
+```
+
+### Exercise:
+
+Make a plot showing where out samples are place on the fist 3 components
+
+```{r}
+df.norm.pca %>%
+  # plot the fist and second component using the provided functions
+```
+
+```{r}
+df.norm.pca %>%
+  # plot the second and third component using the provided functions
+```
+
+Does this look different from the PCA with pre-normalized data? In what way? 
+
+### Exercise:  
+
+We will now investigate which genes are contributing most to the difference between the samples along the first PC axis (PC1).
+
+```{r}
+df.norm.pca.loadings <- df.norm.pca %>% 
+  mutate(
+    top_10_pc_1 = map(pca_loadings, function(.d) {
+      .d %>% filter(PC == 1) %>% arrange(-loading) %>% slice(1:10)
+    }),
+    bottom_10_pc_1 =  map(pca_loadings, function(.d) {
+      .d %>% filter(PC == 1) %>% arrange(loading) %>% slice(1:10)
+    })
+  )
+```
+
+Most down-regulated genes of PC 1:
+
+```{r}
+df.norm.pca.loadings %>% 
+  unnest(bottom_10_pc_1) %>%
+  select(gene, loading)
+```
+
+Most up-regulated genes of PC 1:
+
+```{r}
+df.norm.pca.loadings %>% 
+  unnest(top_10_pc_1) %>%
+  select(gene, loading)
+```
+
+Another useful tool is to plot the expression levels in a heatmap.
+
+```{r}
+df.norm.heatmap <- right_join(
+  df.norm %>% select(gene, sequence_id, counts_norm),
+  bind_rows(
+    df.norm.pca.loadings %>% unnest(cols = top_10_pc_1) %>% select(gene, loading),
+    df.norm.pca.loadings %>% unnest(cols = bottom_10_pc_1) %>% select(gene, loading)
+  ),
+  by = "gene"
+) %>%
+  left_join(
+    df.transcriptomics.design %>% select(sample_id, sequence_id, purpose, phosphate_mM),
+    by= c("sequence_id")
+  ) %>%
+  select(gene, sample_id, counts_norm) %>%
+  pivot_wider(
+    names_from = sample_id, 
+    values_from = counts_norm
+  ) %>%
+  ungroup()
+```
+
+```{r}
+df.norm.heatmap %>%
+  column_to_rownames(var = "gene") %>%
+  as.matrix() %>% t() %>% scale() %>% t() %>%
+  heatmap(col=diverging_hcl(n = 50, palette = "Blue-Red 3"))
+```
+
+# Differential Expression
+
+The goal of this exercise is to find differentially expressed genes.
+
+First, recall the experimental design. What are our experimental groups?
+
+```{r}
+df.transcriptomics.design %>% 
+  select(sample_id, sequence_id, phosphate_mM, purpose) %>% 
+  knitr::kable()
+```
+
+
+We are analyzing our data using the DESeq methodology. Instead of reinventing the wheel we will use the `DESeq2` package. You can find more information about the theoretical background of the package in the papers provided above. 
+
+## Preparing the data for DESeq2
+
+DESeq2 needs as inputs, at least, 3 objects:
+
+- countData: a matrix containing genes in rows and samples in columns. Gene names should be set as the row names of the matrix.
+- colData: a data.frame with two columns, one containing the sample names and the other one containing the experimental conditions (in our case, control and treatment).
+- design: a formula indicating the name of the column in the colData object that contains the experimental conditions.
+
+
+### Exercise:
+
+Create a data.frame containing the (filtered) counts data and the design data. It should look like this:
+
+```{r}
+df.diff <- df.counts.f %>%
+  # join design data
+```
+
+### Exercise:
+
+Create the object for countData. Transform the df.diff to wide format, set the genes as row names and convert to matrix. It should look like this:
+
+```{r}
+df.diff.wide <- df.diff %>% 
+  arrange(purpose) %>% 
+  # select only the necessary columns
+  # tranform to wide format
+  # set the row names
+  # transorm to to matrix. Hint: as.matrix
+
+```
+
+### Excercise:
+
+Create the object for colData. It should look like this:
+
+```{r}
+df.diff.design <- df.diff %>% 
+  # get the unique combinations of sequence_id and purpose. Hint: distinct()
+  # arrange by purpose 
+  # convert sequence_id and purpose columns to factors. Hint: use as.factor() in combination with mutate
+```
+
+### Exercise:
+
+Create the DESeq2 object and estimate size factors to apply counts normalization
+
+```{r}
+# create the deseq dataset
+deseq.dataset <- DESeqDataSetFromMatrix(
+  countData=as.matrix(df.diff.wide),
+  colData=df.diff.design,
+  design=~purpose
+) %>%
+  estimateSizeFactors()
+```
+
+## Counts normalization
+
+The previous function call creates a DESeq2 object which, among many other things, contains the normalized counts and the estimated size factors. These factors should be equal to the ones we calculated previously.
+
+### Exercise:
+
+Check if the previous statement is true.
+
+```{r}
+# hint: you can get the size factors by using the `sizeFactors()` function and the created DESeq object
+```
+
+You can access the normalized counts from the DESeq object by calling the `counts` function with `normalized = TRUE`. 
+This is how the normalized data looks like:
+
+## Dispersion estimation
+
+In RNA-seq count data there is a dependency between the variance and the mean that is addressed in the statistical procedures that are used for differential gene expression analysis. This plot visualizes the (overdispersed) mean-variance dependency in your normalized data:
+
+Computing mean and variance:
+
+```{r}
+# create DESeq object
+dds <- DESeq(deseq.dataset)
+```
+
+```{r}
+norm.counts <- counts(deseq.dataset, normalized=TRUE)
+mean.counts <- rowMeans(norm.counts)
+variance.counts <- apply(norm.counts, 1, var)
+
+df.mean.var <- tibble(
+  mean_counts = mean.counts,
+  var =  variance.counts
+)
+```
+
+```{r}
+df.mean.var %>% 
+  ggplot(aes(x = mean_counts, y = var)) +
+    geom_point(alpha = 0.2) +
+  labs(
+    title = "Mean-variance relationship",
+    x = "Mean log2(normalized counts) per gene",
+    y = "Variance of log2(normalized counts)"
+  ) +
+  geom_abline(intercept = 0, slope = 1, colour = "brown") +
+  scale_x_log10() +
+  scale_y_log10()
+```
+
+DESeq2 resolves this issue using regression and shrinkage:
+
+```{r}
+plotDispEsts(dds, log = "xy")
+```
+
+## Differential expression
+
+In order to extract the results of the DESeq analysis, we need to call the `results()` function on the previously created DESeq object. The following code extracts into a data.frame the log fold change, the p-values and adjusted p-values for differential expression. 
+
+```{r}
+df.deseq.results <- dds %>%
+  results(contrast=c("purpose","treatment","control")) %>%
+  as.data.frame() %>%
+  rownames_to_column("gene")
+```
+
+```{r}
+df.deseq.results %>% 
+  head() %>% 
+  knitr::kable()
+```
+
+The results can be plotted in an MA plot:
+
+```{r}
+dds %>% 
+  plotMA(ylim=c(-3,3))
+```
+
+…and you can plot the expression values of for instance the 10 most differentially expressed genes:
+
+```{r}
+df.deseq.results %>% 
+  select(gene, padj) %>% 
+  arrange(padj) %>%
+  slice(1:10) %>%
+  left_join(
+    df.norm, by = "gene"
+  ) %>%
+  left_join(
+    df.transcriptomics.design, by = "sequence_id"
+  ) %>%
+  mutate(
+    gene = reorder(gene, padj)
+  ) %>%
+  ggplot(aes(x=purpose, y=log2(counts_norm), colour=padj)) +
+  facet_wrap(~gene, ncol = 5) +
+  geom_point() +
+  scale_color_viridis_c(limits = c(0, 1)) +
+  labs(
+    x = "", y= bquote("log"[2]~"Normalized Counts"), colour = "Adjusted P. Value"
+  ) +
+  theme(legend.position = 'bottom')
+```
+
+### Exercise:
+
+How many genes have an adj p-value < 0.01?
+
+```{r}
+df.deseq.results %>% 
+```
+
+### Excercise:
+
+Draw an histogram of the p-values and the adjusted p-values
+
+```{r}
+df.deseq.results %>% 
+  ggplot() +
+ # histogram of pvalues
+ + # you can add two ggplot objects with `+` with the patchwork package
+  df.deseq.results %>% 
+  ggplot() +
+ # histogram of adj pvalues
+```
+
+### Excercise:
+
+Create a volcano plot.
+
+```{r}
+# good luck with this one!
+```
+
+### Exercise:
+
+Print a table with all the genes with adj p-value < 0.01 and log fold change > 2.
+
+```{r}
+df.deseq.results %>%
+  # filter
+  # hint: use the kable function from knitr package to print nicely  tables
+
+```
+
+## Export
+
+```{r}
+deseq.export.file.path <- df.deseq.results %>% 
+  write_output_csv("transcriptomics_deseq")
+```
+
+DEseq data was exported to `r deseq.export.file.path`
+
