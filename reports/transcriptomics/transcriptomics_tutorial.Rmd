@@ -714,7 +714,7 @@ In order to extract the results of the DESeq analysis, we need to call the `resu
 
 ```{r}
 df.deseq.results <- dds %>%
-  results(contrast=c("purpose","treatment","control")) %>%
+  lfcShrink(contrast=c("purpose","treatment","control")) %>%
   as.data.frame() %>%
   rownames_to_column("gene")
 ```
