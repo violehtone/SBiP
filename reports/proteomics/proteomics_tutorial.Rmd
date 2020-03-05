@@ -310,8 +310,22 @@ Extract the results using `topTable` (Hint set number of values to extract to In
 df.proteomics.limma <- # FILL IN
 ```
 
-
 ### Exercise 4.2
+
+```{r}
+# make histogram of p.values
+p.pval.raw <- df.proteomics.limma %>% 
+  # EXTEND
+
+# make histogram of adjusted p.values
+p.pval.adj <- df.proteomics.limma %>% 
+  # EXTEND
+
+# combine with patchwork
+p.pval.raw | p.pval.adj
+```
+
+### Exercise 4.3
 
 Make a volcano plot of the limma data. 
 
@@ -326,7 +340,7 @@ df.volcano.limma %>%
   # FILL IN
 ```
 
-### Exercise 4.3
+### Exercise 4.4
 
 Finally print a table with all interesting proteins.
 
