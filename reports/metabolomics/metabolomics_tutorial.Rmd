@@ -1,0 +1,116 @@
+---
+title: "Metabolomics Analysis"
+author: "Joeri Jongbloets"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+library("tidyverse")
+library("broom")
+# install.packages("ggfortify")
+library("ggfortify")
+# install.packages("colorspace")
+library("colorspace")
+```
+
+## Exercise 1: Preparation
+
+In the `load_data` chunk we need to load all the data we will need for the analysis. We have 2 data sources:
+
+* `design`: maps sample_ids to the conditions of the experiment
+* `metabolomics`: contains the measured intensities of each feature and mapping of metabolomics samples to sample_id.
+
+The data is stored respectively in 3 data.frames: `df.design`, `df.metabolomics.raw` and `df.metabolomics.design`.
+
+
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+source(file.path(functions.dir, "output.R"))
+# Load experimental design
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design()
+# Load metabolomics data
+source(file.path(data.raw.dir, "metabolomics.R"))
+df.metabolomics.design <- load_metabolomics_design()
+df.metabolomics.raw <- load_metabolomics()
+
+df.metabolomics.buckets <- df.metabolomics.raw %>%
+  distinct(bucket, RT, mz_ratio, mass, charge, Name, Formula)
+
+```
+
+
+### Exercise 1.1
+
+First thing to do when encountering a new dataset is to look at it's shape and properties.
+
+```{r}
+df.metabolomics.raw %>% glimpse()
+```
+
+
+#### Question 1.1
+
+What is in data.frame and what do you think is the meaning of each column?
+Is the data in a tidy format?
+
+
+
+## Feature Statistics
+
+As you might have notice, some of the features have a formula and/or a label associated to it but other don't. In addition, there are features that have the same formula and/or label. Create a figure showing the percentage of features with a formula and with a name for each phase and a table showing the total number of features and with names and formulas and how many of those are unique for each phase.
+
+```{r}
+df.metabolomics.summary <- df.metabolomics.raw %>%
+  group_by(phase) %>%
+  summarise(
+    # count total number of entries
+    # count number of entries with a formula. Hint: you can use `sum()` in combination with is.na()
+    # count number of unique formulas. Hint: `n_distinct` function
+    # count number of entries with a name Hint: you can use `sum()` in combination with is.na()
+    # count number of unique names. Hint: `n_distinct` function
+  )
+```
+
+```{r}
+df.metabolomics.summary %>%
+  pivot_longer(
+    cols = ,
+    names_to = ,
+    names_prefix = ,
+    values_to = 
+  ) %>%
+  mutate(
+    # calculate the percentage of the total
+  ) %>%
+  ggplot(aes()) +
+  # EXTEND
+  # Hint: use position = "dodge" inside the geom_col to have side-by-side columns
+```
+
+```{r}
+df.metabolomics.summary %>% 
+  knitr::kable()
+```
+
+
+## Next steps:
+
+From now on, you're on your own. Things to look at: 
+
+- Distribution of raw data
+- Sample bias; do you need to normalize? 
+- PCA
+- Heatmap
+- Statistical tests
+
+Note: beware there are two phases in this dataset, you should treat them as different datasets.
