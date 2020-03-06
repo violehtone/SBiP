@@ -1,0 +1,430 @@
+---
+title: "Proteomics Analysis"
+author: "Joeri Jongbloets, Hugo Pineda"
+date: "`r strftime(Sys.Date(), '%B %d %Y')`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, warning=FALSE
+  
+)
+
+library(broom)
+# install.packages("patchwork")
+library(patchwork)
+# install.packages("patchwork")
+library(ggrepel)
+# install.packages("kableExtra")
+library(kableExtra)
+# install.packages("BiocManager") (only if you do not have BiocManager)
+# BiocManager::install("limma")
+library(limma)
+# make sure tidyverse is loaded last to resolve namespace conflicts
+library(tidyverse)
+```
+
+## Exercise 1: Preparation
+
+In the `load_data` chunk we need to load all the data we will need for the analysis. We have 3 data sources:
+
+* `design`: maps sample_ids to the conditions of the experiment
+* `proteomics`: contains the observed ratio's for all proteins.
+* `gene_id_map`: maps uniprot IDs to gene IDs 
+
+The data is stored respectively in 3 data.frames: `df.design`, `df.proteomics.raw`, and `df.gene.map`.
+
+```{r load_data, include=FALSE}
+# Load project settings
+source(here::here("settings.R"))
+
+# Load helper functions
+source(file.path(functions.dir, "output.R"))
+
+# Load experimental design
+source(file.path(data.raw.dir, "design.R"))
+df.design <- load_design()
+
+# Load proteomics data
+source(file.path(data.raw.dir, "proteomics.R"))
+df.proteomics.raw <- load_proteomics_ratio()
+```
+
+### Exercise 1.1
+
+First thing to do when encountering a new dataset is to look at it's shape and properties.
+
+```{r}
+df.proteomics.raw %>% glimpse()
+```
+
+#### Question 1.1
+
+What is in data.frame and what do you think is the meaning of each column?
+Is the data in a tidy format?
+
+### Exercise 1.2
+
+The second thing to check is number of NA (Not Available) values. Missing data might disrupt our analysis and many functions (like `mean`) will choke on them. To get an idea on the number of NA values we can count how many proteins have 1, 2, ..., N missing values.
+
+Create a data.frame named `df.proteomics.summary` with this summary using the `count` function of `dplyr`. This function will count the number of entries in every group and store the count in the column named `n`. Of course this means `count` only works if the data.frame is grouped (so find a column to group by!).
+
+```{r}
+df.proteomics.summary <- df.proteomics.raw %>% 
+  group_by(ratio_count) %>% 
+  count()
+```
+
+Using the summarized data create two bar plots. The first shows the *number* of proteins with 0, 1, .. N number of non-NA ratios and the second shows the *percentage* of proteins with 0, ..., N non-NA ratios.
+
+```{r}
+# make the first plot
+p.na.count <- df.proteomics.summary %>% 
+  ggplot(aes(x = as.factor(ratio_count), y = n)) +
+  geom_col() +
+  labs(
+    x = "# of non-NA ratios",
+    y = "# of proteins",
+    title = "# of proteins with non-NA ratios"
+  )
+
+# make the second plot
+p.na.perc <- df.proteomics.summary %>% 
+  ggplot(aes(x = as.factor(ratio_count), y = n / sum(n))) +
+  geom_col() +
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x = "# of non-NA values",
+    y = "% of proteins",
+    title = "% of proteins with non-NA ratios"
+  )
+
+# use patchwork to combine both plots
+p.na.count | p.na.perc
+```
+
+#### Question 1.2
+
+Are proteins with 0 non-NA values useful? Should we remove them?
+
+### Exercise 1.3
+
+We can remove the observations for which no non-NA values are by filtering the `ratio_count` variable. At the same time this is a good oppertunity to tidy our dataset using `pivot_longer`.
+
+```{r}
+df.proteomics <- df.proteomics.raw %>% 
+  # remove entries without ratios
+  filter(ratio_count > 0) %>% 
+  # tidy data using pivot_longer
+  pivot_longer(
+    cols = starts_with("log_"), 
+    names_to = "replicate", 
+    # we can use names_prefix to remove the prefix from the values
+    names_prefix = "log_ratio_",  
+    values_to = "ratio"
+  )
+```
+
+## Exercise 2: Distribution of ratios
+
+Generally it is a good idea to look at the distribution of our values and compare the distributions of across our samples.
+
+### Exercise 2.1
+
+Create two density plots using `geom_density` to show the overall distribution of the `avg_ratio` and the distributions of the `ratio` per replicate.
+
+```{r}
+# make the first plot
+p.dist.avg <- df.proteomics %>% 
+  ggplot(aes(avg_ratio)) +
+  geom_density() +
+  labs(
+    x = "Average ratio",
+    title = "Distribution of average ratios"
+  )
+
+# make the second plot
+p.dist.replicate <- df.proteomics %>% 
+  ggplot(aes(ratio, colour = replicate)) +
+  geom_density() +
+  labs(
+    title = "Distribution of ratios per replicate"
+  )
+
+# combine with patchwork
+p.dist.avg | p.dist.replicate
+```
+
+### Exercise 2.2
+
+The (semi-)obviuous question to ask is whether our the average ratios follow a normal distribution. 
+To assess this make a Quantile-Quantile plot (`qq`) using `stat_qq` and `stat_qq_line`. 
+
+```{r}
+# make QQ plot for all data together
+p.qq.all <- df.proteomics %>% 
+  ggplot(aes(sample = ratio)) +
+  stat_qq() + 
+  stat_qq_line()  +
+  labs(
+    title = "All Data"
+  )
+
+# make QQ plot per replicate
+p.qq.replicate <- df.proteomics %>% 
+  ggplot(aes(sample = ratio)) +
+  facet_wrap(~replicate, ncol=1) +
+  stat_qq() + 
+  stat_qq_line() +
+  labs(
+    title = "Per replicate"
+  )
+
+p.qq.all | p.qq.replicate
+```
+
+## Exercise 3: T-tests
+
+### Exercise 3.1
+
+As a first indication let's use a one-sample t-test to see which proteins are significantly up/down regulated.
+We want to apply our t.test per protein, this means:
+
+1. Divide the data in smaller subsets per protein (`nest`)
+2. Apply `t.test` to each subset (`map`)
+3. Extract model components to separate columns (`tidy`)
+
+Since we are doing many t.tests we probably want to correct for multiple testing and flag the proteins which are significantly different from 0.
+
+```{r}
+df.proteomics.ttest <- df.proteomics %>% 
+  # group by protein
+  group_by(protein) %>% 
+  # nest to create subsets
+  nest() %>%
+  # apply t.test to each subset using map
+  # and extract model components
+  mutate(
+    t_test = map(data, function(.d) {t.test(.d$ratio, mu = 0) }),
+    t_test_tidy = map(t_test, tidy)
+  ) %>% 
+  # unnest to expose the extracted components
+  unnest(t_test_tidy) %>%
+  ungroup() %>%
+  # calculate adjusted p.value 
+  mutate(
+    padj = p.adjust(p.value, method = p.value.adj.method)
+  ) %>%
+  rename(logFC = estimate)
+```
+
+### Exercise 3.2
+
+When performing many tests it is a good idea to look at the distribution of the p-values.
+
+```{r}
+# make histogram of p.values
+p.pval.raw <- df.proteomics.ttest %>% 
+  ggplot(aes(p.value)) +
+  geom_histogram() +
+  labs(
+    x = "P.value", y = "Count",
+    title = "Histogram of unadjusted p.values"
+  )
+
+# make histogram of adjusted p.values
+p.pval.adj <- df.proteomics.ttest %>% 
+  ggplot(aes(padj)) +
+  geom_histogram() +
+  labs(
+    x = "Adj. P.value", y = "Count",
+    title = "Histogram of adjusted p.values"
+  )
+
+# combine with patchwork
+p.pval.raw | p.pval.adj
+```
+
+Read this if you do not know what to expect from above plot: http://varianceexplained.org/statistics/interpreting-pvalue-histogram/
+
+### Exercise 3.3
+
+As seen before a good method for obtaining an overview of the t.test is results is with an volcano plot.
+
+```{r}
+# define threshold
+alpha <- 0.01 # Threshold on the adjusted p-value
+fold.change.threshold <- 2 # threshold on  absolutefold change
+
+# prepare a data.frame with each row labelled whether it meets our thresholds
+df.volcano <- df.proteomics.ttest %>% 
+  mutate(
+    threshold = (abs(logFC) > fold.change.threshold & padj < alpha)
+  )
+
+# make volcano plot
+df.volcano %>% 
+  ggplot(aes(x = logFC, y = -log10(padj), colour = threshold)) +
+  geom_point(alpha = 0.5) +
+  geom_vline(xintercept = 0, colour = "black") +
+  geom_vline(xintercept = c(-fold.change.threshold, fold.change.threshold), colour = "red") +
+  geom_hline(yintercept = -log10(alpha), colour = "red") +
+  geom_text_repel(
+    aes(x = logFC, y = -log10(padj), label = protein), 
+    data = df.volcano %>% filter(threshold),
+    colour = "grey20"
+  ) +
+  theme(legend.position = "none") +
+  labs(
+    title = "Volcano plot", 
+    x = "Effect size: log2(fold-change)", 
+    y = "-log10(adjusted p-value)"
+  )
+```
+
+### Exercise 3.4
+
+Finally print a table with all interesting proteins.
+
+```{r}
+df.volcano %>%
+  filter(threshold) %>%
+  arrange(padj, logFC) %>%
+  select(protein, logFC, p.value, padj) %>%
+  knitr::kable(caption = glue::glue("Proteins with adj P-value < {alpha} and absolute log ratio > {fold.change.threshold}")) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+## Exercise 4: Limma 
+
+Another - more robust - method of finding which proteins are significantly up/down- regulated is using the `limma` package. The `limma` package was initially developed for (two-color) microarray data. One characteristic of this type of data is that it gives you ratios between control over treatment per gene for every replicate. This is very similar to our data!
+
+Resources:
+
+  * https://link.springer.com/chapter/10.1007/0-387-29362-0_23
+  * https://academic.oup.com/nar/article/43/7/e47/2414268
+
+### Exercise 4.1
+
+First create a matrix with one column per sample and one row per protein and the observed ratio as values.
+To retain the protein information (which can not be stored in the matrix) you can place that information in the row names.
+Then we can use `lmFit` to fit linear models to each protein and `eBayes` to compute statistical values for each model.
+
+```{r}
+# make matrix
+m.proteomics <- df.proteomics.raw %>% 
+  # remove NA values
+  filter(ratio_count > 1) %>% 
+  # select protein and log ratio's of each replicate
+  select(protein, starts_with("log_ratio_")) %>% 
+  # store protein values as rownames
+  column_to_rownames("protein") %>% 
+  # convert to matrix
+  as.matrix()
+
+# fit linear models
+fit <- lmFit(m.proteomics)
+# estimate statistics
+fit <- eBayes(fit)
+```
+
+Extract the results using `topTable` (Hint set number of values to extract to Infinite) and recover the protein names from the rownames.
+
+```{r}
+df.proteomics.limma <- topTable(fit, number = Inf) %>% 
+  rownames_to_column("protein")
+```
+
+
+### Exercise 4.2
+
+Again look at the histogram of p-values.
+
+```{r}
+# make histogram of p.values
+p.pval.raw <- df.proteomics.limma %>% 
+  ggplot(aes(P.Value)) +
+  geom_histogram() +
+  labs(
+    x = "P.value", y = "Count",
+    title = "Histogram of unadjusted p.values"
+  )
+
+# make histogram of adjusted p.values
+p.pval.adj <- df.proteomics.limma %>% 
+  ggplot(aes(adj.P.Val)) +
+  geom_histogram() +
+  labs(
+    x = "Adj. P.value", y = "Count",
+    title = "Histogram of adjusted p.values"
+  )
+
+# combine with patchwork
+p.pval.raw | p.pval.adj
+```
+
+### Exercise 4.3
+
+Make a volcano plot of the limma data. 
+
+```{r}
+# we reuse the threshold from the t.test
+
+# prepare a data.frame with each row labelled whether it meets our thresholds
+df.volcano.limma <- df.proteomics.limma %>%
+  mutate(
+    threshold = (abs(logFC) > fold.change.threshold & adj.P.Val < alpha)
+  )
+
+# make volcano plot
+df.volcano.limma %>% 
+  ggplot(aes(x = logFC, y = -log10(adj.P.Val), colour = threshold)) +
+  geom_point(alpha = 0.5) +
+  geom_vline(xintercept = 0, colour = "black") +
+  geom_vline(xintercept = c(-fold.change.threshold, fold.change.threshold), colour = "red") +
+  geom_hline(yintercept = -log10(alpha), colour = "red") +
+  geom_text_repel(
+    aes(x = logFC, y = -log10(adj.P.Val), label = protein), 
+    data = df.volcano.limma %>% filter(threshold),
+    colour = "grey20"
+  ) +
+  theme(legend.position = "none") +
+  labs(
+    title = "Volcano plot", 
+    x = "Effect size: log2(fold-change)", 
+    y = "-log10(adjusted p-value)"
+  )
+```
+
+### Exercise 4.4
+
+Finally print a table with all interesting proteins.
+
+```{r}
+df.volcano.limma %>%
+  filter(threshold) %>%
+  arrange(adj.P.Val, logFC) %>%
+  select(protein, logFC, P.Value, adj.P.Val) %>%
+  knitr::kable(caption = glue::glue("Proteins with adj P-value < {alpha} and absolute log ratio > {fold.change.threshold}")) %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+## Export
+
+```{r}
+ttest.export.file.path <- df.volcano %>% 
+  select(protein, logFC, p.value, padj) %>%
+  write_output_csv("proteomics", "proteomics_ttest")
+```
+
+T-test results were exported to `r ttest.export.file.path`
+
+```{r}
+limma.export.file.path <- df.volcano.limma %>% 
+  select(protein, logFC, P.Value, adj.P.Val) %>%
+  write_output_csv("proteomics", "proteomics_limma")
+```
+
+Limma results were exported to `r limma.export.file.path`
+
