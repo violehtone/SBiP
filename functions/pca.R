@@ -9,8 +9,8 @@ f_pca <- function( .d, counts_from, features_from, samples_from ) {
       data = map(data, function(.d) { 
         .d %>%
           pivot_wider(
-            names_from = features_from, 
-            values_from = counts_from
+            names_from = all_of(features_from), 
+            values_from = all_of(counts_from)
           )
       }),
       # perform pca
@@ -37,9 +37,12 @@ f_pca <- function( .d, counts_from, features_from, samples_from ) {
 
 f_pca_var_exp <- function( .d ) {
   
-  .d %>%
-    unnest(pca_aug) %>% 
-    summarize_at(.vars = vars(starts_with(".fittedPC")), .funs = list(var)) %>% 
+  .groups <- .d %>% groups()
+  
+  .d.unnested <- .d %>%
+    unnest(pca_aug) %>%
+    summarize_at(.vars = vars(starts_with(".fittedPC")), .funs = list(var)) %>%
+    group_by(!!!.groups) %>%
     pivot_longer(
       cols = starts_with(".fittedPC"),
       names_to = "pc",
@@ -56,7 +59,7 @@ f_pca_var_exp <- function( .d ) {
 
 # Custom function to plot pca results 
 f_pca_plot <- function(
-  pca.object, data, x.pc = 1, y.pc = 2, design = NULL, design.key = NULL, colour = NULL, label = NULL
+  pca.object, data, x.pc = 1, y.pc = 2, design = NULL, design.key = NULL, colour = NULL, label = NULL, title = NULL
 ){
   
   if(!is.null(design)) {
@@ -65,7 +68,7 @@ f_pca_plot <- function(
     data <- left_join(data, design, by = design.key)
   }
   
-  results <- autoplot(
+  p <- autoplot(
     object = pca.object, data = data, 
     x = x.pc,
     y = y.pc, 
@@ -79,10 +82,14 @@ f_pca_plot <- function(
     labs(
       x = glue::glue("Principal Component {x.pc}"),
       y = glue::glue("Principal Component {y.pc}"),
-      title = glue::glue("PCA on PC {x.pc} and PC {y.pc}")
+      subtitle = glue::glue("PCA on PC {x.pc} and PC {y.pc}")
     )
+  
+  if (!is.null(title)) {
+    p <- p + labs(title = title)
+  }
 
-  return(results)
+  return(p)
 }
 
 f_pca_plot_var_exp <- function(.d) {
@@ -99,7 +106,7 @@ f_pca_plot_var_exp <- function(.d) {
     ggplot(aes(as.factor(pc), value, group = key)) + 
     geom_point() + 
     geom_line() + 
-    facet_wrap(~key, scales = "free_y") +
+    facet_wrap(~key) +
     theme_bw() +
     lims(y = c(0, 1)) +
     labs(

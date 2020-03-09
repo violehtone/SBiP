@@ -53,6 +53,9 @@ update_geom_defaults("point", list(size = 2.5))
 
 ### GGplot labels
 
+p.label.ln <- function(.l) {bquote("ln"~.(.l)) }
+p.label.log <- function(.l, base=10) {bquote("log"[.(base)]~.(.l)) }
+
 p.label.mu <- bquote(mu~("h"^-1))
 p.label.dt <- bquote(Delta*"t"~(h))
 p.label.condition <- "Condition"
@@ -72,7 +75,7 @@ p.label.method <- "Method"
 p.label.od <- function(.w) { bquote("OD"[.(.w)]) }
 p.label.od.720 <- p.label.od(720)
 p.label.od.730 <- p.label.od(730)
-p.label.od.ln <- function(.w) { bquote("ln"(.(p.label.od(.w)))) }
+p.label.od.ln <- function(.w) { p.label.ln(p.label.od(.w)) }
 p.label.od.ln.720 <- p.label.od.ln(720)
 p.label.cdr <- ~ bquote("Cumulative d"~("h"^-1))
 p.label.temperature <-  bquote("Temperature"~(degree*"C"))
