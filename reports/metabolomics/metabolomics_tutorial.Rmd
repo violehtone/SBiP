@@ -34,17 +34,22 @@ The data is stored respectively in 3 data.frames: `df.design`, `df.metabolomics.
 # Load project settings
 source(here::here("settings.R"))
 
+# load output functions
 source(file.path(functions.dir, "output.R"))
+# Load pca functions
+source(file.path(functions.dir, "pca.R"))
+
 # Load experimental design
 source(file.path(data.raw.dir, "design.R"))
 df.design <- load_design()
+
 # Load metabolomics data
 source(file.path(data.raw.dir, "metabolomics.R"))
 df.metabolomics.design <- load_metabolomics_design()
 df.metabolomics.raw <- load_metabolomics()
 
 df.metabolomics.buckets <- df.metabolomics.raw %>%
-  distinct(bucket, RT, mz_ratio, mass, charge, Name, Formula)
+  distinct(phase, bucket, RT, mz_ratio, mass, charge, Name, Formula)
 
 ```
 
@@ -70,31 +75,55 @@ Is the data in a tidy format?
 As you might have notice, some of the features have a formula and/or a label associated to it but other don't. In addition, there are features that have the same formula and/or label. Create a figure showing the percentage of features with a formula and with a name for each phase and a table showing the total number of features and with names and formulas and how many of those are unique for each phase.
 
 ```{r}
-df.metabolomics.summary <- df.metabolomics.raw %>%
+df.metabolomics.summary <- df.metabolomics.buckets %>%
   group_by(phase) %>%
   summarise(
     # count total number of entries
+    total_number = n(),
     # count number of entries with a formula. Hint: you can use `sum()` in combination with is.na()
+    entries_with_formula = sum(!is.na(Formula)),
     # count number of unique formulas. Hint: `n_distinct` function
+    unique_formula = n_distinct(Formula, na.rm = TRUE),
     # count number of entries with a name Hint: you can use `sum()` in combination with is.na()
+    entries_with_name = sum(!is.na(Name)),
     # count number of unique names. Hint: `n_distinct` function
+    unique_name = n_distinct(Name, na.rm = TRUE)
   )
 ```
 
 ```{r}
+df.metabolomics.raw %>%
+  group_by(phase, bucket) %>%
+  summarise(
+    n_samples = n_distinct(metabolomics_id)
+  ) %>%
+  ggplot(aes( n_samples )) +
+  facet_wrap(~phase) +
+  geom_histogram()
+```
+
+
+```{r}
 df.metabolomics.summary %>%
   pivot_longer(
-    cols = ,
-    names_to = ,
-    names_prefix = ,
-    values_to = 
+    cols = starts_with("entries_with_"),
+    names_to = "type",
+    names_prefix = "entries_with_",
+    values_to = "counts"
   ) %>%
   mutate(
     # calculate the percentage of the total
+    percentage = counts / total_number
   ) %>%
-  ggplot(aes()) +
-  # EXTEND
+  ggplot(aes( x = type, y = percentage, fill = phase )) +
   # Hint: use position = "dodge" inside the geom_col to have side-by-side columns
+  geom_col(position = "dodge") +
+  # format labels on y-axis as percentages
+  scale_y_continuous(labels = scales::percent) +
+  labs(
+    x = "Variable",
+    y = "% non-NA entries"
+  )
 ```
 
 ```{r}
@@ -102,14 +131,177 @@ df.metabolomics.summary %>%
   knitr::kable()
 ```
 
+## Pre-Normalization
+
+```{r}
+df.metabolomics.raw %>%
+  ggplot(aes( x = metabolomics_id, y = log10(value + 1), colour = phase )) +
+  # facet_wrap(~phase) +
+  geom_boxplot() +
+  coord_flip() +
+  labs(
+    x = "Metabolomics ID",
+    y = p.label.log("Value")
+  )
+```
+
+```{r}
+df.metabolomics.raw %>%
+  left_join(df.metabolomics.design, by = c("phase", "metabolomics_id")) %>%
+  ggplot(aes(log10(value + 1), colour = sample_id )) +
+  facet_wrap(~phase) +
+  geom_density() +
+  labs(
+    x = p.label.log("Value"),
+    y = "Density",
+    colour = "Metabolomics ID"
+  )
+```
+
+## Normalize
+
+In class we designed the following normalization method:
+
+```{r}
+df.metabolomics.norm <- df.metabolomics.raw %>%
+  group_by(phase, bucket) %>%
+  # remove metabolites with all zero values
+  filter(sum(value) != 0) %>%
+  left_join(df.metabolomics.design, by = c("phase", "metabolomics_id")) %>%
+  left_join(df.design %>% select(sample_id, purpose), by = c("sample_id")) %>%
+  group_by(phase, bucket, purpose) %>%
+  mutate(
+    expected_value = mean(value[value > 0]),
+    expected_value = ifelse(is.na(expected_value), 0, expected_value),
+    # remove/replace zero values with mean
+    value_cor = ifelse(value > 0, value, expected_value)
+  ) %>%
+  group_by(phase, bucket) %>%
+  mutate(
+    # calculate pseudo-reference for size factors
+    pseudo_reference = ifelse(any(value_cor == 0), NA, mean(log(value_cor)))
+  ) %>%
+  group_by(phase, metabolomics_id) %>%
+  mutate(
+    # calculate average distance to pseudo_reference
+    size_factor = exp(median(log(value_cor) - pseudo_reference, na.rm=T)),
+    # calculate normalized value
+    value_norm = value_cor / size_factor,
+  )  %>% select(-c(sample_id, purpose))
+```
+
+Note: in certain situations (i.e. a metabolite with 0 values in one group) the above method will not replace these zeros.
+Therefore you need to be aware of zero values in the rest of your analyasis.
+
+The chunck below (note; eval = FALSE means it is not executed when knitted) demonstrates a different approach. 
+This will replace zero values with the lowest observed value (per metabolite).
+
+```{r, eval=FALSE}
+df.metabolomics.norm <- df.metabolomics.raw %>%
+  group_by(phase, bucket) %>%
+  # remove metabolites with all zero values
+  filter(sum(value) != 0) %>%
+  mutate(
+    # replace zero values by half of the smallest observed value for that metabolite
+    value_norm = ifelse(value <= 0, min(value[value > 0], na.rm = T) / 2, value),
+    # calculate pseudo-reference for size factors
+    pseudo_reference = ifelse(any(value == 0), NA, mean(log(value)))
+  ) %>%
+  group_by(phase, metabolomics_id) %>%
+  mutate(
+    # calculate average distance to pseudo_reference
+    size_factor = exp(median(log(value) - pseudo_reference, na.rm=T)),
+    # calculate normalized value
+    value_norm = value / size_factor,
+  )
+```
+
+### Check Normalization
+
+```{r}
+df.metabolomics.norm %>%
+  ggplot(aes( x = metabolomics_id, y = log10(value_norm + 1), colour = phase )) +
+  # facet_wrap(~phase) +
+  geom_boxplot() +
+  coord_flip() +
+  labs(
+    x = "Metabolomics ID",
+    y = p.label.log("Value")
+  )
+```
+
+```{r}
+df.metabolomics.norm %>%
+  left_join(df.metabolomics.design, by = c("phase", "metabolomics_id")) %>%
+  ggplot(aes(log10(value_norm + 1), colour = sample_id )) +
+  facet_wrap(~phase) +
+  geom_density() +
+  labs(
+    x = p.label.log("Value"),
+    y = "Density",
+    colour = "Metabolomics ID"
+  )
+```
+
+## PCA
+
+```{r}
+df.pca <- df.metabolomics.norm %>%
+  group_by(phase) %>%
+  # filter(phase == "polar") %>%
+  select(phase, bucket, metabolomics_id, value_norm) %>% 
+  # pivot_wider(
+  #   names_from = all_of("bucket"), 
+  #   values_from = all_of("value_norm")
+  # )
+  f_pca(counts_from = "value_norm", features_from = "bucket", samples_from = "metabolomics_id")
+```
+
+First look at the amount of variance explained by each component using the `f_pca_var_exp` function.
+
+```{r}
+df.pca.var.exp <- df.pca %>%
+  f_pca_var_exp()
+
+df.pca.var.exp
+```
+
+Or in plotted form using `f_pca_plot_var_exp`
+
+```{r}
+df.pca.var.exp %>%
+  f_pca_plot_var_exp() +
+  facet_grid(phase ~ key)
+```
+
+Which components are most relevant for explaining the variance in our dataset?
+
+Let's inspect where our samples are placed on the first three components.
+
+```{r}
+df.pca %>%
+  filter(phase == "polar") %>%
+  mutate(
+    pca_graph = map2(
+      pca, data,
+      f_pca_plot,
+      x.pc = 1, y.pc = 2,
+      design = df.metabolomics.design %>% 
+        left_join(df.design, by = "sample_id"),
+      design.key = "metabolomics_id",
+      colour = "purpose", label = "sample_id"
+    )
+  ) %>% 
+  pull(pca_graph) %>% first()
+```
 
 ## Next steps:
 
 From now on, you're on your own. Things to look at: 
 
-- Distribution of raw data
-- Sample bias; do you need to normalize? 
-- PCA
+- ~~Distribution of raw data~~
+- Sample bias; ~~do you need to normalize?~~ Pick your normalization method
+- PCA; interpret
 - Heatmap
 - Statistical tests
 
