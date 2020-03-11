@@ -38,6 +38,10 @@ Reports describe the data analysis performed as part of this project. At least e
 | `cell_extracts`   | Calculate Lysis Efficiency    | `casy` | Lysis efficiency | `cell_extracts/YYMMDD_cell_extracts.csv` |
 | `qpcr`            | Calculate # DNA Fragments     |   | # DNA Fragments       | `qpcr/YYMMDD_qpcr_fragments_PLATEID.csv` |
 | `ploidy`          | Calculate Ploidy Level        | `cell_extracts`, `qprc`  | Ploidy Level | `ploidy/YYMMDD_chromosomes_per_cell.csv` |
+| `transcriptomics` | Calculate changes in mRNA     |   | Fold Changes + P.values | `transcriptomics/YYMMDD_transcriptomics_deseq.csv` |
+| `proteomics`      | Calculate changes in proteins |   | Fold Changes + P.values | `proteomics/YYMMDD_proteomics_METHOD.csv` |
+| `metabolomics`    | Calculate changes in metabolites |   | Fold Changes + P.values | `metabolomics/YYMMDD_metabolomics_METHOD.csv` |
+| `omics_integration` | Integrate proteomics and transcriptomics |  |  |  |
 
 ### Scripts
 
