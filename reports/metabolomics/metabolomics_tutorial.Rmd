@@ -188,6 +188,7 @@ df.metabolomics.norm <- df.metabolomics.raw %>%
     # calculate normalized value
     value_norm = value_cor / size_factor,
   )  %>% select(-c(sample_id, purpose))
+# NOTE: at this point the data.frame is grouped by phase AND metabolomics ID
 ```
 
 Note: in certain situations (i.e. a metabolite with 0 values in one group) the above method will not replace these zeros.
@@ -214,6 +215,7 @@ df.metabolomics.norm <- df.metabolomics.raw %>%
     # calculate normalized value
     value_norm = value / size_factor,
   )
+# NOTE: at this point the data.frame is grouped by phase AND metabolomics ID
 ```
 
 ### Check Normalization
